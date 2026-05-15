@@ -1,0 +1,9 @@
+add_executable(test_matmul_bf16_out_fp32 test_matmul_bf16_out_fp32.cpp)
+target_link_libraries(test_matmul_bf16_out_fp32 PRIVATE tensorlib)
+target_link_libraries(test_matmul_bf16_out_fp32 PRIVATE fbamtrain_lib)
+
+add_test(NAME test_matmul_bf16_out_fp32 COMMAND test_matmul_bf16_out_fp32)
+set_tests_properties(test_matmul_bf16_out_fp32 PROPERTIES ENVIRONMENT "${FBAMTRAIN_ENV_PREFER_CUTLASS}")
+
+add_test(NAME test_matmul_bf16_out_fp32_no_cutlass COMMAND test_matmul_bf16_out_fp32)
+set_tests_properties(test_matmul_bf16_out_fp32_no_cutlass PROPERTIES ENVIRONMENT "${FBAMTRAIN_ENV_PREFER_TRITON}")

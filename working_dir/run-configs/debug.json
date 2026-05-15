@@ -1,0 +1,55 @@
+{
+  "micro_batch_size": 32,
+  "total_batch_size": 32,
+  "train_sequence_length": 1024,
+  "validation_sequence_length": 1024,
+  "validation_interval": 100,
+  "enable_validation": false,
+  "max_training_steps": 100000,
+  "frame_cols": 160,
+  "frame_rows": 48,
+  "tokenizer_file_path": "tokenizer.txt",
+  "train_data_config": {
+    "recordings_directory_path": "train_recordings",
+    "iteration_seed": 42
+  },
+  "validation_data_config": {
+    "recordings_directory_path": "validation_recordings",
+    "iteration_seed": 42
+  },
+  "optimizer": {
+    "type": "muon",
+    "learning_rate": 0.002,
+    "weight_decay": 0.01,
+    "beta1": 0.9,
+    "beta2": 0.999,
+    "eps": 1e-08,
+    "momentum": 0.0,
+    "nesterov": false
+  },
+  "checkpointing": {
+    "checkpoint_interval": 1000,
+    "checkpoint_directory": "checkpoints",
+    "resume_behavior": "load_latest",
+    "dataset_cursor_path": "checkpoints/dataset_cursor.json"
+  },
+  "model_config": {
+    "dtype": "fp16",
+    "n_embed": 1024,
+    "n_layer": 3,
+    "n_head": 8,
+    "downsample_blocks": 2,
+    "max_code_point": 256,
+    "rms_norm_eps": 1e-05,
+    "bias": true,
+    "downsample_conv_mode": "dilated",
+    "downsample_conv_dilation": 2,
+    "frame_cols": 160,
+    "frame_rows": 48,
+    "model_init_seed": 42,
+    "use_fp16_accumulation": true,
+    "streaming_chunk_size": 1,
+    "recompute_interval": 1,
+    "frame_head_reduction_strategy": "last_pos"
+  }
+}

@@ -1,0 +1,7 @@
+add_executable(test_contiguous_fallback test_contiguous_fallback.cpp)
+
+target_link_libraries(test_contiguous_fallback PRIVATE tensorlib)
+target_link_libraries(test_contiguous_fallback PRIVATE fbamtrain_lib)
+
+add_test(NAME test_contiguous_fallback COMMAND test_contiguous_fallback)
+set_tests_properties(test_contiguous_fallback PROPERTIES ENVIRONMENT "${FBAMTRAIN_ENV_PREFER_CUTLASS}")

@@ -1,0 +1,2907 @@
+{
+  "conv2d": {
+    "ic1024_oc1024_stride1_pad2_dil2": {
+      "basename": "conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_bf16_stride1_pad2_dil2_ic1024_oc1024_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1024,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      }
+    },
+    "ic1024_oc1024_stride1_pad2_dil2_fp16": {
+      "basename": "conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_fp16_stride1_pad2_dil2_ic1024_oc1024_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1024,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      }
+    },
+    "ic1024_oc1024_stride1_pad2_dil2_fp16_acc_fp16": {
+      "basename": "conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_FP16_ACCUM": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1024,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      }
+    },
+    "ic1024_oc2048_stride1_pad1_dil1": {
+      "basename": "conv2d_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_bf16_stride1_pad1_dil1_ic1024_oc2048_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 2048,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      }
+    },
+    "ic1024_oc2048_stride1_pad1_dil1_fp16": {
+      "basename": "conv2d_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_fp16_stride1_pad1_dil1_ic1024_oc2048_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 2048,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      }
+    },
+    "ic1024_oc2048_stride1_pad1_dil1_fp16_acc_fp16": {
+      "basename": "conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_FP16_ACCUM": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 2048,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      }
+    },
+    "ic32_oc64_stride1_pad1_dil1": {
+      "basename": "conv2d_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_bf16_stride1_pad1_dil1_ic32_oc64_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "32",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 16,
+        "dilation": 1,
+        "groups": 1,
+        "height": 64,
+        "in_channels": 32,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 64,
+        "padding": 1,
+        "stride": 1,
+        "width": 64
+      }
+    },
+    "ic32_oc64_stride1_pad1_dil1_fp16": {
+      "basename": "conv2d_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_fp16_stride1_pad1_dil1_ic32_oc64_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "32",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 16,
+        "dilation": 1,
+        "groups": 1,
+        "height": 64,
+        "in_channels": 32,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 64,
+        "padding": 1,
+        "stride": 1,
+        "width": 64
+      }
+    },
+    "ic32_oc64_stride1_pad1_dil1_fp16_acc_fp16": {
+      "basename": "conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_FP16_ACCUM": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "32",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 16,
+        "dilation": 1,
+        "groups": 1,
+        "height": 64,
+        "in_channels": 32,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 64,
+        "padding": 1,
+        "stride": 1,
+        "width": 64
+      }
+    },
+    "ic768_oc1536_stride1_pad1_dil1": {
+      "basename": "conv2d_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_bf16_stride1_pad1_dil1_ic768_oc1536_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1536,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      }
+    },
+    "ic768_oc1536_stride1_pad1_dil1_fp16": {
+      "basename": "conv2d_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_fp16_stride1_pad1_dil1_ic768_oc1536_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1536,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      }
+    },
+    "ic768_oc1536_stride1_pad1_dil1_fp16_acc_fp16": {
+      "basename": "conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_FP16_ACCUM": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1536,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      }
+    },
+    "ic768_oc768_stride1_pad2_dil2": {
+      "basename": "conv2d_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_bf16_stride1_pad2_dil2_ic768_oc768_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 768,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      }
+    },
+    "ic768_oc768_stride1_pad2_dil2_fp16": {
+      "basename": "conv2d_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_fp16_stride1_pad2_dil2_ic768_oc768_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 768,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      }
+    },
+    "ic768_oc768_stride1_pad2_dil2_fp16_acc_fp16": {
+      "basename": "conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_FP16_ACCUM": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 768,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      }
+    }
+  },
+  "conv2d_dgrad": {
+    "ic1024_oc1024_stride1_pad2_dil2": {
+      "basename": "conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_bf16_stride1_pad2_dil2_ic1024_oc1024_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1024,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu"
+    },
+    "ic1024_oc1024_stride1_pad2_dil2_fp16": {
+      "basename": "conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_fp16_stride1_pad2_dil2_ic1024_oc1024_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1024,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu"
+    },
+    "ic1024_oc1024_stride1_pad2_dil2_fp16_acc_fp16": {
+      "basename": "conv2d_dgrad_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_FP16_ACCUM": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1024,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu"
+    },
+    "ic1024_oc2048_stride1_pad1_dil1": {
+      "basename": "conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_bf16_stride1_pad1_dil1_ic1024_oc2048_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 2048,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu"
+    },
+    "ic1024_oc2048_stride1_pad1_dil1_fp16": {
+      "basename": "conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_fp16_stride1_pad1_dil1_ic1024_oc2048_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 2048,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu"
+    },
+    "ic1024_oc2048_stride1_pad1_dil1_fp16_acc_fp16": {
+      "basename": "conv2d_dgrad_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_FP16_ACCUM": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 2048,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu"
+    },
+    "ic32_oc64_stride1_pad1_dil1": {
+      "basename": "conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_bf16_stride1_pad1_dil1_ic32_oc64_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "32",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 16,
+        "dilation": 1,
+        "groups": 1,
+        "height": 64,
+        "in_channels": 32,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 64,
+        "padding": 1,
+        "stride": 1,
+        "width": 64
+      },
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu"
+    },
+    "ic32_oc64_stride1_pad1_dil1_fp16": {
+      "basename": "conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_fp16_stride1_pad1_dil1_ic32_oc64_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "32",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 16,
+        "dilation": 1,
+        "groups": 1,
+        "height": 64,
+        "in_channels": 32,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 64,
+        "padding": 1,
+        "stride": 1,
+        "width": 64
+      },
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu"
+    },
+    "ic32_oc64_stride1_pad1_dil1_fp16_acc_fp16": {
+      "basename": "conv2d_dgrad_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_FP16_ACCUM": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "32",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 16,
+        "dilation": 1,
+        "groups": 1,
+        "height": 64,
+        "in_channels": 32,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 64,
+        "padding": 1,
+        "stride": 1,
+        "width": 64
+      },
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu"
+    },
+    "ic768_oc1536_stride1_pad1_dil1": {
+      "basename": "conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_bf16_stride1_pad1_dil1_ic768_oc1536_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1536,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu"
+    },
+    "ic768_oc1536_stride1_pad1_dil1_fp16": {
+      "basename": "conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_fp16_stride1_pad1_dil1_ic768_oc1536_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1536,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu"
+    },
+    "ic768_oc1536_stride1_pad1_dil1_fp16_acc_fp16": {
+      "basename": "conv2d_dgrad_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_FP16_ACCUM": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1536,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu"
+    },
+    "ic768_oc768_stride1_pad2_dil2": {
+      "basename": "conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_bf16_stride1_pad2_dil2_ic768_oc768_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 768,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu"
+    },
+    "ic768_oc768_stride1_pad2_dil2_fp16": {
+      "basename": "conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_fp16_stride1_pad2_dil2_ic768_oc768_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 768,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu"
+    },
+    "ic768_oc768_stride1_pad2_dil2_fp16_acc_fp16": {
+      "basename": "conv2d_dgrad_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_FP16_ACCUM": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 768,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu"
+    }
+  },
+  "conv2d_wgrad": {
+    "ic1024_oc1024_stride1_pad2_dil2": {
+      "basename": "conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_bf16_stride1_pad2_dil2_ic1024_oc1024_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1024,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu"
+    },
+    "ic1024_oc1024_stride1_pad2_dil2_fp16": {
+      "basename": "conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_fp16_stride1_pad2_dil2_ic1024_oc1024_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1024,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu"
+    },
+    "ic1024_oc1024_stride1_pad2_dil2_fp16_acc_fp16": {
+      "basename": "conv2d_wgrad_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_FP16_ACCUM": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "enabled": false,
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1024,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu"
+    },
+    "ic1024_oc2048_stride1_pad1_dil1": {
+      "basename": "conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_bf16_stride1_pad1_dil1_ic1024_oc2048_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 2048,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu"
+    },
+    "ic1024_oc2048_stride1_pad1_dil1_fp16": {
+      "basename": "conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_fp16_stride1_pad1_dil1_ic1024_oc2048_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 2048,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu"
+    },
+    "ic1024_oc2048_stride1_pad1_dil1_fp16_acc_fp16": {
+      "basename": "conv2d_wgrad_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_FP16_ACCUM": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "enabled": false,
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 1024,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 2048,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu"
+    },
+    "ic32_oc64_stride1_pad1_dil1": {
+      "basename": "conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_bf16_stride1_pad1_dil1_ic32_oc64_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "32",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 16,
+        "dilation": 1,
+        "groups": 1,
+        "height": 64,
+        "in_channels": 32,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 64,
+        "padding": 1,
+        "stride": 1,
+        "width": 64
+      },
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu"
+    },
+    "ic32_oc64_stride1_pad1_dil1_fp16": {
+      "basename": "conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_fp16_stride1_pad1_dil1_ic32_oc64_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "32",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 16,
+        "dilation": 1,
+        "groups": 1,
+        "height": 64,
+        "in_channels": 32,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 64,
+        "padding": 1,
+        "stride": 1,
+        "width": 64
+      },
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu"
+    },
+    "ic32_oc64_stride1_pad1_dil1_fp16_acc_fp16": {
+      "basename": "conv2d_wgrad_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_FP16_ACCUM": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "32",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "enabled": false,
+      "problem": {
+        "batch": 16,
+        "dilation": 1,
+        "groups": 1,
+        "height": 64,
+        "in_channels": 32,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 64,
+        "padding": 1,
+        "stride": 1,
+        "width": 64
+      },
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu"
+    },
+    "ic768_oc1536_stride1_pad1_dil1": {
+      "basename": "conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_bf16_stride1_pad1_dil1_ic768_oc1536_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1536,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu"
+    },
+    "ic768_oc1536_stride1_pad1_dil1_fp16": {
+      "basename": "conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_fp16_stride1_pad1_dil1_ic768_oc1536_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1536,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu"
+    },
+    "ic768_oc1536_stride1_pad1_dil1_fp16_acc_fp16": {
+      "basename": "conv2d_wgrad_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "1",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "1",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "1",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_FP16_ACCUM": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "enabled": false,
+      "problem": {
+        "batch": 4,
+        "dilation": 1,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 1536,
+        "padding": 1,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu"
+    },
+    "ic768_oc768_stride1_pad2_dil2": {
+      "basename": "conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_bf16_stride1_pad2_dil2_ic768_oc768_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 768,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu"
+    },
+    "ic768_oc768_stride1_pad2_dil2_fp16": {
+      "basename": "conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_fp16_stride1_pad2_dil2_ic768_oc768_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 768,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu"
+    },
+    "ic768_oc768_stride1_pad2_dil2_fp16_acc_fp16": {
+      "basename": "conv2d_wgrad_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm80",
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_FP16_ACCUM": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "768",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "enabled": false,
+      "problem": {
+        "batch": 4,
+        "dilation": 2,
+        "groups": 1,
+        "height": 32,
+        "in_channels": 768,
+        "kernel_h": 3,
+        "kernel_w": 3,
+        "out_channels": 768,
+        "padding": 2,
+        "stride": 1,
+        "width": 32
+      },
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu"
+    }
+  },
+  "gemm": {
+    "addmm_cutlass_bf16": {
+      "basename": "addmm_cutlass_bf16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_addmm_bf16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "addmm_cutlass_fp16": {
+      "basename": "addmm_cutlass_fp16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_addmm_fp16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "addmm_cutlass_fp16_acc_fp16": {
+      "basename": "addmm_cutlass_fp16_acc_fp16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP16_ACCUM": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_addmm_fp16_acc_fp16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "addmm_cutlass_fp16_acc_fp32": {
+      "basename": "addmm_cutlass_fp16_acc_fp16_out_fp32_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP16_ACCUM": "1",
+        "CUTLASS_GEMM_FP32_OUTPUT": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_addmm_fp16_acc_fp16_out_fp32_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "addmm_cutlass_fp16_out_fp32": {
+      "basename": "addmm_cutlass_fp16_out_fp32_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP32_OUTPUT": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_addmm_fp16_out_fp32_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "addmm_gelu_cutlass_bf16": {
+      "basename": "addmm_gelu_cutlass_bf16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "2",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_addmm_gelu_bf16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "addmm_gelu_cutlass_fp16": {
+      "basename": "addmm_gelu_cutlass_fp16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "2",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_addmm_gelu_fp16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "addmm_gelu_cutlass_fp16_acc_fp16": {
+      "basename": "addmm_gelu_cutlass_fp16_acc_fp16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "2",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP16_ACCUM": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_addmm_gelu_fp16_acc_fp16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "addmm_gelu_preact_cutlass_bf16": {
+      "basename": "addmm_gelu_preact_cutlass_bf16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "2",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_addmm_gelu_preact_bf16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_WRITE_OUT_PREACT": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "addmm_gelu_preact_cutlass_fp16": {
+      "basename": "addmm_gelu_preact_cutlass_fp16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "2",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_addmm_gelu_preact_fp16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_WRITE_OUT_PREACT": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "addmm_gelu_preact_cutlass_fp16_acc_fp16": {
+      "basename": "addmm_gelu_preact_cutlass_fp16_acc_fp16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "2",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP16_ACCUM": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_addmm_gelu_preact_fp16_acc_fp16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_WRITE_OUT_PREACT": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_bf16": {
+      "basename": "matmul_cutlass_bf16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_bf16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_bf16_out_fp32": {
+      "basename": "matmul_cutlass_bf16_out_fp32_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_FP32_OUTPUT": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_bf16_out_fp32_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_bf16_out_fp32_ta": {
+      "basename": "matmul_cutlass_bf16_out_fp32_ta_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_FP32_OUTPUT": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_bf16_out_fp32_ta_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_bf16_out_fp32_tab": {
+      "basename": "matmul_cutlass_bf16_out_fp32_tab_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_FP32_OUTPUT": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_bf16_out_fp32_tab_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_bf16_out_fp32_tb": {
+      "basename": "matmul_cutlass_bf16_out_fp32_tb_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_FP32_OUTPUT": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_bf16_out_fp32_tb_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_bf16_ta": {
+      "basename": "matmul_cutlass_bf16_ta_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_bf16_ta_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_bf16_tab": {
+      "basename": "matmul_cutlass_bf16_tab_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_bf16_tab_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_bf16_tb": {
+      "basename": "matmul_cutlass_bf16_tb_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_bf16_tb_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_fp16": {
+      "basename": "matmul_cutlass_fp16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_fp16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_fp16_acc_fp16": {
+      "basename": "matmul_cutlass_fp16_acc_fp16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP16_ACCUM": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_fp16_acc_fp16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_fp16_acc_fp16_ta": {
+      "basename": "matmul_cutlass_fp16_acc_fp16_ta_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP16_ACCUM": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_fp16_acc_fp16_ta_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_fp16_acc_fp16_tab": {
+      "basename": "matmul_cutlass_fp16_acc_fp16_tab_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP16_ACCUM": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_fp16_acc_fp16_tab_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_fp16_acc_fp16_tb": {
+      "basename": "matmul_cutlass_fp16_acc_fp16_tb_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP16_ACCUM": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_fp16_acc_fp16_tb_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_fp16_acc_fp32": {
+      "basename": "matmul_cutlass_fp16_acc_fp16_out_fp32_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP16_ACCUM": "1",
+        "CUTLASS_GEMM_FP32_OUTPUT": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_fp16_acc_fp16_out_fp32_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_fp16_acc_fp32_ta": {
+      "basename": "matmul_cutlass_fp16_acc_fp16_out_fp32_ta_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP16_ACCUM": "1",
+        "CUTLASS_GEMM_FP32_OUTPUT": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_fp16_acc_fp16_out_fp32_ta_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_fp16_acc_fp32_tab": {
+      "basename": "matmul_cutlass_fp16_acc_fp16_out_fp32_tab_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP16_ACCUM": "1",
+        "CUTLASS_GEMM_FP32_OUTPUT": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_fp16_acc_fp16_out_fp32_tab_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_fp16_acc_fp32_tb": {
+      "basename": "matmul_cutlass_fp16_acc_fp16_out_fp32_tb_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP16_ACCUM": "1",
+        "CUTLASS_GEMM_FP32_OUTPUT": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_fp16_acc_fp16_out_fp32_tb_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_fp16_out_fp32": {
+      "basename": "matmul_cutlass_fp16_out_fp32_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP32_OUTPUT": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_fp16_out_fp32_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_fp16_out_fp32_ta": {
+      "basename": "matmul_cutlass_fp16_out_fp32_ta_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP32_OUTPUT": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_fp16_out_fp32_ta_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_fp16_out_fp32_tab": {
+      "basename": "matmul_cutlass_fp16_out_fp32_tab_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP32_OUTPUT": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_fp16_out_fp32_tab_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_fp16_out_fp32_tb": {
+      "basename": "matmul_cutlass_fp16_out_fp32_tb_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP32_OUTPUT": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_fp16_out_fp32_tb_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_fp16_ta": {
+      "basename": "matmul_cutlass_fp16_ta_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_fp16_ta_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_fp16_tab": {
+      "basename": "matmul_cutlass_fp16_tab_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_fp16_tab_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_cutlass_fp16_tb": {
+      "basename": "matmul_cutlass_fp16_tb_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_fp16_tb_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_gelu_bwd_cutlass_bf16": {
+      "basename": "matmul_gelu_bwd_cutlass_bf16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_BIAS_OP": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_gelu_bwd_bf16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_WITH_BIAS": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_gelu_bwd_cutlass_bf16_ta": {
+      "basename": "matmul_gelu_bwd_cutlass_bf16_ta_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_BIAS_OP": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_gelu_bwd_bf16_ta_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1",
+        "CUTLASS_GEMM_WITH_BIAS": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_gelu_bwd_cutlass_bf16_tab": {
+      "basename": "matmul_gelu_bwd_cutlass_bf16_tab_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_BIAS_OP": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_gelu_bwd_bf16_tab_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1",
+        "CUTLASS_GEMM_WITH_BIAS": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_gelu_bwd_cutlass_bf16_tb": {
+      "basename": "matmul_gelu_bwd_cutlass_bf16_tb_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_BIAS_OP": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_gelu_bwd_bf16_tb_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1",
+        "CUTLASS_GEMM_WITH_BIAS": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_gelu_bwd_cutlass_fp16": {
+      "basename": "matmul_gelu_bwd_cutlass_fp16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_BIAS_OP": "1",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_gelu_bwd_fp16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_WITH_BIAS": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_gelu_bwd_cutlass_fp16_acc_fp16": {
+      "basename": "matmul_gelu_bwd_cutlass_fp16_acc_fp16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_BIAS_OP": "1",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP16_ACCUM": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_gelu_bwd_fp16_acc_fp16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_WITH_BIAS": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta": {
+      "basename": "matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_BIAS_OP": "1",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP16_ACCUM": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_gelu_bwd_fp16_acc_fp16_ta_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1",
+        "CUTLASS_GEMM_WITH_BIAS": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab": {
+      "basename": "matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_BIAS_OP": "1",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP16_ACCUM": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_gelu_bwd_fp16_acc_fp16_tab_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1",
+        "CUTLASS_GEMM_WITH_BIAS": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb": {
+      "basename": "matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_BIAS_OP": "1",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP16_ACCUM": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_gelu_bwd_fp16_acc_fp16_tb_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1",
+        "CUTLASS_GEMM_WITH_BIAS": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_gelu_bwd_cutlass_fp16_ta": {
+      "basename": "matmul_gelu_bwd_cutlass_fp16_ta_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_BIAS_OP": "1",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_gelu_bwd_fp16_ta_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1",
+        "CUTLASS_GEMM_WITH_BIAS": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_gelu_bwd_cutlass_fp16_tab": {
+      "basename": "matmul_gelu_bwd_cutlass_fp16_tab_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_BIAS_OP": "1",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_gelu_bwd_fp16_tab_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_A": "1",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1",
+        "CUTLASS_GEMM_WITH_BIAS": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_gelu_bwd_cutlass_fp16_tb": {
+      "basename": "matmul_gelu_bwd_cutlass_fp16_tb_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "0",
+        "CUTLASS_GEMM_ALIGNMENT_A": "2",
+        "CUTLASS_GEMM_ALIGNMENT_B": "2",
+        "CUTLASS_GEMM_BIAS_OP": "1",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_gelu_bwd_fp16_tb_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3",
+        "CUTLASS_GEMM_TRANSPOSE_B": "1",
+        "CUTLASS_GEMM_WITH_BIAS": "1"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_gelu_cutlass_bf16": {
+      "basename": "matmul_gelu_cutlass_bf16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "2",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_gelu_bf16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_gelu_cutlass_fp16": {
+      "basename": "matmul_gelu_cutlass_fp16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "2",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_gelu_fp16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    },
+    "matmul_gelu_cutlass_fp16_acc_fp16": {
+      "basename": "matmul_gelu_cutlass_fp16_acc_fp16_sm80",
+      "defines": {
+        "CUTLASS_GEMM_ACTIVATION": "2",
+        "CUTLASS_GEMM_ALIGNMENT_A": "8",
+        "CUTLASS_GEMM_ALIGNMENT_B": "8",
+        "CUTLASS_GEMM_FP16": "1",
+        "CUTLASS_GEMM_FP16_ACCUM": "1",
+        "CUTLASS_GEMM_INSTRUCTION_K": "16",
+        "CUTLASS_GEMM_INSTRUCTION_M": "16",
+        "CUTLASS_GEMM_INSTRUCTION_N": "8",
+        "CUTLASS_GEMM_KERNEL_NAME": "cutlass_matmul_gelu_fp16_acc_fp16_kernel",
+        "CUTLASS_GEMM_NUM_STAGES": "3"
+      },
+      "problem": {
+        "bias_stride": 0,
+        "k": 4096,
+        "lda": 4096,
+        "ldb": 4096,
+        "ldd": 4096,
+        "m": 4096,
+        "n": 4096,
+        "split_k_slices": 1
+      }
+    }
+  },
+  "mha": {
+    "mha_full_attn_cutlass_bf16": {
+      "basename": "mha_full_attn_cutlass_bf16_sm80",
+      "defines": {
+        "CUTLASS_MHA_HEAD_DIM": "128",
+        "CUTLASS_MHA_IS_ALIGNED": "1",
+        "CUTLASS_MHA_KERNEL_NAME": "cutlass_mha_full_attn_bf16_kernel",
+        "CUTLASS_MHA_SUPPORTS_BIAS": "0",
+        "CUTLASS_MHA_SUPPORTS_DROPOUT": "0"
+      },
+      "problem": {
+        "batch_size": 4,
+        "head_dim": 128,
+        "num_heads": 16,
+        "sequence_length": 2048
+      }
+    },
+    "mha_full_attn_cutlass_bf16_lse": {
+      "basename": "mha_full_attn_cutlass_bf16_lse_sm80",
+      "defines": {
+        "CUTLASS_MHA_HEAD_DIM": "128",
+        "CUTLASS_MHA_IS_ALIGNED": "1",
+        "CUTLASS_MHA_KERNEL_NAME": "cutlass_mha_full_attn_bf16_lse_kernel",
+        "CUTLASS_MHA_SUPPORTS_BIAS": "0",
+        "CUTLASS_MHA_SUPPORTS_DROPOUT": "0",
+        "CUTLASS_MHA_WRITE_LSE": "1"
+      },
+      "problem": {
+        "batch_size": 4,
+        "head_dim": 128,
+        "num_heads": 16,
+        "sequence_length": 2048
+      }
+    },
+    "mha_full_attn_cutlass_fp16": {
+      "basename": "mha_full_attn_cutlass_fp16_sm80",
+      "defines": {
+        "CUTLASS_MHA_FP16": "1",
+        "CUTLASS_MHA_HEAD_DIM": "128",
+        "CUTLASS_MHA_IS_ALIGNED": "1",
+        "CUTLASS_MHA_KERNEL_NAME": "cutlass_mha_full_attn_fp16_kernel",
+        "CUTLASS_MHA_SUPPORTS_BIAS": "0",
+        "CUTLASS_MHA_SUPPORTS_DROPOUT": "0"
+      },
+      "problem": {
+        "batch_size": 4,
+        "head_dim": 128,
+        "num_heads": 16,
+        "sequence_length": 2048
+      }
+    },
+    "mha_full_attn_cutlass_fp16_lse": {
+      "basename": "mha_full_attn_cutlass_fp16_lse_sm80",
+      "defines": {
+        "CUTLASS_MHA_FP16": "1",
+        "CUTLASS_MHA_HEAD_DIM": "128",
+        "CUTLASS_MHA_IS_ALIGNED": "1",
+        "CUTLASS_MHA_KERNEL_NAME": "cutlass_mha_full_attn_fp16_lse_kernel",
+        "CUTLASS_MHA_SUPPORTS_BIAS": "0",
+        "CUTLASS_MHA_SUPPORTS_DROPOUT": "0",
+        "CUTLASS_MHA_WRITE_LSE": "1"
+      },
+      "problem": {
+        "batch_size": 4,
+        "head_dim": 128,
+        "num_heads": 16,
+        "sequence_length": 2048
+      }
+    }
+  },
+  "mha_bwd": {
+    "mha_full_attn_bwd_cutlass_bf16": {
+      "basename": "mha_full_attn_bwd_cutlass_bf16_sm80",
+      "defines": {
+        "CUTLASS_MHA_BWD_HEAD_DIM": "128",
+        "CUTLASS_MHA_BWD_KERNEL_NAME": "cutlass_mha_full_attn_bwd_bf16_kernel"
+      },
+      "problem": {
+        "batch_size": 4,
+        "head_dim": 128,
+        "num_heads": 16,
+        "sequence_length": 2048
+      }
+    },
+    "mha_full_attn_bwd_cutlass_fp16": {
+      "basename": "mha_full_attn_bwd_cutlass_fp16_sm80",
+      "defines": {
+        "CUTLASS_MHA_BWD_FP16": "1",
+        "CUTLASS_MHA_BWD_HEAD_DIM": "128",
+        "CUTLASS_MHA_BWD_KERNEL_NAME": "cutlass_mha_full_attn_bwd_fp16_kernel"
+      },
+      "problem": {
+        "batch_size": 4,
+        "head_dim": 128,
+        "num_heads": 16,
+        "sequence_length": 2048
+      }
+    }
+  }
+}

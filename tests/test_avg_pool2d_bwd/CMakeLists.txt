@@ -1,0 +1,9 @@
+add_executable(test_avg_pool2d_bwd test_avg_pool2d_bwd.cpp)
+
+target_link_libraries(test_avg_pool2d_bwd PRIVATE tensorlib)
+target_link_libraries(test_avg_pool2d_bwd PRIVATE fbamtrain_lib)
+
+add_test(NAME test_avg_pool2d_bwd COMMAND test_avg_pool2d_bwd)
+set_tests_properties(test_avg_pool2d_bwd PROPERTIES ENVIRONMENT "${FBAMTRAIN_ENV_PREFER_CUTLASS}")
+add_test(NAME test_avg_pool2d_bwd_no_cutlass COMMAND test_avg_pool2d_bwd)
+set_tests_properties(test_avg_pool2d_bwd_no_cutlass PROPERTIES ENVIRONMENT "${FBAMTRAIN_ENV_PREFER_TRITON}")

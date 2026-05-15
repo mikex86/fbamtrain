@@ -1,0 +1,8 @@
+add_subdirectory(bench_matmul)
+add_subdirectory(bench_mha_attn_fwd)
+add_subdirectory(bench_conv2d)
+add_subdirectory(bench_streaming_lstm)
+add_subdirectory(bench_streaming_lstm_bwd)
+add_subdirectory(bench_streaming_lstm_bwd_supplier)
+add_subdirectory(bench_matmul_mfu)
+add_subdirectory(bench_mha_mfu)

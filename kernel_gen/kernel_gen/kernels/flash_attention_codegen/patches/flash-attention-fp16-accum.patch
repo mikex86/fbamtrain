@@ -1,0 +1,92 @@
+--- a/csrc/flash_attn/src/kernel_traits.h
++++ b/csrc/flash_attn/src/kernel_traits.h
+@@ -12,7 +12,7 @@
+ 
+ using namespace cute;
+ 
+-template<int kHeadDim_, int kBlockM_, int kBlockN_, int kNWarps_, typename elem_type=cutlass::half_t>
++template<int kHeadDim_, int kBlockM_, int kBlockN_, int kNWarps_, typename elem_type=cutlass::half_t, bool UseFp16Accum_=false>
+ struct Flash_kernel_traits {
+ 
+ #if defined(__CUDA_ARCH__) &&  __CUDA_ARCH__ >= 800
+@@ -27,9 +27,13 @@
+     using index_t = int64_t;
+ 
+ #if defined(__CUDA_ARCH__) &&  __CUDA_ARCH__ >= 800
++    static_assert(!UseFp16Accum_ || std::is_same_v<elem_type, cutlass::half_t>,
++                  "FP16 accumulation is only supported for FP16 inputs.");
+     using MMA_Atom_Arch = std::conditional_t<
+         std::is_same_v<elem_type, cutlass::half_t>,
+-        MMA_Atom<SM80_16x8x16_F32F16F16F32_TN>,
++        std::conditional_t<UseFp16Accum_,
++                           MMA_Atom<SM80_16x8x16_F16F16F16F16_TN>,
++                           MMA_Atom<SM80_16x8x16_F32F16F16F32_TN>>,
+         MMA_Atom<SM80_16x8x16_F32BF16BF16F32_TN>
+     >;
+ #else
+@@ -46,8 +50,9 @@
+ };
+ 
+ // If Share_Q_K_smem is true, that forces Is_Q_in_regs to be true
+-template<int kHeadDim_, int kBlockM_, int kBlockN_, int kNWarps_, bool Is_Q_in_regs_=false, bool Share_Q_K_smem_=false, typename elem_type=cutlass::half_t,
+-         typename Base=Flash_kernel_traits<kHeadDim_, kBlockM_, kBlockN_, kNWarps_, elem_type> >
++template<int kHeadDim_, int kBlockM_, int kBlockN_, int kNWarps_, bool Is_Q_in_regs_=false, bool Share_Q_K_smem_=false,
++         typename elem_type=cutlass::half_t, bool UseFp16Accum_=false,
++         typename Base=Flash_kernel_traits<kHeadDim_, kBlockM_, kBlockN_, kNWarps_, elem_type, UseFp16Accum_> >
+ struct Flash_fwd_kernel_traits : public Base {
+     using Element = typename Base::Element;
+     using ElementAccum = typename Base::ElementAccum;
+@@ -163,7 +168,8 @@
+ template<int kHeadDim_, int kBlockM_, int kBlockN_, int kNWarps_,
+          int AtomLayoutMSdP_=1, int AtomLayoutNdKV=2, int AtomLayoutMdQ=2,
+          bool Is_V_in_regs_=false, bool No_double_buffer_=false, typename elem_type=cutlass::half_t,
+-         typename Base=Flash_kernel_traits<kHeadDim_, kBlockM_, kBlockN_, kNWarps_, elem_type> >
++         bool UseFp16Accum_=false,
++         typename Base=Flash_kernel_traits<kHeadDim_, kBlockM_, kBlockN_, kNWarps_, elem_type, UseFp16Accum_> >
+ struct Flash_bwd_kernel_traits : public Base {
+     using Element = typename Base::Element;
+     using ElementAccum = typename Base::ElementAccum;
+--- a/csrc/flash_attn/src/softmax.h
++++ b/csrc/flash_attn/src/softmax.h
+@@ -20,6 +20,23 @@
+ 
+ ////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
++template <typename T>
++__device__ __forceinline__ void scale_accum(T &value, float scale) {
++    value *= scale;
++}
++
++__device__ __forceinline__ void scale_accum(cutlass::half_t &value, float scale) {
++    float tmp = static_cast<float>(value);
++    tmp *= scale;
++    value = cutlass::half_t(tmp);
++}
++
++__device__ __forceinline__ void scale_accum(cutlass::bfloat16_t &value, float scale) {
++    float tmp = static_cast<float>(value);
++    tmp *= scale;
++    value = cutlass::bfloat16_t(tmp);
++}
++
+ template<bool zero_init=true, typename Engine0, typename Layout0, typename Engine1, typename Layout1, typename Operator>
+ __device__ __forceinline__ void thread_reduce_(Tensor<Engine0, Layout0> const &tensor, Tensor<Engine1, Layout1> &summary, Operator &op) {
+     static_assert(Layout0::rank == 2, "Only support 2D Tensor");
+@@ -157,7 +174,7 @@
+                 float scores_scale = exp2f((scores_max_prev(mi) - scores_max_cur) * softmax_scale_log2);
+                 row_sum(mi) *= scores_scale;
+                 #pragma unroll
+-                for (int ni = 0; ni < size<1>(acc_o_rowcol); ++ni) { acc_o_rowcol(mi, ni) *= scores_scale; }
++                for (int ni = 0; ni < size<1>(acc_o_rowcol); ++ni) { scale_accum(acc_o_rowcol(mi, ni), scores_scale); }
+             }
+             FLASH_NAMESPACE::scale_apply_exp2(scores, row_max, softmax_scale_log2);
+             // We don't do the reduce across threads here since we don't need to use the row_sum.
+@@ -180,7 +197,7 @@
+             lse(mi) = (sum == 0.f || sum != sum) ? (Split ? -INFINITY : INFINITY) : row_max(mi) * softmax_scale + __logf(sum);
+             float scale = !Is_dropout ? inv_sum : inv_sum * rp_dropout;
+             #pragma unroll
+-            for (int ni = 0; ni < size<1>(acc_o_rowcol); ++ni) { acc_o_rowcol(mi, ni) *= scale; }
++            for (int ni = 0; ni < size<1>(acc_o_rowcol); ++ni) { scale_accum(acc_o_rowcol(mi, ni), scale); }
+         }
+         return lse;
+     };

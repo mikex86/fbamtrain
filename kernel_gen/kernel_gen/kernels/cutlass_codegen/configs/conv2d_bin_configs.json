@@ -1,0 +1,718 @@
+{
+  "conv2d": {
+    "ic1024_oc1024_stride1_pad2_dil2_b32_h24_w80": {
+      "accumulate_in_fp16": false,
+      "basename": "conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80",
+      "batch": 32,
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_OP": "cutlass::conv::Operator::kFprop",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "defines_by_sm": {
+        "sm90": {
+          "CUTLASS_CONV_ALIGNMENT_A": "8",
+          "CUTLASS_CONV_ALIGNMENT_B": "8",
+          "CUTLASS_CONV_CLUSTER_K": "1",
+          "CUTLASS_CONV_CLUSTER_M": "2",
+          "CUTLASS_CONV_CLUSTER_N": "4",
+          "CUTLASS_CONV_THREADBLOCK_K": "64",
+          "CUTLASS_CONV_THREADBLOCK_M": "128",
+          "CUTLASS_CONV_THREADBLOCK_N": "128"
+        }
+      },
+      "dilation": 2,
+      "enabled": true,
+      "groups": 1,
+      "height": 24,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_name": "cutlass_conv2d_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_kernel",
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "source_file": "conv2d_cutlass_kernel.cu",
+      "source_file_by_sm": {
+        "sm90": "conv2d_cutlass3_kernel.cu"
+      },
+      "stride": 1,
+      "width": 80
+    },
+    "ic1024_oc1024_stride1_pad2_dil2_b32_h24_w80_fp16": {
+      "accumulate_in_fp16": false,
+      "basename": "conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80",
+      "batch": 32,
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_OP": "cutlass::conv::Operator::kFprop",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "defines_by_sm": {
+        "sm90": {
+          "CUTLASS_CONV_ALIGNMENT_A": "8",
+          "CUTLASS_CONV_ALIGNMENT_B": "8",
+          "CUTLASS_CONV_CLUSTER_K": "1",
+          "CUTLASS_CONV_CLUSTER_M": "2",
+          "CUTLASS_CONV_CLUSTER_N": "4",
+          "CUTLASS_CONV_THREADBLOCK_K": "64",
+          "CUTLASS_CONV_THREADBLOCK_M": "128",
+          "CUTLASS_CONV_THREADBLOCK_N": "128"
+        }
+      },
+      "dilation": 2,
+      "enabled": true,
+      "groups": 1,
+      "height": 24,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_name": "cutlass_conv2d_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_kernel",
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "source_file": "conv2d_cutlass_kernel.cu",
+      "source_file_by_sm": {
+        "sm90": "conv2d_cutlass3_kernel.cu"
+      },
+      "stride": 1,
+      "width": 80
+    },
+    "ic1024_oc1024_stride1_pad2_dil2_b32_h24_w80_fp16_acc_fp16": {
+      "accumulate_in_fp16": true,
+      "basename": "conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80",
+      "batch": 32,
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_FP16_ACCUM": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_OP": "cutlass::conv::Operator::kFprop",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "defines_by_sm": {
+        "sm90": {
+          "CUTLASS_CONV_ALIGNMENT_A": "8",
+          "CUTLASS_CONV_ALIGNMENT_B": "8",
+          "CUTLASS_CONV_CLUSTER_K": "1",
+          "CUTLASS_CONV_CLUSTER_M": "2",
+          "CUTLASS_CONV_CLUSTER_N": "4",
+          "CUTLASS_CONV_THREADBLOCK_K": "64",
+          "CUTLASS_CONV_THREADBLOCK_M": "128",
+          "CUTLASS_CONV_THREADBLOCK_N": "128"
+        }
+      },
+      "dilation": 2,
+      "enabled": true,
+      "groups": 1,
+      "height": 24,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_name": "cutlass_conv2d_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_kernel",
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "source_file": "conv2d_cutlass_kernel.cu",
+      "source_file_by_sm": {
+        "sm90": "conv2d_cutlass3_kernel.cu"
+      },
+      "stride": 1,
+      "width": 80
+    },
+    "ic1024_oc1024_stride1_pad2_dil2_b32_h48_w160": {
+      "accumulate_in_fp16": false,
+      "basename": "conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80",
+      "batch": 32,
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_OP": "cutlass::conv::Operator::kFprop",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "defines_by_sm": {
+        "sm90": {
+          "CUTLASS_CONV_ALIGNMENT_A": "8",
+          "CUTLASS_CONV_ALIGNMENT_B": "8",
+          "CUTLASS_CONV_CLUSTER_K": "1",
+          "CUTLASS_CONV_CLUSTER_M": "2",
+          "CUTLASS_CONV_CLUSTER_N": "4",
+          "CUTLASS_CONV_THREADBLOCK_K": "64",
+          "CUTLASS_CONV_THREADBLOCK_M": "128",
+          "CUTLASS_CONV_THREADBLOCK_N": "128"
+        }
+      },
+      "dilation": 2,
+      "enabled": true,
+      "groups": 1,
+      "height": 48,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_name": "cutlass_conv2d_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_kernel",
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "source_file": "conv2d_cutlass_kernel.cu",
+      "source_file_by_sm": {
+        "sm90": "conv2d_cutlass3_kernel.cu"
+      },
+      "stride": 1,
+      "width": 160
+    },
+    "ic1024_oc1024_stride1_pad2_dil2_b32_h48_w160_fp16": {
+      "accumulate_in_fp16": false,
+      "basename": "conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80",
+      "batch": 32,
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_OP": "cutlass::conv::Operator::kFprop",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "defines_by_sm": {
+        "sm90": {
+          "CUTLASS_CONV_ALIGNMENT_A": "8",
+          "CUTLASS_CONV_ALIGNMENT_B": "8",
+          "CUTLASS_CONV_CLUSTER_K": "1",
+          "CUTLASS_CONV_CLUSTER_M": "2",
+          "CUTLASS_CONV_CLUSTER_N": "4",
+          "CUTLASS_CONV_THREADBLOCK_K": "64",
+          "CUTLASS_CONV_THREADBLOCK_M": "128",
+          "CUTLASS_CONV_THREADBLOCK_N": "128"
+        }
+      },
+      "dilation": 2,
+      "enabled": true,
+      "groups": 1,
+      "height": 48,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_name": "cutlass_conv2d_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_kernel",
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "source_file": "conv2d_cutlass_kernel.cu",
+      "source_file_by_sm": {
+        "sm90": "conv2d_cutlass3_kernel.cu"
+      },
+      "stride": 1,
+      "width": 160
+    },
+    "ic1024_oc1024_stride1_pad2_dil2_b32_h48_w160_fp16_acc_fp16": {
+      "accumulate_in_fp16": true,
+      "basename": "conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80",
+      "batch": 32,
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_FP16_ACCUM": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_OP": "cutlass::conv::Operator::kFprop",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "defines_by_sm": {
+        "sm90": {
+          "CUTLASS_CONV_ALIGNMENT_A": "8",
+          "CUTLASS_CONV_ALIGNMENT_B": "8",
+          "CUTLASS_CONV_CLUSTER_K": "1",
+          "CUTLASS_CONV_CLUSTER_M": "2",
+          "CUTLASS_CONV_CLUSTER_N": "4",
+          "CUTLASS_CONV_THREADBLOCK_K": "64",
+          "CUTLASS_CONV_THREADBLOCK_M": "128",
+          "CUTLASS_CONV_THREADBLOCK_N": "128"
+        }
+      },
+      "dilation": 2,
+      "enabled": true,
+      "groups": 1,
+      "height": 48,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_name": "cutlass_conv2d_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_kernel",
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "source_file": "conv2d_cutlass_kernel.cu",
+      "source_file_by_sm": {
+        "sm90": "conv2d_cutlass3_kernel.cu"
+      },
+      "stride": 1,
+      "width": 160
+    }
+  },
+  "conv2d_dgrad": {
+    "ic1024_oc1024_stride1_pad2_dil2_b32_h24_w80": {
+      "accumulate_in_fp16": false,
+      "basename": "conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80",
+      "batch": 32,
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_OP": "cutlass::conv::Operator::kDgrad",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "defines_by_sm": {
+        "sm90": {
+          "CUTLASS_CONV_ALIGNMENT_A": "8",
+          "CUTLASS_CONV_ALIGNMENT_B": "8",
+          "CUTLASS_CONV_CLUSTER_K": "1",
+          "CUTLASS_CONV_CLUSTER_M": "2",
+          "CUTLASS_CONV_CLUSTER_N": "4",
+          "CUTLASS_CONV_THREADBLOCK_K": "64",
+          "CUTLASS_CONV_THREADBLOCK_M": "128",
+          "CUTLASS_CONV_THREADBLOCK_N": "128"
+        }
+      },
+      "dilation": 2,
+      "enabled": true,
+      "groups": 1,
+      "height": 24,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_name": "cutlass_conv2d_dgrad_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_kernel",
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu",
+      "source_file_by_sm": {
+        "sm90": "conv2d_cutlass3_kernel.cu"
+      },
+      "stride": 1,
+      "width": 80
+    },
+    "ic1024_oc1024_stride1_pad2_dil2_b32_h24_w80_fp16": {
+      "accumulate_in_fp16": false,
+      "basename": "conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80",
+      "batch": 32,
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_OP": "cutlass::conv::Operator::kDgrad",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "defines_by_sm": {
+        "sm90": {
+          "CUTLASS_CONV_ALIGNMENT_A": "8",
+          "CUTLASS_CONV_ALIGNMENT_B": "8",
+          "CUTLASS_CONV_CLUSTER_K": "1",
+          "CUTLASS_CONV_CLUSTER_M": "2",
+          "CUTLASS_CONV_CLUSTER_N": "4",
+          "CUTLASS_CONV_THREADBLOCK_K": "64",
+          "CUTLASS_CONV_THREADBLOCK_M": "128",
+          "CUTLASS_CONV_THREADBLOCK_N": "128"
+        }
+      },
+      "dilation": 2,
+      "enabled": true,
+      "groups": 1,
+      "height": 24,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_name": "cutlass_conv2d_dgrad_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_kernel",
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu",
+      "source_file_by_sm": {
+        "sm90": "conv2d_cutlass3_kernel.cu"
+      },
+      "stride": 1,
+      "width": 80
+    },
+    "ic1024_oc1024_stride1_pad2_dil2_b32_h48_w160": {
+      "accumulate_in_fp16": false,
+      "basename": "conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80",
+      "batch": 32,
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_OP": "cutlass::conv::Operator::kDgrad",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "defines_by_sm": {
+        "sm90": {
+          "CUTLASS_CONV_ALIGNMENT_A": "8",
+          "CUTLASS_CONV_ALIGNMENT_B": "8",
+          "CUTLASS_CONV_CLUSTER_K": "1",
+          "CUTLASS_CONV_CLUSTER_M": "2",
+          "CUTLASS_CONV_CLUSTER_N": "4",
+          "CUTLASS_CONV_THREADBLOCK_K": "64",
+          "CUTLASS_CONV_THREADBLOCK_M": "128",
+          "CUTLASS_CONV_THREADBLOCK_N": "128"
+        }
+      },
+      "dilation": 2,
+      "enabled": true,
+      "groups": 1,
+      "height": 48,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_name": "cutlass_conv2d_dgrad_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_kernel",
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu",
+      "source_file_by_sm": {
+        "sm90": "conv2d_cutlass3_kernel.cu"
+      },
+      "stride": 1,
+      "width": 160
+    },
+    "ic1024_oc1024_stride1_pad2_dil2_b32_h48_w160_fp16": {
+      "accumulate_in_fp16": false,
+      "basename": "conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80",
+      "batch": 32,
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_dgrad_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_OP": "cutlass::conv::Operator::kDgrad",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "defines_by_sm": {
+        "sm90": {
+          "CUTLASS_CONV_ALIGNMENT_A": "8",
+          "CUTLASS_CONV_ALIGNMENT_B": "8",
+          "CUTLASS_CONV_CLUSTER_K": "1",
+          "CUTLASS_CONV_CLUSTER_M": "2",
+          "CUTLASS_CONV_CLUSTER_N": "4",
+          "CUTLASS_CONV_THREADBLOCK_K": "64",
+          "CUTLASS_CONV_THREADBLOCK_M": "128",
+          "CUTLASS_CONV_THREADBLOCK_N": "128"
+        }
+      },
+      "dilation": 2,
+      "enabled": true,
+      "groups": 1,
+      "height": 48,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_name": "cutlass_conv2d_dgrad_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_kernel",
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "source_file": "conv2d_cutlass_dgrad_kernel.cu",
+      "source_file_by_sm": {
+        "sm90": "conv2d_cutlass3_kernel.cu"
+      },
+      "stride": 1,
+      "width": 160
+    }
+  },
+  "conv2d_wgrad": {
+    "ic1024_oc1024_stride1_pad2_dil2_b32_h24_w80": {
+      "accumulate_in_fp16": false,
+      "basename": "conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80",
+      "batch": 32,
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_OP": "cutlass::conv::Operator::kWgrad",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "defines_by_sm": {
+        "sm90": {
+          "CUTLASS_CONV_ALIGNMENT_A": "8",
+          "CUTLASS_CONV_ALIGNMENT_B": "8",
+          "CUTLASS_CONV_CLUSTER_K": "1",
+          "CUTLASS_CONV_CLUSTER_M": "2",
+          "CUTLASS_CONV_CLUSTER_N": "4",
+          "CUTLASS_CONV_THREADBLOCK_K": "64",
+          "CUTLASS_CONV_THREADBLOCK_M": "128",
+          "CUTLASS_CONV_THREADBLOCK_N": "128"
+        }
+      },
+      "dilation": 2,
+      "enabled": true,
+      "groups": 1,
+      "height": 24,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_name": "cutlass_conv2d_wgrad_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_kernel",
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu",
+      "source_file_by_sm": {
+        "sm90": "conv2d_cutlass3_kernel.cu"
+      },
+      "stride": 1,
+      "width": 80
+    },
+    "ic1024_oc1024_stride1_pad2_dil2_b32_h24_w80_fp16": {
+      "accumulate_in_fp16": false,
+      "basename": "conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80",
+      "batch": 32,
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_OP": "cutlass::conv::Operator::kWgrad",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "defines_by_sm": {
+        "sm90": {
+          "CUTLASS_CONV_ALIGNMENT_A": "8",
+          "CUTLASS_CONV_ALIGNMENT_B": "8",
+          "CUTLASS_CONV_CLUSTER_K": "1",
+          "CUTLASS_CONV_CLUSTER_M": "2",
+          "CUTLASS_CONV_CLUSTER_N": "4",
+          "CUTLASS_CONV_THREADBLOCK_K": "64",
+          "CUTLASS_CONV_THREADBLOCK_M": "128",
+          "CUTLASS_CONV_THREADBLOCK_N": "128"
+        }
+      },
+      "dilation": 2,
+      "enabled": true,
+      "groups": 1,
+      "height": 24,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_name": "cutlass_conv2d_wgrad_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_kernel",
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu",
+      "source_file_by_sm": {
+        "sm90": "conv2d_cutlass3_kernel.cu"
+      },
+      "stride": 1,
+      "width": 80
+    },
+    "ic1024_oc1024_stride1_pad2_dil2_b32_h48_w160": {
+      "accumulate_in_fp16": false,
+      "basename": "conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80",
+      "batch": 32,
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_OP": "cutlass::conv::Operator::kWgrad",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "defines_by_sm": {
+        "sm90": {
+          "CUTLASS_CONV_ALIGNMENT_A": "8",
+          "CUTLASS_CONV_ALIGNMENT_B": "8",
+          "CUTLASS_CONV_CLUSTER_K": "1",
+          "CUTLASS_CONV_CLUSTER_M": "2",
+          "CUTLASS_CONV_CLUSTER_N": "4",
+          "CUTLASS_CONV_THREADBLOCK_K": "64",
+          "CUTLASS_CONV_THREADBLOCK_M": "128",
+          "CUTLASS_CONV_THREADBLOCK_N": "128"
+        }
+      },
+      "dilation": 2,
+      "enabled": true,
+      "groups": 1,
+      "height": 48,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_name": "cutlass_conv2d_wgrad_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_kernel",
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu",
+      "source_file_by_sm": {
+        "sm90": "conv2d_cutlass3_kernel.cu"
+      },
+      "stride": 1,
+      "width": 160
+    },
+    "ic1024_oc1024_stride1_pad2_dil2_b32_h48_w160_fp16": {
+      "accumulate_in_fp16": false,
+      "basename": "conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80",
+      "batch": 32,
+      "defines": {
+        "CUTLASS_CONV_EXPECT_DILATION_H": "2",
+        "CUTLASS_CONV_EXPECT_DILATION_W": "2",
+        "CUTLASS_CONV_EXPECT_GROUPS": "1",
+        "CUTLASS_CONV_EXPECT_KERNEL_H": "3",
+        "CUTLASS_CONV_EXPECT_KERNEL_W": "3",
+        "CUTLASS_CONV_EXPECT_PADDING_H": "2",
+        "CUTLASS_CONV_EXPECT_PADDING_W": "2",
+        "CUTLASS_CONV_EXPECT_STRIDE_H": "1",
+        "CUTLASS_CONV_EXPECT_STRIDE_W": "1",
+        "CUTLASS_CONV_FP16": "1",
+        "CUTLASS_CONV_ITERATOR_ALGO": "cutlass::conv::IteratorAlgorithm::kOptimized",
+        "CUTLASS_CONV_KERNEL_NAME": "cutlass_conv2d_wgrad_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_kernel",
+        "CUTLASS_CONV_META_IN_CHANNELS": "1024",
+        "CUTLASS_CONV_NUM_STAGES": "3",
+        "CUTLASS_CONV_OP": "cutlass::conv::Operator::kWgrad",
+        "CUTLASS_CONV_STRIDE_SUPPORT": "cutlass::conv::StrideSupport::kUnity"
+      },
+      "defines_by_sm": {
+        "sm90": {
+          "CUTLASS_CONV_ALIGNMENT_A": "8",
+          "CUTLASS_CONV_ALIGNMENT_B": "8",
+          "CUTLASS_CONV_CLUSTER_K": "1",
+          "CUTLASS_CONV_CLUSTER_M": "2",
+          "CUTLASS_CONV_CLUSTER_N": "4",
+          "CUTLASS_CONV_THREADBLOCK_K": "64",
+          "CUTLASS_CONV_THREADBLOCK_M": "128",
+          "CUTLASS_CONV_THREADBLOCK_N": "128"
+        }
+      },
+      "dilation": 2,
+      "enabled": true,
+      "groups": 1,
+      "height": 48,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_name": "cutlass_conv2d_wgrad_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_kernel",
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "source_file": "conv2d_cutlass_wgrad_kernel.cu",
+      "source_file_by_sm": {
+        "sm90": "conv2d_cutlass3_kernel.cu"
+      },
+      "stride": 1,
+      "width": 160
+    }
+  }
+}

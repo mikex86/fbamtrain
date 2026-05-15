@@ -1,0 +1,7 @@
+# Empty CLion C/C++ Code Style settings
+BasedOnStyle: LLVM
+BreakBeforeBraces: Allman
+IndentWidth: 4
+ColumnLimit: 120
+NamespaceIndentation: All
+IndentCaseLabels: true

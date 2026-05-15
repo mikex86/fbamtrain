@@ -1,0 +1,90 @@
+{
+  "flash_attention": {
+    "sm_80": {
+      "fwd": {
+        "bf16": {
+          "autotuned": true,
+          "config": {
+            "block_m": 128,
+            "block_n": 64,
+            "num_warps": 4
+          },
+          "metrics": {
+            "kernel_ms": 0.2204330603281657,
+            "max_abs_diff": 0.001953125,
+            "mean_abs_diff": 6.0558319091796875e-05,
+            "validation_passed": true
+          },
+          "problem": {
+            "batch": 8,
+            "heads": 8,
+            "seqlen": 1024,
+            "head_dim": 128
+          }
+        },
+        "fp16": {
+          "autotuned": true,
+          "config": {
+            "block_m": 128,
+            "block_n": 64,
+            "num_warps": 4
+          },
+          "metrics": {
+            "kernel_ms": 0.2201258659362793,
+            "max_abs_diff": 0.000244140625,
+            "mean_abs_diff": 7.569789886474609e-06,
+            "validation_passed": true
+          },
+          "problem": {
+            "batch": 8,
+            "heads": 8,
+            "seqlen": 1024,
+            "head_dim": 128
+          }
+        }
+      },
+      "bwd": {
+        "bf16": {
+          "autotuned": true,
+          "config": {
+            "block_m": 128,
+            "block_n": 64,
+            "num_warps": 8
+          },
+          "metrics": {
+            "kernel_ms": 0.8404309590657552,
+            "max_abs_diff": 0.0078125,
+            "mean_abs_diff": 6.771087646484375e-05,
+            "validation_passed": true
+          },
+          "problem": {
+            "batch": 8,
+            "heads": 8,
+            "seqlen": 1024,
+            "head_dim": 128
+          }
+        },
+        "fp16": {
+          "autotuned": true,
+          "config": {
+            "block_m": 128,
+            "block_n": 64,
+            "num_warps": 8
+          },
+          "metrics": {
+            "kernel_ms": 0.8381781260172526,
+            "max_abs_diff": 0.00048828125,
+            "mean_abs_diff": 8.463859558105469e-06,
+            "validation_passed": true
+          },
+          "problem": {
+            "batch": 8,
+            "heads": 8,
+            "seqlen": 1024,
+            "head_dim": 128
+          }
+        }
+      }
+    }
+  }
+}

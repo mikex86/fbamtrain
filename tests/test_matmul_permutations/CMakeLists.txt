@@ -1,0 +1,5 @@
+add_executable(test_matmul_permutations test_matmul_permutations.cpp)
+target_link_libraries(test_matmul_permutations PRIVATE tensorlib)
+target_link_libraries(test_matmul_permutations PRIVATE fbamtrain_lib)
+
+add_test(NAME test_matmul_permutations COMMAND test_matmul_permutations)

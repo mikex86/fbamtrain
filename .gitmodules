@@ -1,0 +1,23 @@
+[submodule "third_party/termstreamxz"]
+	path = third_party/termstreamxz
+	url = https://github.com/mikex86/termstreamxz
+
+[submodule "third_party/json"]
+	path = third_party/json
+	url = https://github.com/nlohmann/json
+
+[submodule "third_party/argparse"]
+	path = third_party/argparse
+	url = https://github.com/p-ranav/argparse
+
+[submodule "third_party/threadpark"]
+	path = third_party/threadpark
+	url = https://github.com/PrimeIntellect-ai/threadpark
+
+[submodule "third_party/nccl"]
+	path = third_party/nccl
+	url = https://github.com/mikex86/nccl
+
+[submodule "third_party/pccl"]
+	path = third_party/pccl
+	url = https://github.com/mikex86/pccl

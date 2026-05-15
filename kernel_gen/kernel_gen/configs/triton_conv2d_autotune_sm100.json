@@ -1,0 +1,1288 @@
+{
+  "conv2d": {
+    "sm100": {
+      "ic3_oc8_k3": {
+        "bf16": {
+          "BLOCK_W": 64,
+          "BLOCK_OC": 64,
+          "BLOCK_K": 32,
+          "num_warps": 4,
+          "num_stages": 1
+        },
+        "fp16": {
+          "BLOCK_W": 64,
+          "BLOCK_OC": 64,
+          "BLOCK_K": 32,
+          "num_warps": 4,
+          "num_stages": 1
+        }
+      },
+      "ic3_oc8_k3_dil2": {
+        "bf16": {
+          "BLOCK_W": 64,
+          "BLOCK_OC": 64,
+          "BLOCK_K": 32,
+          "num_warps": 4,
+          "num_stages": 1
+        },
+        "fp16": {
+          "BLOCK_W": 128,
+          "BLOCK_OC": 64,
+          "BLOCK_K": 32,
+          "num_warps": 4,
+          "num_stages": 1
+        }
+      },
+      "ic32_oc64_k3": {
+        "bf16": {
+          "BLOCK_W": 64,
+          "BLOCK_OC": 64,
+          "BLOCK_K": 32,
+          "num_warps": 4,
+          "num_stages": 1
+        },
+        "fp16": {
+          "BLOCK_W": 64,
+          "BLOCK_OC": 64,
+          "BLOCK_K": 32,
+          "num_warps": 4,
+          "num_stages": 1
+        }
+      },
+      "ic768_oc768_k3_dil2": {
+        "bf16": {
+          "BLOCK_W": 64,
+          "BLOCK_OC": 64,
+          "BLOCK_K": 32,
+          "num_warps": 4,
+          "num_stages": 1
+        },
+        "fp16": {
+          "BLOCK_W": 64,
+          "BLOCK_OC": 64,
+          "BLOCK_K": 32,
+          "num_warps": 4,
+          "num_stages": 1
+        }
+      },
+      "ic768_oc1536_k3": {
+        "bf16": {
+          "BLOCK_W": 64,
+          "BLOCK_OC": 64,
+          "BLOCK_K": 32,
+          "num_warps": 4,
+          "num_stages": 1
+        },
+        "fp16": {
+          "BLOCK_W": 64,
+          "BLOCK_OC": 64,
+          "BLOCK_K": 32,
+          "num_warps": 4,
+          "num_stages": 1
+        }
+      },
+      "ic1024_oc1024_k3_dil2": {
+        "bf16": {
+          "BLOCK_W": 64,
+          "BLOCK_OC": 64,
+          "BLOCK_K": 32,
+          "num_warps": 4,
+          "num_stages": 1
+        },
+        "fp16": {
+          "BLOCK_W": 64,
+          "BLOCK_OC": 64,
+          "BLOCK_K": 32,
+          "num_warps": 4,
+          "num_stages": 1
+        }
+      },
+      "ic1024_oc2048_k3": {
+        "bf16": {
+          "BLOCK_W": 64,
+          "BLOCK_OC": 64,
+          "BLOCK_K": 32,
+          "num_warps": 4,
+          "num_stages": 1
+        },
+        "fp16": {
+          "BLOCK_W": 64,
+          "BLOCK_OC": 64,
+          "BLOCK_K": 32,
+          "num_warps": 4,
+          "num_stages": 1
+        }
+      }
+    }
+  },
+  "conv2d_dgrad": {
+    "sm100": {
+      "ic3_oc8_k3": {
+        "bf16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ],
+        "fp16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ]
+      },
+      "ic3_oc8_k3_dil2": {
+        "bf16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ],
+        "fp16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ]
+      },
+      "ic32_oc64_k3": {
+        "bf16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          }
+        ],
+        "fp16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          }
+        ]
+      },
+      "ic768_oc768_k3_dil2": {
+        "bf16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ],
+        "fp16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ]
+      },
+      "ic768_oc1536_k3": {
+        "bf16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ],
+        "fp16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ]
+      },
+      "ic1024_oc1024_k3_dil2": {
+        "bf16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ],
+        "fp16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ]
+      },
+      "ic1024_oc2048_k3": {
+        "bf16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ],
+        "fp16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ]
+      }
+    }
+  },
+  "conv2d_wgrad": {
+    "sm100": {
+      "ic3_oc8_k3": {
+        "bf16": [
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 128,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ],
+        "fp16": [
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 128,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ]
+      },
+      "ic3_oc8_k3_dil2": {
+        "bf16": [
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 128,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ],
+        "fp16": [
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 128,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ]
+      },
+      "ic32_oc64_k3": {
+        "bf16": [
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 128,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ],
+        "fp16": [
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 128,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ]
+      },
+      "ic768_oc768_k3_dil2": {
+        "bf16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 128,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ],
+        "fp16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 128,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ]
+      },
+      "ic768_oc1536_k3": {
+        "bf16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 128,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ],
+        "fp16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 128,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ]
+      },
+      "ic1024_oc1024_k3_dil2": {
+        "bf16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 128,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ],
+        "fp16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 128,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ]
+      },
+      "ic1024_oc2048_k3": {
+        "bf16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 128,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ],
+        "fp16": [
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 32,
+            "BLOCK_K": 16,
+            "num_warps": 2,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 64,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 32,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          },
+          {
+            "BLOCK_W": 128,
+            "BLOCK_OC": 64,
+            "BLOCK_K": 32,
+            "num_warps": 4,
+            "num_stages": 1
+          }
+        ]
+      }
+    }
+  }
+}

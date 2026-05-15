@@ -1,0 +1,8 @@
+add_executable(bench_streaming_lstm_bwd_supplier bench_streaming_lstm_bwd_supplier.cpp)
+
+target_link_libraries(bench_streaming_lstm_bwd_supplier PRIVATE tensorlib)
+target_link_libraries(bench_streaming_lstm_bwd_supplier PRIVATE fbamtrain_lib)
+
+add_test(NAME bench_streaming_lstm_bwd_supplier COMMAND bench_streaming_lstm_bwd_supplier)
+set_tests_properties(bench_streaming_lstm_bwd_supplier PROPERTIES ENVIRONMENT "${FBAMTRAIN_ENV_PREFER_CUTLASS}"
+    RUN_SERIAL TRUE)

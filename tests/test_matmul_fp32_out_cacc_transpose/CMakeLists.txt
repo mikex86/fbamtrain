@@ -1,0 +1,7 @@
+add_executable(test_matmul_fp32_out_cacc_transpose test_matmul_fp32_out_cacc_transpose.cpp)
+
+target_link_libraries(test_matmul_fp32_out_cacc_transpose PRIVATE tensorlib)
+target_link_libraries(test_matmul_fp32_out_cacc_transpose PRIVATE fbamtrain_lib)
+
+add_test(NAME test_matmul_fp32_out_cacc_transpose COMMAND test_matmul_fp32_out_cacc_transpose)
+set_tests_properties(test_matmul_fp32_out_cacc_transpose PROPERTIES ENVIRONMENT "${FBAMTRAIN_ENV_PREFER_TRITON}")

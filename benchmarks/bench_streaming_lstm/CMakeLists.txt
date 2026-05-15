@@ -1,0 +1,7 @@
+add_executable(bench_streaming_lstm bench_streaming_lstm.cpp)
+
+target_link_libraries(bench_streaming_lstm PRIVATE tensorlib)
+target_link_libraries(bench_streaming_lstm PRIVATE fbamtrain_lib)
+
+add_test(NAME bench_streaming_lstm COMMAND bench_streaming_lstm)
+set_tests_properties(bench_streaming_lstm PROPERTIES ENVIRONMENT "${FBAMTRAIN_ENV_PREFER_CUTLASS}")

@@ -1,0 +1,7 @@
+add_executable(test_lstm_cell_bf16 test_lstm_cell_bf16.cpp)
+
+target_link_libraries(test_lstm_cell_bf16 PRIVATE tensorlib)
+target_link_libraries(test_lstm_cell_bf16 PRIVATE fbamtrain_lib)
+
+add_test(NAME test_lstm_cell_bf16 COMMAND test_lstm_cell_bf16)
+set_tests_properties(test_lstm_cell_bf16 PROPERTIES ENVIRONMENT "${FBAMTRAIN_ENV_PREFER_CUTLASS}")

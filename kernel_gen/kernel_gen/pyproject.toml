@@ -1,0 +1,21 @@
+[project]
+name = "kernel-gen"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "setuptools>=80.9.0",
+    "matplotlib>=3.10.6",
+    "pytest>=8.4.2",
+    "torch",
+    # It's important to pin this triton version here
+    # because depending on the triton version, either one or two trailing nullptr arguments are required.
+    # This means a lot of logic under src/passes/*.cpp would break because as it asserts the convention of this
+    # triton version. In the future, if upgrading triton is necessary, we need to inspect that the "argument convention"
+    # of triton has not changed again and that we are invoking the triton kernels correctly from cpp with correct argument count.
+    # We also have to ensure that these synthetic arguments (which just happen to mostly default to nullptrs) are
+    # correctly handled when they *do* get touched (load etc.) by the PTX. Workspaces/Scratch ptrs must be properly allocated
+    # the way triton expects it, if workspace pointers are used.
+    "triton==3.4.0",
+]

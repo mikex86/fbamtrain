@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+SCRIPT_PATH=${SCRIPT_PATH:-"${ROOT_DIR}/toyimpl/src/main.py"}
+CONFIG_PATH=${CONFIG_PATH:-"${ROOT_DIR}/working_dir/run-configs/debug.json"}
+WORKDIR=${WORKDIR:-"${ROOT_DIR}/working_dir"}
+
+WANDB_PROJECT=${WANDB_PROJECT:-"fbamtrain"}
+WANDB_ENTITY=${WANDB_ENTITY:-""}
+WANDB_NAME=${WANDB_NAME:-""}
+WANDB_GROUP=${WANDB_GROUP:-""}
+WANDB_TAGS=${WANDB_TAGS:-""}
+
+ARGS=(
+  "${SCRIPT_DIR}/wandb_log_wrapper_toyimpl.py"
+  --script "${SCRIPT_PATH}"
+  --config "${CONFIG_PATH}"
+  --workdir "${WORKDIR}"
+  --wandb-project "${WANDB_PROJECT}"
+)
+
+if [[ -n "${WANDB_ENTITY}" ]]; then
+  ARGS+=(--wandb-entity "${WANDB_ENTITY}")
+fi
+if [[ -n "${WANDB_NAME}" ]]; then
+  ARGS+=(--wandb-name "${WANDB_NAME}")
+fi
+if [[ -n "${WANDB_GROUP}" ]]; then
+  ARGS+=(--wandb-group "${WANDB_GROUP}")
+fi
+if [[ -n "${WANDB_TAGS}" ]]; then
+  ARGS+=(--wandb-tags "${WANDB_TAGS}")
+fi
+
+python3 "${ARGS[@]}" "$@"

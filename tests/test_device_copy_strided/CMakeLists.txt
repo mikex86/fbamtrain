@@ -1,0 +1,7 @@
+add_executable(test_device_copy_strided test_device_copy_strided.cpp)
+
+target_link_libraries(test_device_copy_strided PRIVATE tensorlib)
+target_link_libraries(test_device_copy_strided PRIVATE fbamtrain_lib)
+
+add_test(NAME test_device_copy_strided COMMAND test_device_copy_strided)
+set_tests_properties(test_device_copy_strided PROPERTIES ENVIRONMENT "${FBAMTRAIN_ENV_PREFER_CUTLASS}")

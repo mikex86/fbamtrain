@@ -1,0 +1,6 @@
+add_executable(test_build_cell_embed_bwd test_build_cell_embed_bwd.cpp)
+target_link_libraries(test_build_cell_embed_bwd PRIVATE tensorlib)
+target_link_libraries(test_build_cell_embed_bwd PRIVATE fbamtrain_lib)
+
+add_test(NAME test_build_cell_embed_bwd COMMAND test_build_cell_embed_bwd)
+set_tests_properties(test_build_cell_embed_bwd PROPERTIES ENVIRONMENT "${FBAMTRAIN_ENV_PREFER_CUTLASS}")

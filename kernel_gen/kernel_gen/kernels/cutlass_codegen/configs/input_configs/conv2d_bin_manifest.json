@@ -1,0 +1,75 @@
+{
+  "bins": [
+    {
+      "batch": 32,
+      "block_index": 1,
+      "config": "working_dir/run-configs/debug.json",
+      "conv_mode": "dilated",
+      "dilation": 2,
+      "groups": 1,
+      "height": 24,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "signature": "ic1024_oc1024_k3x3_s1_p2_d2_g1",
+      "stride": 1,
+      "width": 80
+    },
+    {
+      "batch": 32,
+      "block_index": 0,
+      "config": "working_dir/run-configs/debug.json",
+      "conv_mode": "dilated",
+      "dilation": 2,
+      "groups": 1,
+      "height": 48,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "signature": "ic1024_oc1024_k3x3_s1_p2_d2_g1",
+      "stride": 1,
+      "width": 160
+    }
+  ],
+  "conv2d_shapes": [
+    {
+      "batch": 32,
+      "block_index": 0,
+      "config": "working_dir/run-configs/debug.json",
+      "conv_mode": "dilated",
+      "dilation": 2,
+      "groups": 1,
+      "height": 48,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "stride": 1,
+      "width": 160
+    },
+    {
+      "batch": 32,
+      "block_index": 1,
+      "config": "working_dir/run-configs/debug.json",
+      "conv_mode": "dilated",
+      "dilation": 2,
+      "groups": 1,
+      "height": 24,
+      "in_channels": 1024,
+      "kernel_h": 3,
+      "kernel_w": 3,
+      "out_channels": 1024,
+      "padding": 2,
+      "stride": 1,
+      "width": 80
+    }
+  ],
+  "source_configs": [
+    "working_dir/run-configs/debug.json"
+  ]
+}

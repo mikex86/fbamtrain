@@ -1,0 +1,7 @@
+add_executable(test_streaming_iterator test_streaming_iterator.cpp)
+
+target_link_libraries(test_streaming_iterator PRIVATE tensorlib)
+target_link_libraries(test_streaming_iterator PRIVATE fbamtrain_lib)
+
+add_test(NAME test_streaming_iterator COMMAND test_streaming_iterator)
+set_tests_properties(test_streaming_iterator PROPERTIES ENVIRONMENT "${FBAMTRAIN_ENV_PREFER_CUTLASS}")

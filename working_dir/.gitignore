@@ -1,0 +1,5 @@
+venv/
+*.safetensors
+train_recordings/
+validation_recordings/
+/wandb/

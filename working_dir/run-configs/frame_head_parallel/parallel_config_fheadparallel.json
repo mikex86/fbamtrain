@@ -1,0 +1,13 @@
+{
+  "frame_head_parallel": {
+    "use_frame_head_parallel": true,
+    "transport": "ccl",
+    "ccl_rendezvous": {
+      "ip": "127.0.0.1",
+      "port": 29500
+    }
+  },
+  "ddp_parallel": {
+    "use_ddp_parallel": false
+  }
+}

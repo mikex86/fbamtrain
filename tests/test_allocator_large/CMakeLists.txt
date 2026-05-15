@@ -1,0 +1,7 @@
+add_executable(test_allocator_large test_allocator_large.cpp)
+
+target_link_libraries(test_allocator_large PRIVATE tensorlib)
+target_link_libraries(test_allocator_large PRIVATE fbamtrain_lib)
+
+add_test(NAME test_allocator_large COMMAND test_allocator_large)
+set_tests_properties(test_allocator_large PROPERTIES ENVIRONMENT "${FBAMTRAIN_ENV_PREFER_CUTLASS}")

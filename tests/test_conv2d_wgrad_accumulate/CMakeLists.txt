@@ -1,0 +1,18 @@
+add_executable(test_conv2d_wgrad_accumulate test_conv2d_wgrad_accumulate.cpp)
+
+target_link_libraries(test_conv2d_wgrad_accumulate PRIVATE tensorlib)
+target_link_libraries(test_conv2d_wgrad_accumulate PRIVATE fbamtrain_lib)
+
+add_test(NAME test_conv2d_wgrad_accumulate_bf16 COMMAND test_conv2d_wgrad_accumulate)
+set_tests_properties(test_conv2d_wgrad_accumulate_bf16
+    PROPERTIES ENVIRONMENT "${FBAMTRAIN_ENV_PREFER_CUTLASS};TEST_DTYPE=bf16")
+add_test(NAME test_conv2d_wgrad_accumulate_bf16_no_cutlass COMMAND test_conv2d_wgrad_accumulate)
+set_tests_properties(test_conv2d_wgrad_accumulate_bf16_no_cutlass
+    PROPERTIES ENVIRONMENT "${FBAMTRAIN_ENV_PREFER_TRITON};TEST_DTYPE=bf16")
+
+add_test(NAME test_conv2d_wgrad_accumulate_fp16 COMMAND test_conv2d_wgrad_accumulate)
+set_tests_properties(test_conv2d_wgrad_accumulate_fp16
+    PROPERTIES ENVIRONMENT "${FBAMTRAIN_ENV_PREFER_CUTLASS};TEST_DTYPE=fp16")
+add_test(NAME test_conv2d_wgrad_accumulate_fp16_no_cutlass COMMAND test_conv2d_wgrad_accumulate)
+set_tests_properties(test_conv2d_wgrad_accumulate_fp16_no_cutlass
+    PROPERTIES ENVIRONMENT "${FBAMTRAIN_ENV_PREFER_TRITON};TEST_DTYPE=fp16")

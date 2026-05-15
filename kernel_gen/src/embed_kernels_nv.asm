@@ -1,0 +1,6089 @@
+// embed_kernels_nv.asm
+// This file contains the assembly code for embedding NVIDIA ELF binaries as binary blobs to be launched by the host application.
+#include "declare_asset.inc.asm"
+
+#if defined(__ELF__)
+    .section .note.GNU-stack,"",@progbits
+#endif
+
+#if NV_KERNEL_ARCH == 80
+#include "../kernel_gen/output/act_gelu_bwd_elementwise_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO act_gelu_bwd_elementwise_bf16_sm80
+EMBED_ASSET act_gelu_bwd_elementwise_bf16_sm80, act_gelu_bwd_elementwise_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/act_gelu_bwd_elementwise_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO act_gelu_bwd_elementwise_fp16_sm80
+EMBED_ASSET act_gelu_bwd_elementwise_fp16_sm80, act_gelu_bwd_elementwise_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/act_gelu_elementwise_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO act_gelu_elementwise_bf16_sm80
+EMBED_ASSET act_gelu_elementwise_bf16_sm80, act_gelu_elementwise_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/act_gelu_elementwise_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO act_gelu_elementwise_fp16_sm80
+EMBED_ASSET act_gelu_elementwise_fp16_sm80, act_gelu_elementwise_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/act_relu_elementwise_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO act_relu_elementwise_bf16_sm80
+EMBED_ASSET act_relu_elementwise_bf16_sm80, act_relu_elementwise_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/act_relu_elementwise_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO act_relu_elementwise_fp16_sm80
+EMBED_ASSET act_relu_elementwise_fp16_sm80, act_relu_elementwise_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/adamw_step_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO adamw_step_bf16_sm80
+EMBED_ASSET adamw_step_bf16_sm80, adamw_step_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/adamw_step_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO adamw_step_fp16_sm80
+EMBED_ASSET adamw_step_fp16_sm80, adamw_step_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/adamw_step_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO adamw_step_fp32_sm80
+EMBED_ASSET adamw_step_fp32_sm80, adamw_step_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/add_elementwise_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO add_elementwise_bf16_sm80
+EMBED_ASSET add_elementwise_bf16_sm80, add_elementwise_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/add_elementwise_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO add_elementwise_fp16_sm80
+EMBED_ASSET add_elementwise_fp16_sm80, add_elementwise_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/add_elementwise_fp32_out_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO add_elementwise_fp32_out_fp16_sm80
+EMBED_ASSET add_elementwise_fp32_out_fp16_sm80, add_elementwise_fp32_out_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/add_elementwise_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO add_elementwise_fp32_sm80
+EMBED_ASSET add_elementwise_fp32_sm80, add_elementwise_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/add_trailing_broadcast_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO add_trailing_broadcast_bf16_sm80
+EMBED_ASSET add_trailing_broadcast_bf16_sm80, add_trailing_broadcast_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/add_trailing_broadcast_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO add_trailing_broadcast_fp16_sm80
+EMBED_ASSET add_trailing_broadcast_fp16_sm80, add_trailing_broadcast_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/add_trailing_broadcast_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO add_trailing_broadcast_fp32_sm80
+EMBED_ASSET add_trailing_broadcast_fp32_sm80, add_trailing_broadcast_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_bf16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_bf16_cacc_sm80
+EMBED_ASSET addmm_bf16_cacc_sm80, addmm_bf16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_bf16_sm80
+EMBED_ASSET addmm_bf16_sm80, addmm_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_bf16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_bf16_unaligned_cacc_sm80
+EMBED_ASSET addmm_bf16_unaligned_cacc_sm80, addmm_bf16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_bf16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_bf16_unaligned_sm80
+EMBED_ASSET addmm_bf16_unaligned_sm80, addmm_bf16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_bf16_sm80
+EMBED_ASSET addmm_cutlass_bf16_sm80, addmm_cutlass_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_fp16_acc_fp16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_fp16_acc_fp16_out_fp32_sm80
+EMBED_ASSET addmm_cutlass_fp16_acc_fp16_out_fp32_sm80, addmm_cutlass_fp16_acc_fp16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_fp16_acc_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_fp16_acc_fp16_sm80
+EMBED_ASSET addmm_cutlass_fp16_acc_fp16_sm80, addmm_cutlass_fp16_acc_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_fp16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_fp16_out_fp32_sm80
+EMBED_ASSET addmm_cutlass_fp16_out_fp32_sm80, addmm_cutlass_fp16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_fp16_sm80
+EMBED_ASSET addmm_cutlass_fp16_sm80, addmm_cutlass_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_fp16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_fp16_cacc_sm80
+EMBED_ASSET addmm_fp16_acc_fp16_cacc_sm80, addmm_fp16_acc_fp16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_fp16_sm80
+EMBED_ASSET addmm_fp16_acc_fp16_sm80, addmm_fp16_acc_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_fp16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_fp16_unaligned_cacc_sm80
+EMBED_ASSET addmm_fp16_acc_fp16_unaligned_cacc_sm80, addmm_fp16_acc_fp16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_fp16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_fp16_unaligned_sm80
+EMBED_ASSET addmm_fp16_acc_fp16_unaligned_sm80, addmm_fp16_acc_fp16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_out_fp32_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_out_fp32_cacc_sm80
+EMBED_ASSET addmm_fp16_acc_out_fp32_cacc_sm80, addmm_fp16_acc_out_fp32_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_out_fp32_sm80
+EMBED_ASSET addmm_fp16_acc_out_fp32_sm80, addmm_fp16_acc_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_out_fp32_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_out_fp32_unaligned_cacc_sm80
+EMBED_ASSET addmm_fp16_acc_out_fp32_unaligned_cacc_sm80, addmm_fp16_acc_out_fp32_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_out_fp32_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_out_fp32_unaligned_sm80
+EMBED_ASSET addmm_fp16_acc_out_fp32_unaligned_sm80, addmm_fp16_acc_out_fp32_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_cacc_sm80
+EMBED_ASSET addmm_fp16_cacc_sm80, addmm_fp16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_out_fp32_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_out_fp32_cacc_sm80
+EMBED_ASSET addmm_fp16_out_fp32_cacc_sm80, addmm_fp16_out_fp32_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_out_fp32_sm80
+EMBED_ASSET addmm_fp16_out_fp32_sm80, addmm_fp16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_out_fp32_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_out_fp32_unaligned_cacc_sm80
+EMBED_ASSET addmm_fp16_out_fp32_unaligned_cacc_sm80, addmm_fp16_out_fp32_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_out_fp32_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_out_fp32_unaligned_sm80
+EMBED_ASSET addmm_fp16_out_fp32_unaligned_sm80, addmm_fp16_out_fp32_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_sm80
+EMBED_ASSET addmm_fp16_sm80, addmm_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_unaligned_cacc_sm80
+EMBED_ASSET addmm_fp16_unaligned_cacc_sm80, addmm_fp16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_unaligned_sm80
+EMBED_ASSET addmm_fp16_unaligned_sm80, addmm_fp16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_bf16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_bf16_cacc_sm80
+EMBED_ASSET addmm_gelu_bf16_cacc_sm80, addmm_gelu_bf16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_bf16_sm80
+EMBED_ASSET addmm_gelu_bf16_sm80, addmm_gelu_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_bf16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_bf16_unaligned_cacc_sm80
+EMBED_ASSET addmm_gelu_bf16_unaligned_cacc_sm80, addmm_gelu_bf16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_bf16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_bf16_unaligned_sm80
+EMBED_ASSET addmm_gelu_bf16_unaligned_sm80, addmm_gelu_bf16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_cutlass_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_cutlass_bf16_sm80
+EMBED_ASSET addmm_gelu_cutlass_bf16_sm80, addmm_gelu_cutlass_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_cutlass_fp16_acc_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_cutlass_fp16_acc_fp16_sm80
+EMBED_ASSET addmm_gelu_cutlass_fp16_acc_fp16_sm80, addmm_gelu_cutlass_fp16_acc_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_cutlass_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_cutlass_fp16_sm80
+EMBED_ASSET addmm_gelu_cutlass_fp16_sm80, addmm_gelu_cutlass_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_acc_fp16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_acc_fp16_cacc_sm80
+EMBED_ASSET addmm_gelu_fp16_acc_fp16_cacc_sm80, addmm_gelu_fp16_acc_fp16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_acc_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_acc_fp16_sm80
+EMBED_ASSET addmm_gelu_fp16_acc_fp16_sm80, addmm_gelu_fp16_acc_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_acc_fp16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_acc_fp16_unaligned_cacc_sm80
+EMBED_ASSET addmm_gelu_fp16_acc_fp16_unaligned_cacc_sm80, addmm_gelu_fp16_acc_fp16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_acc_fp16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_acc_fp16_unaligned_sm80
+EMBED_ASSET addmm_gelu_fp16_acc_fp16_unaligned_sm80, addmm_gelu_fp16_acc_fp16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_cacc_sm80
+EMBED_ASSET addmm_gelu_fp16_cacc_sm80, addmm_gelu_fp16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_sm80
+EMBED_ASSET addmm_gelu_fp16_sm80, addmm_gelu_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_unaligned_cacc_sm80
+EMBED_ASSET addmm_gelu_fp16_unaligned_cacc_sm80, addmm_gelu_fp16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_unaligned_sm80
+EMBED_ASSET addmm_gelu_fp16_unaligned_sm80, addmm_gelu_fp16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_bf16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_bf16_cacc_sm80
+EMBED_ASSET addmm_gelu_preact_bf16_cacc_sm80, addmm_gelu_preact_bf16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_bf16_sm80
+EMBED_ASSET addmm_gelu_preact_bf16_sm80, addmm_gelu_preact_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_bf16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_bf16_unaligned_cacc_sm80
+EMBED_ASSET addmm_gelu_preact_bf16_unaligned_cacc_sm80, addmm_gelu_preact_bf16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_bf16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_bf16_unaligned_sm80
+EMBED_ASSET addmm_gelu_preact_bf16_unaligned_sm80, addmm_gelu_preact_bf16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_cutlass_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_cutlass_bf16_sm80
+EMBED_ASSET addmm_gelu_preact_cutlass_bf16_sm80, addmm_gelu_preact_cutlass_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_cutlass_fp16_acc_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_cutlass_fp16_acc_fp16_sm80
+EMBED_ASSET addmm_gelu_preact_cutlass_fp16_acc_fp16_sm80, addmm_gelu_preact_cutlass_fp16_acc_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_cutlass_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_cutlass_fp16_sm80
+EMBED_ASSET addmm_gelu_preact_cutlass_fp16_sm80, addmm_gelu_preact_cutlass_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_acc_fp16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_acc_fp16_cacc_sm80
+EMBED_ASSET addmm_gelu_preact_fp16_acc_fp16_cacc_sm80, addmm_gelu_preact_fp16_acc_fp16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_acc_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_acc_fp16_sm80
+EMBED_ASSET addmm_gelu_preact_fp16_acc_fp16_sm80, addmm_gelu_preact_fp16_acc_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_acc_fp16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_acc_fp16_unaligned_cacc_sm80
+EMBED_ASSET addmm_gelu_preact_fp16_acc_fp16_unaligned_cacc_sm80, addmm_gelu_preact_fp16_acc_fp16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_acc_fp16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_acc_fp16_unaligned_sm80
+EMBED_ASSET addmm_gelu_preact_fp16_acc_fp16_unaligned_sm80, addmm_gelu_preact_fp16_acc_fp16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_cacc_sm80
+EMBED_ASSET addmm_gelu_preact_fp16_cacc_sm80, addmm_gelu_preact_fp16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_sm80
+EMBED_ASSET addmm_gelu_preact_fp16_sm80, addmm_gelu_preact_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_unaligned_cacc_sm80
+EMBED_ASSET addmm_gelu_preact_fp16_unaligned_cacc_sm80, addmm_gelu_preact_fp16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_unaligned_sm80
+EMBED_ASSET addmm_gelu_preact_fp16_unaligned_sm80, addmm_gelu_preact_fp16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/avg_pool1d_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO avg_pool1d_bf16_sm80
+EMBED_ASSET avg_pool1d_bf16_sm80, avg_pool1d_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/avg_pool1d_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO avg_pool1d_fp16_sm80
+EMBED_ASSET avg_pool1d_fp16_sm80, avg_pool1d_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bf16_sm80
+EMBED_ASSET avg_pool2d_bf16_sm80, avg_pool2d_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_nhwc_2x2_s2_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_nhwc_2x2_s2_bf16_sm80
+EMBED_ASSET avg_pool2d_nhwc_2x2_s2_bf16_sm80, avg_pool2d_nhwc_2x2_s2_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_bf16_sm80
+EMBED_ASSET avg_pool2d_bwd_bf16_sm80, avg_pool2d_bwd_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_fp16_sm80
+EMBED_ASSET avg_pool2d_bwd_fp16_sm80, avg_pool2d_bwd_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_noaccum_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_noaccum_bf16_sm80
+EMBED_ASSET avg_pool2d_bwd_noaccum_bf16_sm80, avg_pool2d_bwd_noaccum_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_noaccum_nhwc_2x2_s2_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_noaccum_nhwc_2x2_s2_bf16_sm80
+EMBED_ASSET avg_pool2d_bwd_noaccum_nhwc_2x2_s2_bf16_sm80, avg_pool2d_bwd_noaccum_nhwc_2x2_s2_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_noaccum_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_noaccum_fp16_sm80
+EMBED_ASSET avg_pool2d_bwd_noaccum_fp16_sm80, avg_pool2d_bwd_noaccum_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_noaccum_nhwc_2x2_s2_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_noaccum_nhwc_2x2_s2_fp16_sm80
+EMBED_ASSET avg_pool2d_bwd_noaccum_nhwc_2x2_s2_fp16_sm80, avg_pool2d_bwd_noaccum_nhwc_2x2_s2_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_fp16_sm80
+EMBED_ASSET avg_pool2d_fp16_sm80, avg_pool2d_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_nhwc_2x2_s2_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_nhwc_2x2_s2_fp16_sm80
+EMBED_ASSET avg_pool2d_nhwc_2x2_s2_fp16_sm80, avg_pool2d_nhwc_2x2_s2_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bf16_sm80
+EMBED_ASSET build_cell_embeds_bf16_sm80, build_cell_embeds_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_color_bf16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_color_bf16_out_fp32_sm80
+EMBED_ASSET build_cell_embeds_bwd_color_bf16_out_fp32_sm80, build_cell_embeds_bwd_color_bf16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_color_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_color_bf16_sm80
+EMBED_ASSET build_cell_embeds_bwd_color_bf16_sm80, build_cell_embeds_bwd_color_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_color_fp16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_color_fp16_out_fp32_sm80
+EMBED_ASSET build_cell_embeds_bwd_color_fp16_out_fp32_sm80, build_cell_embeds_bwd_color_fp16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_color_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_color_fp16_sm80
+EMBED_ASSET build_cell_embeds_bwd_color_fp16_sm80, build_cell_embeds_bwd_color_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_cp_bf16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_cp_bf16_out_fp32_sm80
+EMBED_ASSET build_cell_embeds_bwd_cp_bf16_out_fp32_sm80, build_cell_embeds_bwd_cp_bf16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_cp_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_cp_bf16_sm80
+EMBED_ASSET build_cell_embeds_bwd_cp_bf16_sm80, build_cell_embeds_bwd_cp_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_cp_fp16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_cp_fp16_out_fp32_sm80
+EMBED_ASSET build_cell_embeds_bwd_cp_fp16_out_fp32_sm80, build_cell_embeds_bwd_cp_fp16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_cp_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_cp_fp16_sm80
+EMBED_ASSET build_cell_embeds_bwd_cp_fp16_sm80, build_cell_embeds_bwd_cp_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_pos_bf16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_pos_bf16_out_fp32_sm80
+EMBED_ASSET build_cell_embeds_bwd_pos_bf16_out_fp32_sm80, build_cell_embeds_bwd_pos_bf16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_pos_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_pos_bf16_sm80
+EMBED_ASSET build_cell_embeds_bwd_pos_bf16_sm80, build_cell_embeds_bwd_pos_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_pos_fp16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_pos_fp16_out_fp32_sm80
+EMBED_ASSET build_cell_embeds_bwd_pos_fp16_out_fp32_sm80, build_cell_embeds_bwd_pos_fp16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_pos_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_pos_fp16_sm80
+EMBED_ASSET build_cell_embeds_bwd_pos_fp16_sm80, build_cell_embeds_bwd_pos_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_fp16_sm80
+EMBED_ASSET build_cell_embeds_fp16_sm80, build_cell_embeds_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/cast_bf16_to_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO cast_bf16_to_fp16_sm80
+EMBED_ASSET cast_bf16_to_fp16_sm80, cast_bf16_to_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/cast_bf16_to_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO cast_bf16_to_fp32_sm80
+EMBED_ASSET cast_bf16_to_fp32_sm80, cast_bf16_to_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/cast_fp16_to_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO cast_fp16_to_bf16_sm80
+EMBED_ASSET cast_fp16_to_bf16_sm80, cast_fp16_to_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/cast_fp16_to_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO cast_fp16_to_fp32_sm80
+EMBED_ASSET cast_fp16_to_fp32_sm80, cast_fp16_to_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/cast_fp32_to_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO cast_fp32_to_bf16_sm80
+EMBED_ASSET cast_fp32_to_bf16_sm80, cast_fp32_to_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/cast_fp32_to_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO cast_fp32_to_fp16_sm80
+EMBED_ASSET cast_fp32_to_fp16_sm80, cast_fp32_to_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/contiguous_3d_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO contiguous_3d_bf16_sm80
+EMBED_ASSET contiguous_3d_bf16_sm80, contiguous_3d_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/contiguous_3d_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO contiguous_3d_fp16_sm80
+EMBED_ASSET contiguous_3d_fp16_sm80, contiguous_3d_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/contiguous_4d_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO contiguous_4d_bf16_sm80
+EMBED_ASSET contiguous_4d_bf16_sm80, contiguous_4d_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/contiguous_4d_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO contiguous_4d_fp16_sm80
+EMBED_ASSET contiguous_4d_fp16_sm80, contiguous_4d_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic1024_oc1024_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic1024_oc1024_k3_dil2_sm80
+EMBED_ASSET conv2d_bf16_ic1024_oc1024_k3_dil2_sm80, conv2d_bf16_ic1024_oc1024_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic1024_oc2048_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic1024_oc2048_k3_sm80
+EMBED_ASSET conv2d_bf16_ic1024_oc2048_k3_sm80, conv2d_bf16_ic1024_oc2048_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic32_oc64_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic32_oc64_k3_sm80
+EMBED_ASSET conv2d_bf16_ic32_oc64_k3_sm80, conv2d_bf16_ic32_oc64_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic3_oc8_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic3_oc8_k3_dil2_sm80
+EMBED_ASSET conv2d_bf16_ic3_oc8_k3_dil2_sm80, conv2d_bf16_ic3_oc8_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic3_oc8_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic3_oc8_k3_sm80
+EMBED_ASSET conv2d_bf16_ic3_oc8_k3_sm80, conv2d_bf16_ic3_oc8_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic768_oc1536_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic768_oc1536_k3_sm80
+EMBED_ASSET conv2d_bf16_ic768_oc1536_k3_sm80, conv2d_bf16_ic768_oc1536_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic768_oc768_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic768_oc768_k3_dil2_sm80
+EMBED_ASSET conv2d_bf16_ic768_oc768_k3_dil2_sm80, conv2d_bf16_ic768_oc768_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm80
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm80, conv2d_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm80
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm80, conv2d_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm80
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm80, conv2d_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80, conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80, conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm80
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm80, conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm80
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm80, conv2d_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80, conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm80
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm80, conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm80
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm80, conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80, conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80, conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80, conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm80
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm80, conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80, conv2d_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm80
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm80, conv2d_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm80
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm80, conv2d_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80, conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80, conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80, conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm80
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm80, conv2d_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic1024_oc1024_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic1024_oc1024_k3_dil2_sm80
+EMBED_ASSET conv2d_dgrad_bf16_ic1024_oc1024_k3_dil2_sm80, conv2d_dgrad_bf16_ic1024_oc1024_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic1024_oc2048_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic1024_oc2048_k3_sm80
+EMBED_ASSET conv2d_dgrad_bf16_ic1024_oc2048_k3_sm80, conv2d_dgrad_bf16_ic1024_oc2048_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic32_oc64_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic32_oc64_k3_sm80
+EMBED_ASSET conv2d_dgrad_bf16_ic32_oc64_k3_sm80, conv2d_dgrad_bf16_ic32_oc64_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic3_oc8_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic3_oc8_k3_dil2_sm80
+EMBED_ASSET conv2d_dgrad_bf16_ic3_oc8_k3_dil2_sm80, conv2d_dgrad_bf16_ic3_oc8_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic3_oc8_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic3_oc8_k3_sm80
+EMBED_ASSET conv2d_dgrad_bf16_ic3_oc8_k3_sm80, conv2d_dgrad_bf16_ic3_oc8_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic768_oc1536_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic768_oc1536_k3_sm80
+EMBED_ASSET conv2d_dgrad_bf16_ic768_oc1536_k3_sm80, conv2d_dgrad_bf16_ic768_oc1536_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic768_oc768_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic768_oc768_k3_dil2_sm80
+EMBED_ASSET conv2d_dgrad_bf16_ic768_oc768_k3_dil2_sm80, conv2d_dgrad_bf16_ic768_oc768_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm80
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm80, conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm80
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm80, conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm80
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm80, conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm80
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm80, conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80, conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80, conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm80
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm80, conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80, conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm80
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm80, conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm80
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm80, conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80, conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80, conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80, conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80, conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80, conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80, conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80, conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm80
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm80, conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic1024_oc1024_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic1024_oc1024_k3_dil2_sm80
+EMBED_ASSET conv2d_dgrad_fp16_ic1024_oc1024_k3_dil2_sm80, conv2d_dgrad_fp16_ic1024_oc1024_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic1024_oc2048_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic1024_oc2048_k3_sm80
+EMBED_ASSET conv2d_dgrad_fp16_ic1024_oc2048_k3_sm80, conv2d_dgrad_fp16_ic1024_oc2048_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic32_oc64_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic32_oc64_k3_sm80
+EMBED_ASSET conv2d_dgrad_fp16_ic32_oc64_k3_sm80, conv2d_dgrad_fp16_ic32_oc64_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic3_oc8_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic3_oc8_k3_dil2_sm80
+EMBED_ASSET conv2d_dgrad_fp16_ic3_oc8_k3_dil2_sm80, conv2d_dgrad_fp16_ic3_oc8_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic3_oc8_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic3_oc8_k3_sm80
+EMBED_ASSET conv2d_dgrad_fp16_ic3_oc8_k3_sm80, conv2d_dgrad_fp16_ic3_oc8_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic768_oc1536_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic768_oc1536_k3_sm80
+EMBED_ASSET conv2d_dgrad_fp16_ic768_oc1536_k3_sm80, conv2d_dgrad_fp16_ic768_oc1536_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic768_oc768_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic768_oc768_k3_dil2_sm80
+EMBED_ASSET conv2d_dgrad_fp16_ic768_oc768_k3_dil2_sm80, conv2d_dgrad_fp16_ic768_oc768_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic1024_oc1024_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic1024_oc1024_k3_dil2_sm80
+EMBED_ASSET conv2d_fp16_ic1024_oc1024_k3_dil2_sm80, conv2d_fp16_ic1024_oc1024_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic1024_oc2048_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic1024_oc2048_k3_sm80
+EMBED_ASSET conv2d_fp16_ic1024_oc2048_k3_sm80, conv2d_fp16_ic1024_oc2048_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic32_oc64_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic32_oc64_k3_sm80
+EMBED_ASSET conv2d_fp16_ic32_oc64_k3_sm80, conv2d_fp16_ic32_oc64_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic3_oc8_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic3_oc8_k3_dil2_sm80
+EMBED_ASSET conv2d_fp16_ic3_oc8_k3_dil2_sm80, conv2d_fp16_ic3_oc8_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic3_oc8_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic3_oc8_k3_sm80
+EMBED_ASSET conv2d_fp16_ic3_oc8_k3_sm80, conv2d_fp16_ic3_oc8_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic768_oc1536_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic768_oc1536_k3_sm80
+EMBED_ASSET conv2d_fp16_ic768_oc1536_k3_sm80, conv2d_fp16_ic768_oc1536_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic768_oc768_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic768_oc768_k3_dil2_sm80
+EMBED_ASSET conv2d_fp16_ic768_oc768_k3_dil2_sm80, conv2d_fp16_ic768_oc768_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic1024_oc1024_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic1024_oc1024_k3_dil2_sm80
+EMBED_ASSET conv2d_wgrad_bf16_ic1024_oc1024_k3_dil2_sm80, conv2d_wgrad_bf16_ic1024_oc1024_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic1024_oc2048_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic1024_oc2048_k3_sm80
+EMBED_ASSET conv2d_wgrad_bf16_ic1024_oc2048_k3_sm80, conv2d_wgrad_bf16_ic1024_oc2048_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic32_oc64_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic32_oc64_k3_sm80
+EMBED_ASSET conv2d_wgrad_bf16_ic32_oc64_k3_sm80, conv2d_wgrad_bf16_ic32_oc64_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic3_oc8_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic3_oc8_k3_dil2_sm80
+EMBED_ASSET conv2d_wgrad_bf16_ic3_oc8_k3_dil2_sm80, conv2d_wgrad_bf16_ic3_oc8_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic3_oc8_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic3_oc8_k3_sm80
+EMBED_ASSET conv2d_wgrad_bf16_ic3_oc8_k3_sm80, conv2d_wgrad_bf16_ic3_oc8_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic768_oc1536_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic768_oc1536_k3_sm80
+EMBED_ASSET conv2d_wgrad_bf16_ic768_oc1536_k3_sm80, conv2d_wgrad_bf16_ic768_oc1536_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic768_oc768_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic768_oc768_k3_dil2_sm80
+EMBED_ASSET conv2d_wgrad_bf16_ic768_oc768_k3_dil2_sm80, conv2d_wgrad_bf16_ic768_oc768_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm80
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm80, conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm80
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm80, conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm80
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm80, conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm80
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm80, conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm80
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm80, conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80, conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm80
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm80, conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm80
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm80, conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80, conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm80
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm80, conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic1024_oc1024_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic1024_oc1024_k3_dil2_sm80
+EMBED_ASSET conv2d_wgrad_fp16_ic1024_oc1024_k3_dil2_sm80, conv2d_wgrad_fp16_ic1024_oc1024_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic1024_oc2048_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic1024_oc2048_k3_sm80
+EMBED_ASSET conv2d_wgrad_fp16_ic1024_oc2048_k3_sm80, conv2d_wgrad_fp16_ic1024_oc2048_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic32_oc64_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic32_oc64_k3_sm80
+EMBED_ASSET conv2d_wgrad_fp16_ic32_oc64_k3_sm80, conv2d_wgrad_fp16_ic32_oc64_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic3_oc8_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic3_oc8_k3_dil2_sm80
+EMBED_ASSET conv2d_wgrad_fp16_ic3_oc8_k3_dil2_sm80, conv2d_wgrad_fp16_ic3_oc8_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic3_oc8_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic3_oc8_k3_sm80
+EMBED_ASSET conv2d_wgrad_fp16_ic3_oc8_k3_sm80, conv2d_wgrad_fp16_ic3_oc8_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic768_oc1536_k3_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic768_oc1536_k3_sm80
+EMBED_ASSET conv2d_wgrad_fp16_ic768_oc1536_k3_sm80, conv2d_wgrad_fp16_ic768_oc1536_k3_sm80.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic768_oc768_k3_dil2_sm80.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic768_oc768_k3_dil2_sm80
+EMBED_ASSET conv2d_wgrad_fp16_ic768_oc768_k3_dil2_sm80, conv2d_wgrad_fp16_ic768_oc768_k3_dil2_sm80.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_add_fp32_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_add_fp32_bf16_sm80
+EMBED_ASSET cross_entropy_on_targets_add_fp32_bf16_sm80, cross_entropy_on_targets_add_fp32_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_add_fp32_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_add_fp32_fp16_sm80
+EMBED_ASSET cross_entropy_on_targets_add_fp32_fp16_sm80, cross_entropy_on_targets_add_fp32_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_bf16_sm80
+EMBED_ASSET cross_entropy_on_targets_bf16_sm80, cross_entropy_on_targets_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_bwd_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_bwd_bf16_sm80
+EMBED_ASSET cross_entropy_on_targets_bwd_bf16_sm80, cross_entropy_on_targets_bwd_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_bwd_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_bwd_fp16_sm80
+EMBED_ASSET cross_entropy_on_targets_bwd_fp16_sm80, cross_entropy_on_targets_bwd_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_fp16_sm80
+EMBED_ASSET cross_entropy_on_targets_fp16_sm80, cross_entropy_on_targets_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/device_copy_strided_2d_sm80.kinfo.inc.asm"
+DECLARE_KINFO device_copy_strided_2d_sm80
+EMBED_ASSET device_copy_strided_2d_sm80, device_copy_strided_2d_sm80.cubin, 4
+#include "../kernel_gen/output/div_add_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO div_add_bf16_sm80
+EMBED_ASSET div_add_bf16_sm80, div_add_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/div_add_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO div_add_fp16_sm80
+EMBED_ASSET div_add_fp16_sm80, div_add_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/div_add_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO div_add_fp32_sm80
+EMBED_ASSET div_add_fp32_sm80, div_add_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/div_elementwise_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO div_elementwise_bf16_sm80
+EMBED_ASSET div_elementwise_bf16_sm80, div_elementwise_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/div_elementwise_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO div_elementwise_fp16_sm80
+EMBED_ASSET div_elementwise_fp16_sm80, div_elementwise_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/div_elementwise_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO div_elementwise_fp32_sm80
+EMBED_ASSET div_elementwise_fp32_sm80, div_elementwise_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_bf16_sm80
+EMBED_ASSET div_scalar_add_bf16_sm80, div_scalar_add_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_broadcast_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_broadcast_bf16_sm80
+EMBED_ASSET div_scalar_add_broadcast_bf16_sm80, div_scalar_add_broadcast_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_broadcast_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_broadcast_fp16_sm80
+EMBED_ASSET div_scalar_add_broadcast_fp16_sm80, div_scalar_add_broadcast_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_broadcast_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_broadcast_fp32_sm80
+EMBED_ASSET div_scalar_add_broadcast_fp32_sm80, div_scalar_add_broadcast_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_fp16_sm80
+EMBED_ASSET div_scalar_add_fp16_sm80, div_scalar_add_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_fp32_sm80
+EMBED_ASSET div_scalar_add_fp32_sm80, div_scalar_add_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/div_scalar_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_bf16_sm80
+EMBED_ASSET div_scalar_bf16_sm80, div_scalar_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/div_scalar_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_fp16_sm80
+EMBED_ASSET div_scalar_fp16_sm80, div_scalar_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/div_scalar_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_fp32_sm80
+EMBED_ASSET div_scalar_fp32_sm80, div_scalar_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/embedding_lookup_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO embedding_lookup_bf16_sm80
+EMBED_ASSET embedding_lookup_bf16_sm80, embedding_lookup_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/embedding_lookup_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO embedding_lookup_fp16_sm80
+EMBED_ASSET embedding_lookup_fp16_sm80, embedding_lookup_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/fill_constant_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO fill_constant_bf16_sm80
+EMBED_ASSET fill_constant_bf16_sm80, fill_constant_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/fill_constant_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO fill_constant_fp16_sm80
+EMBED_ASSET fill_constant_fp16_sm80, fill_constant_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/fill_constant_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO fill_constant_fp32_sm80
+EMBED_ASSET fill_constant_fp32_sm80, fill_constant_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/fill_normal_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO fill_normal_bf16_sm80
+EMBED_ASSET fill_normal_bf16_sm80, fill_normal_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/fill_normal_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO fill_normal_fp16_sm80
+EMBED_ASSET fill_normal_fp16_sm80, fill_normal_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/fill_uniform_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO fill_uniform_bf16_sm80
+EMBED_ASSET fill_uniform_bf16_sm80, fill_uniform_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/fill_uniform_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO fill_uniform_fp16_sm80
+EMBED_ASSET fill_uniform_fp16_sm80, fill_uniform_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/fill_uniform_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO fill_uniform_fp32_sm80
+EMBED_ASSET fill_uniform_fp32_sm80, fill_uniform_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/fill_zeros_sm80.kinfo.inc.asm"
+DECLARE_KINFO fill_zeros_sm80
+EMBED_ASSET fill_zeros_sm80, fill_zeros_sm80.cubin, 4
+#include "../kernel_gen/output/layer_norm_fwd_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO layer_norm_fwd_bf16_sm80
+EMBED_ASSET layer_norm_fwd_bf16_sm80, layer_norm_fwd_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/layer_norm_fwd_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO layer_norm_fwd_fp16_sm80
+EMBED_ASSET layer_norm_fwd_fp16_sm80, layer_norm_fwd_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/lstm_cell_bwd_pointwise_out_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_bwd_pointwise_out_bf16_sm80
+EMBED_ASSET lstm_cell_bwd_pointwise_out_bf16_sm80, lstm_cell_bwd_pointwise_out_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/lstm_cell_bwd_pointwise_out_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_bwd_pointwise_out_fp16_sm80
+EMBED_ASSET lstm_cell_bwd_pointwise_out_fp16_sm80, lstm_cell_bwd_pointwise_out_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/lstm_cell_fwd_fp32_state_out_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_fwd_fp32_state_out_bf16_sm80
+EMBED_ASSET lstm_cell_fwd_fp32_state_out_bf16_sm80, lstm_cell_fwd_fp32_state_out_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/lstm_cell_fwd_fp32_state_out_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_fwd_fp32_state_out_fp16_sm80
+EMBED_ASSET lstm_cell_fwd_fp32_state_out_fp16_sm80, lstm_cell_fwd_fp32_state_out_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/lstm_cell_fwd_out_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_fwd_out_fp16_sm80
+EMBED_ASSET lstm_cell_fwd_out_fp16_sm80, lstm_cell_fwd_out_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/lstm_cell_recompute_out_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_recompute_out_bf16_sm80
+EMBED_ASSET lstm_cell_recompute_out_bf16_sm80, lstm_cell_recompute_out_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/lstm_cell_recompute_out_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_recompute_out_fp16_sm80
+EMBED_ASSET lstm_cell_recompute_out_fp16_sm80, lstm_cell_recompute_out_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_cacc_sm80
+EMBED_ASSET matmul_bf16_cacc_sm80, matmul_bf16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_cacc_sm80
+EMBED_ASSET matmul_bf16_out_fp32_cacc_sm80, matmul_bf16_out_fp32_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_sm80
+EMBED_ASSET matmul_bf16_out_fp32_sm80, matmul_bf16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_ta_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_ta_cacc_sm80
+EMBED_ASSET matmul_bf16_out_fp32_ta_cacc_sm80, matmul_bf16_out_fp32_ta_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_ta_sm80
+EMBED_ASSET matmul_bf16_out_fp32_ta_sm80, matmul_bf16_out_fp32_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tab_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tab_cacc_sm80
+EMBED_ASSET matmul_bf16_out_fp32_tab_cacc_sm80, matmul_bf16_out_fp32_tab_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tab_sm80
+EMBED_ASSET matmul_bf16_out_fp32_tab_sm80, matmul_bf16_out_fp32_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tb_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tb_cacc_sm80
+EMBED_ASSET matmul_bf16_out_fp32_tb_cacc_sm80, matmul_bf16_out_fp32_tb_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tb_sm80
+EMBED_ASSET matmul_bf16_out_fp32_tb_sm80, matmul_bf16_out_fp32_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_unaligned_cacc_sm80
+EMBED_ASSET matmul_bf16_out_fp32_unaligned_cacc_sm80, matmul_bf16_out_fp32_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_unaligned_sm80
+EMBED_ASSET matmul_bf16_out_fp32_unaligned_sm80, matmul_bf16_out_fp32_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_ta_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_ta_unaligned_cacc_sm80
+EMBED_ASSET matmul_bf16_out_fp32_ta_unaligned_cacc_sm80, matmul_bf16_out_fp32_ta_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_ta_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_ta_unaligned_sm80
+EMBED_ASSET matmul_bf16_out_fp32_ta_unaligned_sm80, matmul_bf16_out_fp32_ta_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tab_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tab_unaligned_cacc_sm80
+EMBED_ASSET matmul_bf16_out_fp32_tab_unaligned_cacc_sm80, matmul_bf16_out_fp32_tab_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tab_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tab_unaligned_sm80
+EMBED_ASSET matmul_bf16_out_fp32_tab_unaligned_sm80, matmul_bf16_out_fp32_tab_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tb_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tb_unaligned_cacc_sm80
+EMBED_ASSET matmul_bf16_out_fp32_tb_unaligned_cacc_sm80, matmul_bf16_out_fp32_tb_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tb_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tb_unaligned_sm80
+EMBED_ASSET matmul_bf16_out_fp32_tb_unaligned_sm80, matmul_bf16_out_fp32_tb_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_sm80
+EMBED_ASSET matmul_bf16_sm80, matmul_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_ta_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_ta_cacc_sm80
+EMBED_ASSET matmul_bf16_ta_cacc_sm80, matmul_bf16_ta_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_ta_sm80
+EMBED_ASSET matmul_bf16_ta_sm80, matmul_bf16_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tab_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tab_cacc_sm80
+EMBED_ASSET matmul_bf16_tab_cacc_sm80, matmul_bf16_tab_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tab_sm80
+EMBED_ASSET matmul_bf16_tab_sm80, matmul_bf16_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tb_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tb_cacc_sm80
+EMBED_ASSET matmul_bf16_tb_cacc_sm80, matmul_bf16_tb_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tb_sm80
+EMBED_ASSET matmul_bf16_tb_sm80, matmul_bf16_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_unaligned_cacc_sm80
+EMBED_ASSET matmul_bf16_unaligned_cacc_sm80, matmul_bf16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_unaligned_sm80
+EMBED_ASSET matmul_bf16_unaligned_sm80, matmul_bf16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_ta_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_ta_unaligned_cacc_sm80
+EMBED_ASSET matmul_bf16_ta_unaligned_cacc_sm80, matmul_bf16_ta_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_ta_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_ta_unaligned_sm80
+EMBED_ASSET matmul_bf16_ta_unaligned_sm80, matmul_bf16_ta_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tab_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tab_unaligned_cacc_sm80
+EMBED_ASSET matmul_bf16_tab_unaligned_cacc_sm80, matmul_bf16_tab_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tab_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tab_unaligned_sm80
+EMBED_ASSET matmul_bf16_tab_unaligned_sm80, matmul_bf16_tab_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tb_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tb_unaligned_cacc_sm80
+EMBED_ASSET matmul_bf16_tb_unaligned_cacc_sm80, matmul_bf16_tb_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tb_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tb_unaligned_sm80
+EMBED_ASSET matmul_bf16_tb_unaligned_sm80, matmul_bf16_tb_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_out_fp32_sm80
+EMBED_ASSET matmul_cutlass_bf16_out_fp32_sm80, matmul_cutlass_bf16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_out_fp32_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_out_fp32_ta_sm80
+EMBED_ASSET matmul_cutlass_bf16_out_fp32_ta_sm80, matmul_cutlass_bf16_out_fp32_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_out_fp32_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_out_fp32_tab_sm80
+EMBED_ASSET matmul_cutlass_bf16_out_fp32_tab_sm80, matmul_cutlass_bf16_out_fp32_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_out_fp32_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_out_fp32_tb_sm80
+EMBED_ASSET matmul_cutlass_bf16_out_fp32_tb_sm80, matmul_cutlass_bf16_out_fp32_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_sm80
+EMBED_ASSET matmul_cutlass_bf16_sm80, matmul_cutlass_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_ta_sm80
+EMBED_ASSET matmul_cutlass_bf16_ta_sm80, matmul_cutlass_bf16_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_tab_sm80
+EMBED_ASSET matmul_cutlass_bf16_tab_sm80, matmul_cutlass_bf16_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_tb_sm80
+EMBED_ASSET matmul_cutlass_bf16_tb_sm80, matmul_cutlass_bf16_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_out_fp32_sm80
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_out_fp32_sm80, matmul_cutlass_fp16_acc_fp16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_out_fp32_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_out_fp32_ta_sm80
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_out_fp32_ta_sm80, matmul_cutlass_fp16_acc_fp16_out_fp32_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_out_fp32_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_out_fp32_tab_sm80
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_out_fp32_tab_sm80, matmul_cutlass_fp16_acc_fp16_out_fp32_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_out_fp32_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_out_fp32_tb_sm80
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_out_fp32_tb_sm80, matmul_cutlass_fp16_acc_fp16_out_fp32_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_sm80
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_sm80, matmul_cutlass_fp16_acc_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_ta_sm80
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_ta_sm80, matmul_cutlass_fp16_acc_fp16_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_tab_sm80
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_tab_sm80, matmul_cutlass_fp16_acc_fp16_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_tb_sm80
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_tb_sm80, matmul_cutlass_fp16_acc_fp16_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_out_fp32_sm80
+EMBED_ASSET matmul_cutlass_fp16_out_fp32_sm80, matmul_cutlass_fp16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_out_fp32_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_out_fp32_ta_sm80
+EMBED_ASSET matmul_cutlass_fp16_out_fp32_ta_sm80, matmul_cutlass_fp16_out_fp32_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_out_fp32_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_out_fp32_tab_sm80
+EMBED_ASSET matmul_cutlass_fp16_out_fp32_tab_sm80, matmul_cutlass_fp16_out_fp32_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_out_fp32_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_out_fp32_tb_sm80
+EMBED_ASSET matmul_cutlass_fp16_out_fp32_tb_sm80, matmul_cutlass_fp16_out_fp32_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_sm80
+EMBED_ASSET matmul_cutlass_fp16_sm80, matmul_cutlass_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_ta_sm80
+EMBED_ASSET matmul_cutlass_fp16_ta_sm80, matmul_cutlass_fp16_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_tab_sm80
+EMBED_ASSET matmul_cutlass_fp16_tab_sm80, matmul_cutlass_fp16_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_tb_sm80
+EMBED_ASSET matmul_cutlass_fp16_tb_sm80, matmul_cutlass_fp16_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_fp16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_fp16_cacc_sm80
+EMBED_ASSET matmul_fp16_acc_fp16_cacc_sm80, matmul_fp16_acc_fp16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_fp16_sm80
+EMBED_ASSET matmul_fp16_acc_fp16_sm80, matmul_fp16_acc_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_fp16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_fp16_unaligned_cacc_sm80
+EMBED_ASSET matmul_fp16_acc_fp16_unaligned_cacc_sm80, matmul_fp16_acc_fp16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_fp16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_fp16_unaligned_sm80
+EMBED_ASSET matmul_fp16_acc_fp16_unaligned_sm80, matmul_fp16_acc_fp16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_cacc_sm80
+EMBED_ASSET matmul_fp16_acc_out_fp32_cacc_sm80, matmul_fp16_acc_out_fp32_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_sm80
+EMBED_ASSET matmul_fp16_acc_out_fp32_sm80, matmul_fp16_acc_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_ta_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_ta_cacc_sm80
+EMBED_ASSET matmul_fp16_acc_out_fp32_ta_cacc_sm80, matmul_fp16_acc_out_fp32_ta_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_ta_sm80
+EMBED_ASSET matmul_fp16_acc_out_fp32_ta_sm80, matmul_fp16_acc_out_fp32_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tab_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tab_cacc_sm80
+EMBED_ASSET matmul_fp16_acc_out_fp32_tab_cacc_sm80, matmul_fp16_acc_out_fp32_tab_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tab_sm80
+EMBED_ASSET matmul_fp16_acc_out_fp32_tab_sm80, matmul_fp16_acc_out_fp32_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tb_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tb_cacc_sm80
+EMBED_ASSET matmul_fp16_acc_out_fp32_tb_cacc_sm80, matmul_fp16_acc_out_fp32_tb_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tb_sm80
+EMBED_ASSET matmul_fp16_acc_out_fp32_tb_sm80, matmul_fp16_acc_out_fp32_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_unaligned_cacc_sm80
+EMBED_ASSET matmul_fp16_acc_out_fp32_unaligned_cacc_sm80, matmul_fp16_acc_out_fp32_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_unaligned_sm80
+EMBED_ASSET matmul_fp16_acc_out_fp32_unaligned_sm80, matmul_fp16_acc_out_fp32_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_ta_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_ta_unaligned_cacc_sm80
+EMBED_ASSET matmul_fp16_acc_out_fp32_ta_unaligned_cacc_sm80, matmul_fp16_acc_out_fp32_ta_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_ta_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_ta_unaligned_sm80
+EMBED_ASSET matmul_fp16_acc_out_fp32_ta_unaligned_sm80, matmul_fp16_acc_out_fp32_ta_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tab_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tab_unaligned_cacc_sm80
+EMBED_ASSET matmul_fp16_acc_out_fp32_tab_unaligned_cacc_sm80, matmul_fp16_acc_out_fp32_tab_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tab_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tab_unaligned_sm80
+EMBED_ASSET matmul_fp16_acc_out_fp32_tab_unaligned_sm80, matmul_fp16_acc_out_fp32_tab_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tb_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tb_unaligned_cacc_sm80
+EMBED_ASSET matmul_fp16_acc_out_fp32_tb_unaligned_cacc_sm80, matmul_fp16_acc_out_fp32_tb_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tb_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tb_unaligned_sm80
+EMBED_ASSET matmul_fp16_acc_out_fp32_tb_unaligned_sm80, matmul_fp16_acc_out_fp32_tb_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_cacc_sm80
+EMBED_ASSET matmul_fp16_cacc_sm80, matmul_fp16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_cacc_sm80
+EMBED_ASSET matmul_fp16_out_fp32_cacc_sm80, matmul_fp16_out_fp32_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_sm80
+EMBED_ASSET matmul_fp16_out_fp32_sm80, matmul_fp16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_ta_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_ta_cacc_sm80
+EMBED_ASSET matmul_fp16_out_fp32_ta_cacc_sm80, matmul_fp16_out_fp32_ta_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_ta_sm80
+EMBED_ASSET matmul_fp16_out_fp32_ta_sm80, matmul_fp16_out_fp32_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tab_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tab_cacc_sm80
+EMBED_ASSET matmul_fp16_out_fp32_tab_cacc_sm80, matmul_fp16_out_fp32_tab_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tab_sm80
+EMBED_ASSET matmul_fp16_out_fp32_tab_sm80, matmul_fp16_out_fp32_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tb_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tb_cacc_sm80
+EMBED_ASSET matmul_fp16_out_fp32_tb_cacc_sm80, matmul_fp16_out_fp32_tb_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tb_sm80
+EMBED_ASSET matmul_fp16_out_fp32_tb_sm80, matmul_fp16_out_fp32_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_unaligned_cacc_sm80
+EMBED_ASSET matmul_fp16_out_fp32_unaligned_cacc_sm80, matmul_fp16_out_fp32_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_unaligned_sm80
+EMBED_ASSET matmul_fp16_out_fp32_unaligned_sm80, matmul_fp16_out_fp32_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_ta_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_ta_unaligned_cacc_sm80
+EMBED_ASSET matmul_fp16_out_fp32_ta_unaligned_cacc_sm80, matmul_fp16_out_fp32_ta_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_ta_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_ta_unaligned_sm80
+EMBED_ASSET matmul_fp16_out_fp32_ta_unaligned_sm80, matmul_fp16_out_fp32_ta_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tab_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tab_unaligned_cacc_sm80
+EMBED_ASSET matmul_fp16_out_fp32_tab_unaligned_cacc_sm80, matmul_fp16_out_fp32_tab_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tab_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tab_unaligned_sm80
+EMBED_ASSET matmul_fp16_out_fp32_tab_unaligned_sm80, matmul_fp16_out_fp32_tab_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tb_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tb_unaligned_cacc_sm80
+EMBED_ASSET matmul_fp16_out_fp32_tb_unaligned_cacc_sm80, matmul_fp16_out_fp32_tb_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tb_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tb_unaligned_sm80
+EMBED_ASSET matmul_fp16_out_fp32_tb_unaligned_sm80, matmul_fp16_out_fp32_tb_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_sm80
+EMBED_ASSET matmul_fp16_sm80, matmul_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_ta_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_ta_cacc_sm80
+EMBED_ASSET matmul_fp16_ta_cacc_sm80, matmul_fp16_ta_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_ta_sm80
+EMBED_ASSET matmul_fp16_ta_sm80, matmul_fp16_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tab_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tab_cacc_sm80
+EMBED_ASSET matmul_fp16_tab_cacc_sm80, matmul_fp16_tab_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tab_sm80
+EMBED_ASSET matmul_fp16_tab_sm80, matmul_fp16_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tb_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tb_cacc_sm80
+EMBED_ASSET matmul_fp16_tb_cacc_sm80, matmul_fp16_tb_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tb_sm80
+EMBED_ASSET matmul_fp16_tb_sm80, matmul_fp16_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_unaligned_cacc_sm80
+EMBED_ASSET matmul_fp16_unaligned_cacc_sm80, matmul_fp16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_unaligned_sm80
+EMBED_ASSET matmul_fp16_unaligned_sm80, matmul_fp16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_ta_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_ta_unaligned_cacc_sm80
+EMBED_ASSET matmul_fp16_ta_unaligned_cacc_sm80, matmul_fp16_ta_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_ta_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_ta_unaligned_sm80
+EMBED_ASSET matmul_fp16_ta_unaligned_sm80, matmul_fp16_ta_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tab_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tab_unaligned_cacc_sm80
+EMBED_ASSET matmul_fp16_tab_unaligned_cacc_sm80, matmul_fp16_tab_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tab_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tab_unaligned_sm80
+EMBED_ASSET matmul_fp16_tab_unaligned_sm80, matmul_fp16_tab_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tb_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tb_unaligned_cacc_sm80
+EMBED_ASSET matmul_fp16_tb_unaligned_cacc_sm80, matmul_fp16_tb_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tb_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tb_unaligned_sm80
+EMBED_ASSET matmul_fp16_tb_unaligned_sm80, matmul_fp16_tb_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bf16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bf16_cacc_sm80
+EMBED_ASSET matmul_gelu_bf16_cacc_sm80, matmul_gelu_bf16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bf16_sm80
+EMBED_ASSET matmul_gelu_bf16_sm80, matmul_gelu_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bf16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bf16_unaligned_cacc_sm80
+EMBED_ASSET matmul_gelu_bf16_unaligned_cacc_sm80, matmul_gelu_bf16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bf16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bf16_unaligned_sm80
+EMBED_ASSET matmul_gelu_bf16_unaligned_sm80, matmul_gelu_bf16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_bf16_cacc_sm80, matmul_gelu_bwd_bf16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_sm80
+EMBED_ASSET matmul_gelu_bwd_bf16_sm80, matmul_gelu_bwd_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_ta_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_ta_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_bf16_ta_cacc_sm80, matmul_gelu_bwd_bf16_ta_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_ta_sm80
+EMBED_ASSET matmul_gelu_bwd_bf16_ta_sm80, matmul_gelu_bwd_bf16_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_tab_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_tab_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_bf16_tab_cacc_sm80, matmul_gelu_bwd_bf16_tab_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_tab_sm80
+EMBED_ASSET matmul_gelu_bwd_bf16_tab_sm80, matmul_gelu_bwd_bf16_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_tb_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_tb_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_bf16_tb_cacc_sm80, matmul_gelu_bwd_bf16_tb_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_tb_sm80
+EMBED_ASSET matmul_gelu_bwd_bf16_tb_sm80, matmul_gelu_bwd_bf16_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_cacc_sm80, matmul_gelu_bwd_bf16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_sm80
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_sm80, matmul_gelu_bwd_bf16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_ta_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_ta_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_ta_cacc_sm80, matmul_gelu_bwd_bf16_unaligned_ta_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_ta_sm80
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_ta_sm80, matmul_gelu_bwd_bf16_unaligned_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_tab_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_tab_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_tab_cacc_sm80, matmul_gelu_bwd_bf16_unaligned_tab_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_tab_sm80
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_tab_sm80, matmul_gelu_bwd_bf16_unaligned_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_tb_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_tb_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_tb_cacc_sm80, matmul_gelu_bwd_bf16_unaligned_tb_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_tb_sm80
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_tb_sm80, matmul_gelu_bwd_bf16_unaligned_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_bf16_sm80
+EMBED_ASSET matmul_gelu_bwd_cutlass_bf16_sm80, matmul_gelu_bwd_cutlass_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_bf16_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_bf16_ta_sm80
+EMBED_ASSET matmul_gelu_bwd_cutlass_bf16_ta_sm80, matmul_gelu_bwd_cutlass_bf16_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_bf16_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_bf16_tab_sm80
+EMBED_ASSET matmul_gelu_bwd_cutlass_bf16_tab_sm80, matmul_gelu_bwd_cutlass_bf16_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_bf16_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_bf16_tb_sm80
+EMBED_ASSET matmul_gelu_bwd_cutlass_bf16_tb_sm80, matmul_gelu_bwd_cutlass_bf16_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_acc_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_acc_fp16_sm80
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_acc_fp16_sm80, matmul_gelu_bwd_cutlass_fp16_acc_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta_sm80
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta_sm80, matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab_sm80
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab_sm80, matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb_sm80
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb_sm80, matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_sm80
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_sm80, matmul_gelu_bwd_cutlass_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_ta_sm80
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_ta_sm80, matmul_gelu_bwd_cutlass_fp16_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_tab_sm80
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_tab_sm80, matmul_gelu_bwd_cutlass_fp16_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_tb_sm80
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_tb_sm80, matmul_gelu_bwd_cutlass_fp16_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_cacc_sm80, matmul_gelu_bwd_fp16_acc_fp16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_sm80, matmul_gelu_bwd_fp16_acc_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_ta_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_ta_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_ta_cacc_sm80, matmul_gelu_bwd_fp16_acc_fp16_ta_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_ta_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_ta_sm80, matmul_gelu_bwd_fp16_acc_fp16_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_tab_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_tab_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_tab_cacc_sm80, matmul_gelu_bwd_fp16_acc_fp16_tab_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_tab_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_tab_sm80, matmul_gelu_bwd_fp16_acc_fp16_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_tb_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_tb_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_tb_cacc_sm80, matmul_gelu_bwd_fp16_acc_fp16_tb_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_tb_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_tb_sm80, matmul_gelu_bwd_fp16_acc_fp16_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_cacc_sm80, matmul_gelu_bwd_fp16_acc_fp16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_sm80, matmul_gelu_bwd_fp16_acc_fp16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_cacc_sm80, matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_sm80, matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_cacc_sm80, matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_sm80, matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_cacc_sm80, matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_sm80, matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_cacc_sm80, matmul_gelu_bwd_fp16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_sm80, matmul_gelu_bwd_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_ta_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_ta_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_ta_cacc_sm80, matmul_gelu_bwd_fp16_ta_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_ta_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_ta_sm80, matmul_gelu_bwd_fp16_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_tab_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_tab_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_tab_cacc_sm80, matmul_gelu_bwd_fp16_tab_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_tab_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_tab_sm80, matmul_gelu_bwd_fp16_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_tb_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_tb_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_tb_cacc_sm80, matmul_gelu_bwd_fp16_tb_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_tb_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_tb_sm80, matmul_gelu_bwd_fp16_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_cacc_sm80, matmul_gelu_bwd_fp16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_sm80, matmul_gelu_bwd_fp16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_ta_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_ta_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_ta_cacc_sm80, matmul_gelu_bwd_fp16_unaligned_ta_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_ta_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_ta_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_ta_sm80, matmul_gelu_bwd_fp16_unaligned_ta_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_tab_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_tab_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_tab_cacc_sm80, matmul_gelu_bwd_fp16_unaligned_tab_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_tab_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_tab_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_tab_sm80, matmul_gelu_bwd_fp16_unaligned_tab_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_tb_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_tb_cacc_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_tb_cacc_sm80, matmul_gelu_bwd_fp16_unaligned_tb_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_tb_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_tb_sm80
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_tb_sm80, matmul_gelu_bwd_fp16_unaligned_tb_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_cutlass_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_cutlass_bf16_sm80
+EMBED_ASSET matmul_gelu_cutlass_bf16_sm80, matmul_gelu_cutlass_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_cutlass_fp16_acc_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_cutlass_fp16_acc_fp16_sm80
+EMBED_ASSET matmul_gelu_cutlass_fp16_acc_fp16_sm80, matmul_gelu_cutlass_fp16_acc_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_cutlass_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_cutlass_fp16_sm80
+EMBED_ASSET matmul_gelu_cutlass_fp16_sm80, matmul_gelu_cutlass_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_acc_fp16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_acc_fp16_cacc_sm80
+EMBED_ASSET matmul_gelu_fp16_acc_fp16_cacc_sm80, matmul_gelu_fp16_acc_fp16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_acc_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_acc_fp16_sm80
+EMBED_ASSET matmul_gelu_fp16_acc_fp16_sm80, matmul_gelu_fp16_acc_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_acc_fp16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_acc_fp16_unaligned_cacc_sm80
+EMBED_ASSET matmul_gelu_fp16_acc_fp16_unaligned_cacc_sm80, matmul_gelu_fp16_acc_fp16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_acc_fp16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_acc_fp16_unaligned_sm80
+EMBED_ASSET matmul_gelu_fp16_acc_fp16_unaligned_sm80, matmul_gelu_fp16_acc_fp16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_cacc_sm80
+EMBED_ASSET matmul_gelu_fp16_cacc_sm80, matmul_gelu_fp16_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_sm80
+EMBED_ASSET matmul_gelu_fp16_sm80, matmul_gelu_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_unaligned_cacc_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_unaligned_cacc_sm80
+EMBED_ASSET matmul_gelu_fp16_unaligned_cacc_sm80, matmul_gelu_fp16_unaligned_cacc_sm80.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_unaligned_sm80.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_unaligned_sm80
+EMBED_ASSET matmul_gelu_fp16_unaligned_sm80, matmul_gelu_fp16_unaligned_sm80.cubin, 4
+#include "../kernel_gen/output/mean_reduce_column_tiled_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mean_reduce_column_tiled_bf16_sm80
+EMBED_ASSET mean_reduce_column_tiled_bf16_sm80, mean_reduce_column_tiled_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/mean_reduce_column_tiled_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mean_reduce_column_tiled_fp16_sm80
+EMBED_ASSET mean_reduce_column_tiled_fp16_sm80, mean_reduce_column_tiled_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/mean_reduce_contiguous_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mean_reduce_contiguous_bf16_sm80
+EMBED_ASSET mean_reduce_contiguous_bf16_sm80, mean_reduce_contiguous_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/mean_reduce_contiguous_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mean_reduce_contiguous_fp16_sm80
+EMBED_ASSET mean_reduce_contiguous_fp16_sm80, mean_reduce_contiguous_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_cutlass_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_cutlass_bf16_sm80
+EMBED_ASSET mha_full_attn_bwd_cutlass_bf16_sm80, mha_full_attn_bwd_cutlass_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_cutlass_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_cutlass_fp16_sm80
+EMBED_ASSET mha_full_attn_bwd_cutlass_fp16_sm80, mha_full_attn_bwd_cutlass_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_hs128_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_hs128_bf16_sm80
+EMBED_ASSET mha_full_attn_bwd_hs128_bf16_sm80, mha_full_attn_bwd_hs128_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_hs128_bf16_uneven_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_hs128_bf16_uneven_sm80
+EMBED_ASSET mha_full_attn_bwd_hs128_bf16_uneven_sm80, mha_full_attn_bwd_hs128_bf16_uneven_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_hs128_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_hs128_fp16_sm80
+EMBED_ASSET mha_full_attn_bwd_hs128_fp16_sm80, mha_full_attn_bwd_hs128_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_hs128_fp16_uneven_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_hs128_fp16_uneven_sm80
+EMBED_ASSET mha_full_attn_bwd_hs128_fp16_uneven_sm80, mha_full_attn_bwd_hs128_fp16_uneven_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_pre_hs128_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_pre_hs128_bf16_sm80
+EMBED_ASSET mha_full_attn_bwd_pre_hs128_bf16_sm80, mha_full_attn_bwd_pre_hs128_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_pre_hs128_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_pre_hs128_fp16_sm80
+EMBED_ASSET mha_full_attn_bwd_pre_hs128_fp16_sm80, mha_full_attn_bwd_pre_hs128_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_cutlass_bf16_lse_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_cutlass_bf16_lse_sm80
+EMBED_ASSET mha_full_attn_cutlass_bf16_lse_sm80, mha_full_attn_cutlass_bf16_lse_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_cutlass_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_cutlass_bf16_sm80
+EMBED_ASSET mha_full_attn_cutlass_bf16_sm80, mha_full_attn_cutlass_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_cutlass_fp16_lse_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_cutlass_fp16_lse_sm80
+EMBED_ASSET mha_full_attn_cutlass_fp16_lse_sm80, mha_full_attn_cutlass_fp16_lse_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_cutlass_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_cutlass_fp16_sm80
+EMBED_ASSET mha_full_attn_cutlass_fp16_sm80, mha_full_attn_cutlass_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_convert_dq_hs128_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_convert_dq_hs128_bf16_sm80
+EMBED_ASSET mha_full_attn_fa_bwd_convert_dq_hs128_bf16_sm80, mha_full_attn_fa_bwd_convert_dq_hs128_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_convert_dq_hs128_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_convert_dq_hs128_fp16_sm80
+EMBED_ASSET mha_full_attn_fa_bwd_convert_dq_hs128_fp16_sm80, mha_full_attn_fa_bwd_convert_dq_hs128_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_dot_do_o_hs128_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_dot_do_o_hs128_bf16_sm80
+EMBED_ASSET mha_full_attn_fa_bwd_dot_do_o_hs128_bf16_sm80, mha_full_attn_fa_bwd_dot_do_o_hs128_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_dot_do_o_hs128_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_dot_do_o_hs128_fp16_sm80
+EMBED_ASSET mha_full_attn_fa_bwd_dot_do_o_hs128_fp16_sm80, mha_full_attn_fa_bwd_dot_do_o_hs128_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_hs128_bf16_even_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_hs128_bf16_even_sm80
+EMBED_ASSET mha_full_attn_fa_bwd_hs128_bf16_even_sm80, mha_full_attn_fa_bwd_hs128_bf16_even_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_hs128_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_hs128_bf16_sm80
+EMBED_ASSET mha_full_attn_fa_bwd_hs128_bf16_sm80, mha_full_attn_fa_bwd_hs128_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_hs128_fp16_even_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_hs128_fp16_even_sm80
+EMBED_ASSET mha_full_attn_fa_bwd_hs128_fp16_even_sm80, mha_full_attn_fa_bwd_hs128_fp16_even_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_hs128_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_hs128_fp16_sm80
+EMBED_ASSET mha_full_attn_fa_bwd_hs128_fp16_sm80, mha_full_attn_fa_bwd_hs128_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_bf16_even_nolse_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_bf16_even_nolse_sm80
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_bf16_even_nolse_sm80, mha_full_attn_fa_fwd_hs128_bf16_even_nolse_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_bf16_even_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_bf16_even_sm80
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_bf16_even_sm80, mha_full_attn_fa_fwd_hs128_bf16_even_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_bf16_nolse_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_bf16_nolse_sm80
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_bf16_nolse_sm80, mha_full_attn_fa_fwd_hs128_bf16_nolse_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_bf16_sm80
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_bf16_sm80, mha_full_attn_fa_fwd_hs128_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_nolse_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_nolse_sm80
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_nolse_sm80, mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_nolse_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_sm80
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_sm80, mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_nolse_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_nolse_sm80
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_nolse_sm80, mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_nolse_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_sm80
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_sm80, mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_even_nolse_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_even_nolse_sm80
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_even_nolse_sm80, mha_full_attn_fa_fwd_hs128_fp16_even_nolse_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_even_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_even_sm80
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_even_sm80, mha_full_attn_fa_fwd_hs128_fp16_even_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_nolse_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_nolse_sm80
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_nolse_sm80, mha_full_attn_fa_fwd_hs128_fp16_nolse_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_sm80
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_sm80, mha_full_attn_fa_fwd_hs128_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_bf16_nolse_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_bf16_nolse_sm80
+EMBED_ASSET mha_full_attn_fwd_hs128_bf16_nolse_sm80, mha_full_attn_fwd_hs128_bf16_nolse_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_bf16_sm80
+EMBED_ASSET mha_full_attn_fwd_hs128_bf16_sm80, mha_full_attn_fwd_hs128_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_bf16_uneven_nolse_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_bf16_uneven_nolse_sm80
+EMBED_ASSET mha_full_attn_fwd_hs128_bf16_uneven_nolse_sm80, mha_full_attn_fwd_hs128_bf16_uneven_nolse_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_bf16_uneven_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_bf16_uneven_sm80
+EMBED_ASSET mha_full_attn_fwd_hs128_bf16_uneven_sm80, mha_full_attn_fwd_hs128_bf16_uneven_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_acc_fp16_nolse_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_acc_fp16_nolse_sm80
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_acc_fp16_nolse_sm80, mha_full_attn_fwd_hs128_fp16_acc_fp16_nolse_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_acc_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_acc_fp16_sm80
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_acc_fp16_sm80, mha_full_attn_fwd_hs128_fp16_acc_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_nolse_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_nolse_sm80
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_nolse_sm80, mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_nolse_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_sm80
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_sm80, mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_nolse_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_nolse_sm80
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_nolse_sm80, mha_full_attn_fwd_hs128_fp16_nolse_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_sm80
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_sm80, mha_full_attn_fwd_hs128_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_uneven_nolse_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_uneven_nolse_sm80
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_uneven_nolse_sm80, mha_full_attn_fwd_hs128_fp16_uneven_nolse_sm80.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_uneven_sm80.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_uneven_sm80
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_uneven_sm80, mha_full_attn_fwd_hs128_fp16_uneven_sm80.cubin, 4
+#include "../kernel_gen/output/mul_elementwise_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mul_elementwise_bf16_sm80
+EMBED_ASSET mul_elementwise_bf16_sm80, mul_elementwise_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/mul_elementwise_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mul_elementwise_fp16_sm80
+EMBED_ASSET mul_elementwise_fp16_sm80, mul_elementwise_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/mul_elementwise_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO mul_elementwise_fp32_sm80
+EMBED_ASSET mul_elementwise_fp32_sm80, mul_elementwise_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/mul_reduce_column_tiled_bf16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_column_tiled_bf16_out_fp32_sm80
+EMBED_ASSET mul_reduce_column_tiled_bf16_out_fp32_sm80, mul_reduce_column_tiled_bf16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/mul_reduce_column_tiled_fp16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_column_tiled_fp16_out_fp32_sm80
+EMBED_ASSET mul_reduce_column_tiled_fp16_out_fp32_sm80, mul_reduce_column_tiled_fp16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/mul_reduce_column_split_partials_bf16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_column_split_partials_bf16_out_fp32_sm80
+EMBED_ASSET mul_reduce_column_split_partials_bf16_out_fp32_sm80, mul_reduce_column_split_partials_bf16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/mul_reduce_column_split_partials_fp16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_column_split_partials_fp16_out_fp32_sm80
+EMBED_ASSET mul_reduce_column_split_partials_fp16_out_fp32_sm80, mul_reduce_column_split_partials_fp16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/mul_reduce_contiguous_bf16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_contiguous_bf16_out_fp32_sm80
+EMBED_ASSET mul_reduce_contiguous_bf16_out_fp32_sm80, mul_reduce_contiguous_bf16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/mul_reduce_contiguous_fp16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_contiguous_fp16_out_fp32_sm80
+EMBED_ASSET mul_reduce_contiguous_fp16_out_fp32_sm80, mul_reduce_contiguous_fp16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/mul_scalar_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mul_scalar_bf16_sm80
+EMBED_ASSET mul_scalar_bf16_sm80, mul_scalar_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/mul_scalar_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mul_scalar_fp16_sm80
+EMBED_ASSET mul_scalar_fp16_sm80, mul_scalar_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/mul_scalar_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO mul_scalar_fp32_sm80
+EMBED_ASSET mul_scalar_fp32_sm80, mul_scalar_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/sqrt_elementwise_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO sqrt_elementwise_bf16_sm80
+EMBED_ASSET sqrt_elementwise_bf16_sm80, sqrt_elementwise_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/sqrt_elementwise_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO sqrt_elementwise_fp16_sm80
+EMBED_ASSET sqrt_elementwise_fp16_sm80, sqrt_elementwise_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/sqrt_elementwise_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO sqrt_elementwise_fp32_sm80
+EMBED_ASSET sqrt_elementwise_fp32_sm80, sqrt_elementwise_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/mul_trailing_broadcast_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mul_trailing_broadcast_bf16_sm80
+EMBED_ASSET mul_trailing_broadcast_bf16_sm80, mul_trailing_broadcast_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/mul_trailing_broadcast_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO mul_trailing_broadcast_fp16_sm80
+EMBED_ASSET mul_trailing_broadcast_fp16_sm80, mul_trailing_broadcast_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/mul_trailing_broadcast_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO mul_trailing_broadcast_fp32_sm80
+EMBED_ASSET mul_trailing_broadcast_fp32_sm80, mul_trailing_broadcast_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/reduce_sum_partial_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO reduce_sum_partial_fp32_sm80
+EMBED_ASSET reduce_sum_partial_fp32_sm80, reduce_sum_partial_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/rms_norm_bwd_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO rms_norm_bwd_bf16_sm80
+EMBED_ASSET rms_norm_bwd_bf16_sm80, rms_norm_bwd_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/rms_norm_bwd_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO rms_norm_bwd_fp16_sm80
+EMBED_ASSET rms_norm_bwd_fp16_sm80, rms_norm_bwd_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/rms_norm_fwd_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO rms_norm_fwd_bf16_sm80
+EMBED_ASSET rms_norm_fwd_bf16_sm80, rms_norm_fwd_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/rms_norm_fwd_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO rms_norm_fwd_fp16_sm80
+EMBED_ASSET rms_norm_fwd_fp16_sm80, rms_norm_fwd_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/sgd_step_bf16_sm80.kinfo.inc.asm"
+DECLARE_KINFO sgd_step_bf16_sm80
+EMBED_ASSET sgd_step_bf16_sm80, sgd_step_bf16_sm80.cubin, 4
+#include "../kernel_gen/output/sgd_step_fp16_sm80.kinfo.inc.asm"
+DECLARE_KINFO sgd_step_fp16_sm80
+EMBED_ASSET sgd_step_fp16_sm80, sgd_step_fp16_sm80.cubin, 4
+#include "../kernel_gen/output/sgd_step_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO sgd_step_fp32_sm80
+EMBED_ASSET sgd_step_fp32_sm80, sgd_step_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_tiled_bf16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_tiled_bf16_out_fp32_sm80
+EMBED_ASSET sum_reduce_column_tiled_bf16_out_fp32_sm80, sum_reduce_column_tiled_bf16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_tiled_fp16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_tiled_fp16_out_fp32_sm80
+EMBED_ASSET sum_reduce_column_tiled_fp16_out_fp32_sm80, sum_reduce_column_tiled_fp16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_tiled_fp32_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_tiled_fp32_out_fp32_sm80
+EMBED_ASSET sum_reduce_column_tiled_fp32_out_fp32_sm80, sum_reduce_column_tiled_fp32_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_split_partials_bf16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_split_partials_bf16_out_fp32_sm80
+EMBED_ASSET sum_reduce_column_split_partials_bf16_out_fp32_sm80, sum_reduce_column_split_partials_bf16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_split_partials_fp16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_split_partials_fp16_out_fp32_sm80
+EMBED_ASSET sum_reduce_column_split_partials_fp16_out_fp32_sm80, sum_reduce_column_split_partials_fp16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_split_partials_fp32_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_split_partials_fp32_out_fp32_sm80
+EMBED_ASSET sum_reduce_column_split_partials_fp32_out_fp32_sm80, sum_reduce_column_split_partials_fp32_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/sum_reduce_contiguous_bf16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_contiguous_bf16_out_fp32_sm80
+EMBED_ASSET sum_reduce_contiguous_bf16_out_fp32_sm80, sum_reduce_contiguous_bf16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/sum_reduce_contiguous_fp16_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_contiguous_fp16_out_fp32_sm80
+EMBED_ASSET sum_reduce_contiguous_fp16_out_fp32_sm80, sum_reduce_contiguous_fp16_out_fp32_sm80.cubin, 4
+#include "../kernel_gen/output/sum_reduce_contiguous_fp32_out_fp32_sm80.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_contiguous_fp32_out_fp32_sm80
+EMBED_ASSET sum_reduce_contiguous_fp32_out_fp32_sm80, sum_reduce_contiguous_fp32_out_fp32_sm80.cubin, 4
+
+#elif NV_KERNEL_ARCH == 89
+#include "../kernel_gen/output/act_gelu_bwd_elementwise_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO act_gelu_bwd_elementwise_bf16_sm89
+EMBED_ASSET act_gelu_bwd_elementwise_bf16_sm89, act_gelu_bwd_elementwise_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/act_gelu_bwd_elementwise_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO act_gelu_bwd_elementwise_fp16_sm89
+EMBED_ASSET act_gelu_bwd_elementwise_fp16_sm89, act_gelu_bwd_elementwise_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/act_gelu_elementwise_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO act_gelu_elementwise_bf16_sm89
+EMBED_ASSET act_gelu_elementwise_bf16_sm89, act_gelu_elementwise_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/act_gelu_elementwise_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO act_gelu_elementwise_fp16_sm89
+EMBED_ASSET act_gelu_elementwise_fp16_sm89, act_gelu_elementwise_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/act_relu_elementwise_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO act_relu_elementwise_bf16_sm89
+EMBED_ASSET act_relu_elementwise_bf16_sm89, act_relu_elementwise_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/act_relu_elementwise_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO act_relu_elementwise_fp16_sm89
+EMBED_ASSET act_relu_elementwise_fp16_sm89, act_relu_elementwise_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/adamw_step_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO adamw_step_bf16_sm89
+EMBED_ASSET adamw_step_bf16_sm89, adamw_step_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/adamw_step_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO adamw_step_fp16_sm89
+EMBED_ASSET adamw_step_fp16_sm89, adamw_step_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/adamw_step_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO adamw_step_fp32_sm89
+EMBED_ASSET adamw_step_fp32_sm89, adamw_step_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/add_elementwise_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO add_elementwise_bf16_sm89
+EMBED_ASSET add_elementwise_bf16_sm89, add_elementwise_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/add_elementwise_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO add_elementwise_fp16_sm89
+EMBED_ASSET add_elementwise_fp16_sm89, add_elementwise_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/add_elementwise_fp32_out_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO add_elementwise_fp32_out_fp16_sm89
+EMBED_ASSET add_elementwise_fp32_out_fp16_sm89, add_elementwise_fp32_out_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/add_elementwise_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO add_elementwise_fp32_sm89
+EMBED_ASSET add_elementwise_fp32_sm89, add_elementwise_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/add_trailing_broadcast_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO add_trailing_broadcast_bf16_sm89
+EMBED_ASSET add_trailing_broadcast_bf16_sm89, add_trailing_broadcast_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/add_trailing_broadcast_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO add_trailing_broadcast_fp16_sm89
+EMBED_ASSET add_trailing_broadcast_fp16_sm89, add_trailing_broadcast_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/add_trailing_broadcast_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO add_trailing_broadcast_fp32_sm89
+EMBED_ASSET add_trailing_broadcast_fp32_sm89, add_trailing_broadcast_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_bf16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_bf16_cacc_sm89
+EMBED_ASSET addmm_bf16_cacc_sm89, addmm_bf16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_bf16_sm89
+EMBED_ASSET addmm_bf16_sm89, addmm_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_bf16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_bf16_unaligned_cacc_sm89
+EMBED_ASSET addmm_bf16_unaligned_cacc_sm89, addmm_bf16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_bf16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_bf16_unaligned_sm89
+EMBED_ASSET addmm_bf16_unaligned_sm89, addmm_bf16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_bf16_sm89
+EMBED_ASSET addmm_cutlass_bf16_sm89, addmm_cutlass_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_fp16_acc_fp16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_fp16_acc_fp16_out_fp32_sm89
+EMBED_ASSET addmm_cutlass_fp16_acc_fp16_out_fp32_sm89, addmm_cutlass_fp16_acc_fp16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_fp16_acc_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_fp16_acc_fp16_sm89
+EMBED_ASSET addmm_cutlass_fp16_acc_fp16_sm89, addmm_cutlass_fp16_acc_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_fp16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_fp16_out_fp32_sm89
+EMBED_ASSET addmm_cutlass_fp16_out_fp32_sm89, addmm_cutlass_fp16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_fp16_sm89
+EMBED_ASSET addmm_cutlass_fp16_sm89, addmm_cutlass_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_fp16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_fp16_cacc_sm89
+EMBED_ASSET addmm_fp16_acc_fp16_cacc_sm89, addmm_fp16_acc_fp16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_fp16_sm89
+EMBED_ASSET addmm_fp16_acc_fp16_sm89, addmm_fp16_acc_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_fp16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_fp16_unaligned_cacc_sm89
+EMBED_ASSET addmm_fp16_acc_fp16_unaligned_cacc_sm89, addmm_fp16_acc_fp16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_fp16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_fp16_unaligned_sm89
+EMBED_ASSET addmm_fp16_acc_fp16_unaligned_sm89, addmm_fp16_acc_fp16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_out_fp32_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_out_fp32_cacc_sm89
+EMBED_ASSET addmm_fp16_acc_out_fp32_cacc_sm89, addmm_fp16_acc_out_fp32_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_out_fp32_sm89
+EMBED_ASSET addmm_fp16_acc_out_fp32_sm89, addmm_fp16_acc_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_out_fp32_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_out_fp32_unaligned_cacc_sm89
+EMBED_ASSET addmm_fp16_acc_out_fp32_unaligned_cacc_sm89, addmm_fp16_acc_out_fp32_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_out_fp32_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_out_fp32_unaligned_sm89
+EMBED_ASSET addmm_fp16_acc_out_fp32_unaligned_sm89, addmm_fp16_acc_out_fp32_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_cacc_sm89
+EMBED_ASSET addmm_fp16_cacc_sm89, addmm_fp16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_out_fp32_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_out_fp32_cacc_sm89
+EMBED_ASSET addmm_fp16_out_fp32_cacc_sm89, addmm_fp16_out_fp32_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_out_fp32_sm89
+EMBED_ASSET addmm_fp16_out_fp32_sm89, addmm_fp16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_out_fp32_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_out_fp32_unaligned_cacc_sm89
+EMBED_ASSET addmm_fp16_out_fp32_unaligned_cacc_sm89, addmm_fp16_out_fp32_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_out_fp32_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_out_fp32_unaligned_sm89
+EMBED_ASSET addmm_fp16_out_fp32_unaligned_sm89, addmm_fp16_out_fp32_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_sm89
+EMBED_ASSET addmm_fp16_sm89, addmm_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_unaligned_cacc_sm89
+EMBED_ASSET addmm_fp16_unaligned_cacc_sm89, addmm_fp16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_unaligned_sm89
+EMBED_ASSET addmm_fp16_unaligned_sm89, addmm_fp16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_bf16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_bf16_cacc_sm89
+EMBED_ASSET addmm_gelu_bf16_cacc_sm89, addmm_gelu_bf16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_bf16_sm89
+EMBED_ASSET addmm_gelu_bf16_sm89, addmm_gelu_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_bf16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_bf16_unaligned_cacc_sm89
+EMBED_ASSET addmm_gelu_bf16_unaligned_cacc_sm89, addmm_gelu_bf16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_bf16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_bf16_unaligned_sm89
+EMBED_ASSET addmm_gelu_bf16_unaligned_sm89, addmm_gelu_bf16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_cutlass_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_cutlass_bf16_sm89
+EMBED_ASSET addmm_gelu_cutlass_bf16_sm89, addmm_gelu_cutlass_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_cutlass_fp16_acc_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_cutlass_fp16_acc_fp16_sm89
+EMBED_ASSET addmm_gelu_cutlass_fp16_acc_fp16_sm89, addmm_gelu_cutlass_fp16_acc_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_cutlass_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_cutlass_fp16_sm89
+EMBED_ASSET addmm_gelu_cutlass_fp16_sm89, addmm_gelu_cutlass_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_acc_fp16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_acc_fp16_cacc_sm89
+EMBED_ASSET addmm_gelu_fp16_acc_fp16_cacc_sm89, addmm_gelu_fp16_acc_fp16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_acc_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_acc_fp16_sm89
+EMBED_ASSET addmm_gelu_fp16_acc_fp16_sm89, addmm_gelu_fp16_acc_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_acc_fp16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_acc_fp16_unaligned_cacc_sm89
+EMBED_ASSET addmm_gelu_fp16_acc_fp16_unaligned_cacc_sm89, addmm_gelu_fp16_acc_fp16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_acc_fp16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_acc_fp16_unaligned_sm89
+EMBED_ASSET addmm_gelu_fp16_acc_fp16_unaligned_sm89, addmm_gelu_fp16_acc_fp16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_cacc_sm89
+EMBED_ASSET addmm_gelu_fp16_cacc_sm89, addmm_gelu_fp16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_sm89
+EMBED_ASSET addmm_gelu_fp16_sm89, addmm_gelu_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_unaligned_cacc_sm89
+EMBED_ASSET addmm_gelu_fp16_unaligned_cacc_sm89, addmm_gelu_fp16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_unaligned_sm89
+EMBED_ASSET addmm_gelu_fp16_unaligned_sm89, addmm_gelu_fp16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_bf16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_bf16_cacc_sm89
+EMBED_ASSET addmm_gelu_preact_bf16_cacc_sm89, addmm_gelu_preact_bf16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_bf16_sm89
+EMBED_ASSET addmm_gelu_preact_bf16_sm89, addmm_gelu_preact_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_bf16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_bf16_unaligned_cacc_sm89
+EMBED_ASSET addmm_gelu_preact_bf16_unaligned_cacc_sm89, addmm_gelu_preact_bf16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_bf16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_bf16_unaligned_sm89
+EMBED_ASSET addmm_gelu_preact_bf16_unaligned_sm89, addmm_gelu_preact_bf16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_cutlass_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_cutlass_bf16_sm89
+EMBED_ASSET addmm_gelu_preact_cutlass_bf16_sm89, addmm_gelu_preact_cutlass_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_cutlass_fp16_acc_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_cutlass_fp16_acc_fp16_sm89
+EMBED_ASSET addmm_gelu_preact_cutlass_fp16_acc_fp16_sm89, addmm_gelu_preact_cutlass_fp16_acc_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_cutlass_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_cutlass_fp16_sm89
+EMBED_ASSET addmm_gelu_preact_cutlass_fp16_sm89, addmm_gelu_preact_cutlass_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_acc_fp16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_acc_fp16_cacc_sm89
+EMBED_ASSET addmm_gelu_preact_fp16_acc_fp16_cacc_sm89, addmm_gelu_preact_fp16_acc_fp16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_acc_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_acc_fp16_sm89
+EMBED_ASSET addmm_gelu_preact_fp16_acc_fp16_sm89, addmm_gelu_preact_fp16_acc_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_acc_fp16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_acc_fp16_unaligned_cacc_sm89
+EMBED_ASSET addmm_gelu_preact_fp16_acc_fp16_unaligned_cacc_sm89, addmm_gelu_preact_fp16_acc_fp16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_acc_fp16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_acc_fp16_unaligned_sm89
+EMBED_ASSET addmm_gelu_preact_fp16_acc_fp16_unaligned_sm89, addmm_gelu_preact_fp16_acc_fp16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_cacc_sm89
+EMBED_ASSET addmm_gelu_preact_fp16_cacc_sm89, addmm_gelu_preact_fp16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_sm89
+EMBED_ASSET addmm_gelu_preact_fp16_sm89, addmm_gelu_preact_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_unaligned_cacc_sm89
+EMBED_ASSET addmm_gelu_preact_fp16_unaligned_cacc_sm89, addmm_gelu_preact_fp16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_unaligned_sm89
+EMBED_ASSET addmm_gelu_preact_fp16_unaligned_sm89, addmm_gelu_preact_fp16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/avg_pool1d_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO avg_pool1d_bf16_sm89
+EMBED_ASSET avg_pool1d_bf16_sm89, avg_pool1d_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/avg_pool1d_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO avg_pool1d_fp16_sm89
+EMBED_ASSET avg_pool1d_fp16_sm89, avg_pool1d_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bf16_sm89
+EMBED_ASSET avg_pool2d_bf16_sm89, avg_pool2d_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_nhwc_2x2_s2_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_nhwc_2x2_s2_bf16_sm89
+EMBED_ASSET avg_pool2d_nhwc_2x2_s2_bf16_sm89, avg_pool2d_nhwc_2x2_s2_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_bf16_sm89
+EMBED_ASSET avg_pool2d_bwd_bf16_sm89, avg_pool2d_bwd_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_fp16_sm89
+EMBED_ASSET avg_pool2d_bwd_fp16_sm89, avg_pool2d_bwd_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_noaccum_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_noaccum_bf16_sm89
+EMBED_ASSET avg_pool2d_bwd_noaccum_bf16_sm89, avg_pool2d_bwd_noaccum_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_noaccum_nhwc_2x2_s2_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_noaccum_nhwc_2x2_s2_bf16_sm89
+EMBED_ASSET avg_pool2d_bwd_noaccum_nhwc_2x2_s2_bf16_sm89, avg_pool2d_bwd_noaccum_nhwc_2x2_s2_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_noaccum_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_noaccum_fp16_sm89
+EMBED_ASSET avg_pool2d_bwd_noaccum_fp16_sm89, avg_pool2d_bwd_noaccum_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_noaccum_nhwc_2x2_s2_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_noaccum_nhwc_2x2_s2_fp16_sm89
+EMBED_ASSET avg_pool2d_bwd_noaccum_nhwc_2x2_s2_fp16_sm89, avg_pool2d_bwd_noaccum_nhwc_2x2_s2_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_fp16_sm89
+EMBED_ASSET avg_pool2d_fp16_sm89, avg_pool2d_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_nhwc_2x2_s2_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_nhwc_2x2_s2_fp16_sm89
+EMBED_ASSET avg_pool2d_nhwc_2x2_s2_fp16_sm89, avg_pool2d_nhwc_2x2_s2_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bf16_sm89
+EMBED_ASSET build_cell_embeds_bf16_sm89, build_cell_embeds_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_color_bf16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_color_bf16_out_fp32_sm89
+EMBED_ASSET build_cell_embeds_bwd_color_bf16_out_fp32_sm89, build_cell_embeds_bwd_color_bf16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_color_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_color_bf16_sm89
+EMBED_ASSET build_cell_embeds_bwd_color_bf16_sm89, build_cell_embeds_bwd_color_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_color_fp16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_color_fp16_out_fp32_sm89
+EMBED_ASSET build_cell_embeds_bwd_color_fp16_out_fp32_sm89, build_cell_embeds_bwd_color_fp16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_color_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_color_fp16_sm89
+EMBED_ASSET build_cell_embeds_bwd_color_fp16_sm89, build_cell_embeds_bwd_color_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_cp_bf16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_cp_bf16_out_fp32_sm89
+EMBED_ASSET build_cell_embeds_bwd_cp_bf16_out_fp32_sm89, build_cell_embeds_bwd_cp_bf16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_cp_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_cp_bf16_sm89
+EMBED_ASSET build_cell_embeds_bwd_cp_bf16_sm89, build_cell_embeds_bwd_cp_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_cp_fp16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_cp_fp16_out_fp32_sm89
+EMBED_ASSET build_cell_embeds_bwd_cp_fp16_out_fp32_sm89, build_cell_embeds_bwd_cp_fp16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_cp_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_cp_fp16_sm89
+EMBED_ASSET build_cell_embeds_bwd_cp_fp16_sm89, build_cell_embeds_bwd_cp_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_pos_bf16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_pos_bf16_out_fp32_sm89
+EMBED_ASSET build_cell_embeds_bwd_pos_bf16_out_fp32_sm89, build_cell_embeds_bwd_pos_bf16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_pos_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_pos_bf16_sm89
+EMBED_ASSET build_cell_embeds_bwd_pos_bf16_sm89, build_cell_embeds_bwd_pos_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_pos_fp16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_pos_fp16_out_fp32_sm89
+EMBED_ASSET build_cell_embeds_bwd_pos_fp16_out_fp32_sm89, build_cell_embeds_bwd_pos_fp16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_pos_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_pos_fp16_sm89
+EMBED_ASSET build_cell_embeds_bwd_pos_fp16_sm89, build_cell_embeds_bwd_pos_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_fp16_sm89
+EMBED_ASSET build_cell_embeds_fp16_sm89, build_cell_embeds_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/cast_bf16_to_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO cast_bf16_to_fp16_sm89
+EMBED_ASSET cast_bf16_to_fp16_sm89, cast_bf16_to_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/cast_bf16_to_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO cast_bf16_to_fp32_sm89
+EMBED_ASSET cast_bf16_to_fp32_sm89, cast_bf16_to_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/cast_fp16_to_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO cast_fp16_to_bf16_sm89
+EMBED_ASSET cast_fp16_to_bf16_sm89, cast_fp16_to_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/cast_fp16_to_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO cast_fp16_to_fp32_sm89
+EMBED_ASSET cast_fp16_to_fp32_sm89, cast_fp16_to_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/cast_fp32_to_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO cast_fp32_to_bf16_sm89
+EMBED_ASSET cast_fp32_to_bf16_sm89, cast_fp32_to_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/cast_fp32_to_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO cast_fp32_to_fp16_sm89
+EMBED_ASSET cast_fp32_to_fp16_sm89, cast_fp32_to_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/contiguous_3d_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO contiguous_3d_bf16_sm89
+EMBED_ASSET contiguous_3d_bf16_sm89, contiguous_3d_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/contiguous_3d_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO contiguous_3d_fp16_sm89
+EMBED_ASSET contiguous_3d_fp16_sm89, contiguous_3d_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/contiguous_4d_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO contiguous_4d_bf16_sm89
+EMBED_ASSET contiguous_4d_bf16_sm89, contiguous_4d_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/contiguous_4d_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO contiguous_4d_fp16_sm89
+EMBED_ASSET contiguous_4d_fp16_sm89, contiguous_4d_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic1024_oc1024_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic1024_oc1024_k3_dil2_sm89
+EMBED_ASSET conv2d_bf16_ic1024_oc1024_k3_dil2_sm89, conv2d_bf16_ic1024_oc1024_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic1024_oc2048_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic1024_oc2048_k3_sm89
+EMBED_ASSET conv2d_bf16_ic1024_oc2048_k3_sm89, conv2d_bf16_ic1024_oc2048_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic32_oc64_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic32_oc64_k3_sm89
+EMBED_ASSET conv2d_bf16_ic32_oc64_k3_sm89, conv2d_bf16_ic32_oc64_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic3_oc8_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic3_oc8_k3_dil2_sm89
+EMBED_ASSET conv2d_bf16_ic3_oc8_k3_dil2_sm89, conv2d_bf16_ic3_oc8_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic3_oc8_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic3_oc8_k3_sm89
+EMBED_ASSET conv2d_bf16_ic3_oc8_k3_sm89, conv2d_bf16_ic3_oc8_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic768_oc1536_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic768_oc1536_k3_sm89
+EMBED_ASSET conv2d_bf16_ic768_oc1536_k3_sm89, conv2d_bf16_ic768_oc1536_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic768_oc768_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic768_oc768_k3_dil2_sm89
+EMBED_ASSET conv2d_bf16_ic768_oc768_k3_dil2_sm89, conv2d_bf16_ic768_oc768_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm89
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm89, conv2d_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm89
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm89, conv2d_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm89
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm89, conv2d_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89, conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89, conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm89
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm89, conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm89
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm89, conv2d_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm89
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm89, conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm89
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm89, conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm89
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm89, conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89, conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89, conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm89
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm89, conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm89
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm89, conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm89
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm89, conv2d_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm89
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm89, conv2d_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm89
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm89, conv2d_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89, conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89, conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm89
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm89, conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm89
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm89, conv2d_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic1024_oc1024_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic1024_oc1024_k3_dil2_sm89
+EMBED_ASSET conv2d_dgrad_bf16_ic1024_oc1024_k3_dil2_sm89, conv2d_dgrad_bf16_ic1024_oc1024_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic1024_oc2048_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic1024_oc2048_k3_sm89
+EMBED_ASSET conv2d_dgrad_bf16_ic1024_oc2048_k3_sm89, conv2d_dgrad_bf16_ic1024_oc2048_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic32_oc64_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic32_oc64_k3_sm89
+EMBED_ASSET conv2d_dgrad_bf16_ic32_oc64_k3_sm89, conv2d_dgrad_bf16_ic32_oc64_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic3_oc8_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic3_oc8_k3_dil2_sm89
+EMBED_ASSET conv2d_dgrad_bf16_ic3_oc8_k3_dil2_sm89, conv2d_dgrad_bf16_ic3_oc8_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic3_oc8_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic3_oc8_k3_sm89
+EMBED_ASSET conv2d_dgrad_bf16_ic3_oc8_k3_sm89, conv2d_dgrad_bf16_ic3_oc8_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic768_oc1536_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic768_oc1536_k3_sm89
+EMBED_ASSET conv2d_dgrad_bf16_ic768_oc1536_k3_sm89, conv2d_dgrad_bf16_ic768_oc1536_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic768_oc768_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic768_oc768_k3_dil2_sm89
+EMBED_ASSET conv2d_dgrad_bf16_ic768_oc768_k3_dil2_sm89, conv2d_dgrad_bf16_ic768_oc768_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm89
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm89, conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm89
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm89, conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm89
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm89, conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm89
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm89, conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89, conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89, conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm89
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm89, conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm89
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm89, conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm89
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm89, conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm89
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm89, conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm89
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm89, conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89, conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89, conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89, conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89, conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89, conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89, conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm89
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm89, conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic1024_oc1024_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic1024_oc1024_k3_dil2_sm89
+EMBED_ASSET conv2d_dgrad_fp16_ic1024_oc1024_k3_dil2_sm89, conv2d_dgrad_fp16_ic1024_oc1024_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic1024_oc2048_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic1024_oc2048_k3_sm89
+EMBED_ASSET conv2d_dgrad_fp16_ic1024_oc2048_k3_sm89, conv2d_dgrad_fp16_ic1024_oc2048_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic32_oc64_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic32_oc64_k3_sm89
+EMBED_ASSET conv2d_dgrad_fp16_ic32_oc64_k3_sm89, conv2d_dgrad_fp16_ic32_oc64_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic3_oc8_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic3_oc8_k3_dil2_sm89
+EMBED_ASSET conv2d_dgrad_fp16_ic3_oc8_k3_dil2_sm89, conv2d_dgrad_fp16_ic3_oc8_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic3_oc8_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic3_oc8_k3_sm89
+EMBED_ASSET conv2d_dgrad_fp16_ic3_oc8_k3_sm89, conv2d_dgrad_fp16_ic3_oc8_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic768_oc1536_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic768_oc1536_k3_sm89
+EMBED_ASSET conv2d_dgrad_fp16_ic768_oc1536_k3_sm89, conv2d_dgrad_fp16_ic768_oc1536_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic768_oc768_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic768_oc768_k3_dil2_sm89
+EMBED_ASSET conv2d_dgrad_fp16_ic768_oc768_k3_dil2_sm89, conv2d_dgrad_fp16_ic768_oc768_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic1024_oc1024_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic1024_oc1024_k3_dil2_sm89
+EMBED_ASSET conv2d_fp16_ic1024_oc1024_k3_dil2_sm89, conv2d_fp16_ic1024_oc1024_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic1024_oc2048_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic1024_oc2048_k3_sm89
+EMBED_ASSET conv2d_fp16_ic1024_oc2048_k3_sm89, conv2d_fp16_ic1024_oc2048_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic32_oc64_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic32_oc64_k3_sm89
+EMBED_ASSET conv2d_fp16_ic32_oc64_k3_sm89, conv2d_fp16_ic32_oc64_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic3_oc8_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic3_oc8_k3_dil2_sm89
+EMBED_ASSET conv2d_fp16_ic3_oc8_k3_dil2_sm89, conv2d_fp16_ic3_oc8_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic3_oc8_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic3_oc8_k3_sm89
+EMBED_ASSET conv2d_fp16_ic3_oc8_k3_sm89, conv2d_fp16_ic3_oc8_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic768_oc1536_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic768_oc1536_k3_sm89
+EMBED_ASSET conv2d_fp16_ic768_oc1536_k3_sm89, conv2d_fp16_ic768_oc1536_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic768_oc768_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic768_oc768_k3_dil2_sm89
+EMBED_ASSET conv2d_fp16_ic768_oc768_k3_dil2_sm89, conv2d_fp16_ic768_oc768_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic1024_oc1024_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic1024_oc1024_k3_dil2_sm89
+EMBED_ASSET conv2d_wgrad_bf16_ic1024_oc1024_k3_dil2_sm89, conv2d_wgrad_bf16_ic1024_oc1024_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic1024_oc2048_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic1024_oc2048_k3_sm89
+EMBED_ASSET conv2d_wgrad_bf16_ic1024_oc2048_k3_sm89, conv2d_wgrad_bf16_ic1024_oc2048_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic32_oc64_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic32_oc64_k3_sm89
+EMBED_ASSET conv2d_wgrad_bf16_ic32_oc64_k3_sm89, conv2d_wgrad_bf16_ic32_oc64_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic3_oc8_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic3_oc8_k3_dil2_sm89
+EMBED_ASSET conv2d_wgrad_bf16_ic3_oc8_k3_dil2_sm89, conv2d_wgrad_bf16_ic3_oc8_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic3_oc8_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic3_oc8_k3_sm89
+EMBED_ASSET conv2d_wgrad_bf16_ic3_oc8_k3_sm89, conv2d_wgrad_bf16_ic3_oc8_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic768_oc1536_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic768_oc1536_k3_sm89
+EMBED_ASSET conv2d_wgrad_bf16_ic768_oc1536_k3_sm89, conv2d_wgrad_bf16_ic768_oc1536_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic768_oc768_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic768_oc768_k3_dil2_sm89
+EMBED_ASSET conv2d_wgrad_bf16_ic768_oc768_k3_dil2_sm89, conv2d_wgrad_bf16_ic768_oc768_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm89
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm89, conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm89
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm89, conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm89
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm89, conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm89
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm89, conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm89
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm89, conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm89
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm89, conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm89
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm89, conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm89
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm89, conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm89
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm89, conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm89
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm89, conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic1024_oc1024_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic1024_oc1024_k3_dil2_sm89
+EMBED_ASSET conv2d_wgrad_fp16_ic1024_oc1024_k3_dil2_sm89, conv2d_wgrad_fp16_ic1024_oc1024_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic1024_oc2048_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic1024_oc2048_k3_sm89
+EMBED_ASSET conv2d_wgrad_fp16_ic1024_oc2048_k3_sm89, conv2d_wgrad_fp16_ic1024_oc2048_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic32_oc64_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic32_oc64_k3_sm89
+EMBED_ASSET conv2d_wgrad_fp16_ic32_oc64_k3_sm89, conv2d_wgrad_fp16_ic32_oc64_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic3_oc8_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic3_oc8_k3_dil2_sm89
+EMBED_ASSET conv2d_wgrad_fp16_ic3_oc8_k3_dil2_sm89, conv2d_wgrad_fp16_ic3_oc8_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic3_oc8_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic3_oc8_k3_sm89
+EMBED_ASSET conv2d_wgrad_fp16_ic3_oc8_k3_sm89, conv2d_wgrad_fp16_ic3_oc8_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic768_oc1536_k3_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic768_oc1536_k3_sm89
+EMBED_ASSET conv2d_wgrad_fp16_ic768_oc1536_k3_sm89, conv2d_wgrad_fp16_ic768_oc1536_k3_sm89.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic768_oc768_k3_dil2_sm89.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic768_oc768_k3_dil2_sm89
+EMBED_ASSET conv2d_wgrad_fp16_ic768_oc768_k3_dil2_sm89, conv2d_wgrad_fp16_ic768_oc768_k3_dil2_sm89.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_add_fp32_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_add_fp32_bf16_sm89
+EMBED_ASSET cross_entropy_on_targets_add_fp32_bf16_sm89, cross_entropy_on_targets_add_fp32_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_add_fp32_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_add_fp32_fp16_sm89
+EMBED_ASSET cross_entropy_on_targets_add_fp32_fp16_sm89, cross_entropy_on_targets_add_fp32_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_bf16_sm89
+EMBED_ASSET cross_entropy_on_targets_bf16_sm89, cross_entropy_on_targets_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_bwd_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_bwd_bf16_sm89
+EMBED_ASSET cross_entropy_on_targets_bwd_bf16_sm89, cross_entropy_on_targets_bwd_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_bwd_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_bwd_fp16_sm89
+EMBED_ASSET cross_entropy_on_targets_bwd_fp16_sm89, cross_entropy_on_targets_bwd_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_fp16_sm89
+EMBED_ASSET cross_entropy_on_targets_fp16_sm89, cross_entropy_on_targets_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/device_copy_strided_2d_sm89.kinfo.inc.asm"
+DECLARE_KINFO device_copy_strided_2d_sm89
+EMBED_ASSET device_copy_strided_2d_sm89, device_copy_strided_2d_sm89.cubin, 4
+#include "../kernel_gen/output/div_add_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO div_add_bf16_sm89
+EMBED_ASSET div_add_bf16_sm89, div_add_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/div_add_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO div_add_fp16_sm89
+EMBED_ASSET div_add_fp16_sm89, div_add_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/div_add_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO div_add_fp32_sm89
+EMBED_ASSET div_add_fp32_sm89, div_add_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/div_elementwise_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO div_elementwise_bf16_sm89
+EMBED_ASSET div_elementwise_bf16_sm89, div_elementwise_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/div_elementwise_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO div_elementwise_fp16_sm89
+EMBED_ASSET div_elementwise_fp16_sm89, div_elementwise_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/div_elementwise_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO div_elementwise_fp32_sm89
+EMBED_ASSET div_elementwise_fp32_sm89, div_elementwise_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_bf16_sm89
+EMBED_ASSET div_scalar_add_bf16_sm89, div_scalar_add_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_broadcast_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_broadcast_bf16_sm89
+EMBED_ASSET div_scalar_add_broadcast_bf16_sm89, div_scalar_add_broadcast_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_broadcast_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_broadcast_fp16_sm89
+EMBED_ASSET div_scalar_add_broadcast_fp16_sm89, div_scalar_add_broadcast_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_broadcast_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_broadcast_fp32_sm89
+EMBED_ASSET div_scalar_add_broadcast_fp32_sm89, div_scalar_add_broadcast_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_fp16_sm89
+EMBED_ASSET div_scalar_add_fp16_sm89, div_scalar_add_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_fp32_sm89
+EMBED_ASSET div_scalar_add_fp32_sm89, div_scalar_add_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/div_scalar_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_bf16_sm89
+EMBED_ASSET div_scalar_bf16_sm89, div_scalar_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/div_scalar_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_fp16_sm89
+EMBED_ASSET div_scalar_fp16_sm89, div_scalar_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/div_scalar_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_fp32_sm89
+EMBED_ASSET div_scalar_fp32_sm89, div_scalar_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/embedding_lookup_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO embedding_lookup_bf16_sm89
+EMBED_ASSET embedding_lookup_bf16_sm89, embedding_lookup_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/embedding_lookup_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO embedding_lookup_fp16_sm89
+EMBED_ASSET embedding_lookup_fp16_sm89, embedding_lookup_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/fill_constant_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO fill_constant_bf16_sm89
+EMBED_ASSET fill_constant_bf16_sm89, fill_constant_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/fill_constant_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO fill_constant_fp16_sm89
+EMBED_ASSET fill_constant_fp16_sm89, fill_constant_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/fill_constant_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO fill_constant_fp32_sm89
+EMBED_ASSET fill_constant_fp32_sm89, fill_constant_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/fill_normal_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO fill_normal_bf16_sm89
+EMBED_ASSET fill_normal_bf16_sm89, fill_normal_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/fill_normal_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO fill_normal_fp16_sm89
+EMBED_ASSET fill_normal_fp16_sm89, fill_normal_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/fill_uniform_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO fill_uniform_bf16_sm89
+EMBED_ASSET fill_uniform_bf16_sm89, fill_uniform_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/fill_uniform_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO fill_uniform_fp16_sm89
+EMBED_ASSET fill_uniform_fp16_sm89, fill_uniform_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/fill_uniform_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO fill_uniform_fp32_sm89
+EMBED_ASSET fill_uniform_fp32_sm89, fill_uniform_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/fill_zeros_sm89.kinfo.inc.asm"
+DECLARE_KINFO fill_zeros_sm89
+EMBED_ASSET fill_zeros_sm89, fill_zeros_sm89.cubin, 4
+#include "../kernel_gen/output/layer_norm_fwd_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO layer_norm_fwd_bf16_sm89
+EMBED_ASSET layer_norm_fwd_bf16_sm89, layer_norm_fwd_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/layer_norm_fwd_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO layer_norm_fwd_fp16_sm89
+EMBED_ASSET layer_norm_fwd_fp16_sm89, layer_norm_fwd_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/lstm_cell_bwd_pointwise_out_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_bwd_pointwise_out_bf16_sm89
+EMBED_ASSET lstm_cell_bwd_pointwise_out_bf16_sm89, lstm_cell_bwd_pointwise_out_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/lstm_cell_bwd_pointwise_out_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_bwd_pointwise_out_fp16_sm89
+EMBED_ASSET lstm_cell_bwd_pointwise_out_fp16_sm89, lstm_cell_bwd_pointwise_out_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/lstm_cell_fwd_fp32_state_out_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_fwd_fp32_state_out_bf16_sm89
+EMBED_ASSET lstm_cell_fwd_fp32_state_out_bf16_sm89, lstm_cell_fwd_fp32_state_out_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/lstm_cell_fwd_fp32_state_out_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_fwd_fp32_state_out_fp16_sm89
+EMBED_ASSET lstm_cell_fwd_fp32_state_out_fp16_sm89, lstm_cell_fwd_fp32_state_out_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/lstm_cell_fwd_out_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_fwd_out_fp16_sm89
+EMBED_ASSET lstm_cell_fwd_out_fp16_sm89, lstm_cell_fwd_out_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/lstm_cell_recompute_out_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_recompute_out_bf16_sm89
+EMBED_ASSET lstm_cell_recompute_out_bf16_sm89, lstm_cell_recompute_out_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/lstm_cell_recompute_out_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_recompute_out_fp16_sm89
+EMBED_ASSET lstm_cell_recompute_out_fp16_sm89, lstm_cell_recompute_out_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_cacc_sm89
+EMBED_ASSET matmul_bf16_cacc_sm89, matmul_bf16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_cacc_sm89
+EMBED_ASSET matmul_bf16_out_fp32_cacc_sm89, matmul_bf16_out_fp32_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_sm89
+EMBED_ASSET matmul_bf16_out_fp32_sm89, matmul_bf16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_ta_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_ta_cacc_sm89
+EMBED_ASSET matmul_bf16_out_fp32_ta_cacc_sm89, matmul_bf16_out_fp32_ta_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_ta_sm89
+EMBED_ASSET matmul_bf16_out_fp32_ta_sm89, matmul_bf16_out_fp32_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tab_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tab_cacc_sm89
+EMBED_ASSET matmul_bf16_out_fp32_tab_cacc_sm89, matmul_bf16_out_fp32_tab_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tab_sm89
+EMBED_ASSET matmul_bf16_out_fp32_tab_sm89, matmul_bf16_out_fp32_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tb_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tb_cacc_sm89
+EMBED_ASSET matmul_bf16_out_fp32_tb_cacc_sm89, matmul_bf16_out_fp32_tb_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tb_sm89
+EMBED_ASSET matmul_bf16_out_fp32_tb_sm89, matmul_bf16_out_fp32_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_unaligned_cacc_sm89
+EMBED_ASSET matmul_bf16_out_fp32_unaligned_cacc_sm89, matmul_bf16_out_fp32_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_unaligned_sm89
+EMBED_ASSET matmul_bf16_out_fp32_unaligned_sm89, matmul_bf16_out_fp32_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_ta_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_ta_unaligned_cacc_sm89
+EMBED_ASSET matmul_bf16_out_fp32_ta_unaligned_cacc_sm89, matmul_bf16_out_fp32_ta_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_ta_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_ta_unaligned_sm89
+EMBED_ASSET matmul_bf16_out_fp32_ta_unaligned_sm89, matmul_bf16_out_fp32_ta_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tab_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tab_unaligned_cacc_sm89
+EMBED_ASSET matmul_bf16_out_fp32_tab_unaligned_cacc_sm89, matmul_bf16_out_fp32_tab_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tab_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tab_unaligned_sm89
+EMBED_ASSET matmul_bf16_out_fp32_tab_unaligned_sm89, matmul_bf16_out_fp32_tab_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tb_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tb_unaligned_cacc_sm89
+EMBED_ASSET matmul_bf16_out_fp32_tb_unaligned_cacc_sm89, matmul_bf16_out_fp32_tb_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tb_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tb_unaligned_sm89
+EMBED_ASSET matmul_bf16_out_fp32_tb_unaligned_sm89, matmul_bf16_out_fp32_tb_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_sm89
+EMBED_ASSET matmul_bf16_sm89, matmul_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_ta_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_ta_cacc_sm89
+EMBED_ASSET matmul_bf16_ta_cacc_sm89, matmul_bf16_ta_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_ta_sm89
+EMBED_ASSET matmul_bf16_ta_sm89, matmul_bf16_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tab_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tab_cacc_sm89
+EMBED_ASSET matmul_bf16_tab_cacc_sm89, matmul_bf16_tab_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tab_sm89
+EMBED_ASSET matmul_bf16_tab_sm89, matmul_bf16_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tb_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tb_cacc_sm89
+EMBED_ASSET matmul_bf16_tb_cacc_sm89, matmul_bf16_tb_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tb_sm89
+EMBED_ASSET matmul_bf16_tb_sm89, matmul_bf16_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_unaligned_cacc_sm89
+EMBED_ASSET matmul_bf16_unaligned_cacc_sm89, matmul_bf16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_unaligned_sm89
+EMBED_ASSET matmul_bf16_unaligned_sm89, matmul_bf16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_ta_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_ta_unaligned_cacc_sm89
+EMBED_ASSET matmul_bf16_ta_unaligned_cacc_sm89, matmul_bf16_ta_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_ta_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_ta_unaligned_sm89
+EMBED_ASSET matmul_bf16_ta_unaligned_sm89, matmul_bf16_ta_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tab_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tab_unaligned_cacc_sm89
+EMBED_ASSET matmul_bf16_tab_unaligned_cacc_sm89, matmul_bf16_tab_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tab_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tab_unaligned_sm89
+EMBED_ASSET matmul_bf16_tab_unaligned_sm89, matmul_bf16_tab_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tb_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tb_unaligned_cacc_sm89
+EMBED_ASSET matmul_bf16_tb_unaligned_cacc_sm89, matmul_bf16_tb_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tb_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tb_unaligned_sm89
+EMBED_ASSET matmul_bf16_tb_unaligned_sm89, matmul_bf16_tb_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_out_fp32_sm89
+EMBED_ASSET matmul_cutlass_bf16_out_fp32_sm89, matmul_cutlass_bf16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_out_fp32_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_out_fp32_ta_sm89
+EMBED_ASSET matmul_cutlass_bf16_out_fp32_ta_sm89, matmul_cutlass_bf16_out_fp32_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_out_fp32_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_out_fp32_tab_sm89
+EMBED_ASSET matmul_cutlass_bf16_out_fp32_tab_sm89, matmul_cutlass_bf16_out_fp32_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_out_fp32_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_out_fp32_tb_sm89
+EMBED_ASSET matmul_cutlass_bf16_out_fp32_tb_sm89, matmul_cutlass_bf16_out_fp32_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_sm89
+EMBED_ASSET matmul_cutlass_bf16_sm89, matmul_cutlass_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_ta_sm89
+EMBED_ASSET matmul_cutlass_bf16_ta_sm89, matmul_cutlass_bf16_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_tab_sm89
+EMBED_ASSET matmul_cutlass_bf16_tab_sm89, matmul_cutlass_bf16_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_tb_sm89
+EMBED_ASSET matmul_cutlass_bf16_tb_sm89, matmul_cutlass_bf16_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_out_fp32_sm89
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_out_fp32_sm89, matmul_cutlass_fp16_acc_fp16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_out_fp32_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_out_fp32_ta_sm89
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_out_fp32_ta_sm89, matmul_cutlass_fp16_acc_fp16_out_fp32_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_out_fp32_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_out_fp32_tab_sm89
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_out_fp32_tab_sm89, matmul_cutlass_fp16_acc_fp16_out_fp32_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_out_fp32_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_out_fp32_tb_sm89
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_out_fp32_tb_sm89, matmul_cutlass_fp16_acc_fp16_out_fp32_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_sm89
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_sm89, matmul_cutlass_fp16_acc_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_ta_sm89
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_ta_sm89, matmul_cutlass_fp16_acc_fp16_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_tab_sm89
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_tab_sm89, matmul_cutlass_fp16_acc_fp16_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_tb_sm89
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_tb_sm89, matmul_cutlass_fp16_acc_fp16_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_out_fp32_sm89
+EMBED_ASSET matmul_cutlass_fp16_out_fp32_sm89, matmul_cutlass_fp16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_out_fp32_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_out_fp32_ta_sm89
+EMBED_ASSET matmul_cutlass_fp16_out_fp32_ta_sm89, matmul_cutlass_fp16_out_fp32_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_out_fp32_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_out_fp32_tab_sm89
+EMBED_ASSET matmul_cutlass_fp16_out_fp32_tab_sm89, matmul_cutlass_fp16_out_fp32_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_out_fp32_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_out_fp32_tb_sm89
+EMBED_ASSET matmul_cutlass_fp16_out_fp32_tb_sm89, matmul_cutlass_fp16_out_fp32_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_sm89
+EMBED_ASSET matmul_cutlass_fp16_sm89, matmul_cutlass_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_ta_sm89
+EMBED_ASSET matmul_cutlass_fp16_ta_sm89, matmul_cutlass_fp16_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_tab_sm89
+EMBED_ASSET matmul_cutlass_fp16_tab_sm89, matmul_cutlass_fp16_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_tb_sm89
+EMBED_ASSET matmul_cutlass_fp16_tb_sm89, matmul_cutlass_fp16_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_fp16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_fp16_cacc_sm89
+EMBED_ASSET matmul_fp16_acc_fp16_cacc_sm89, matmul_fp16_acc_fp16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_fp16_sm89
+EMBED_ASSET matmul_fp16_acc_fp16_sm89, matmul_fp16_acc_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_fp16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_fp16_unaligned_cacc_sm89
+EMBED_ASSET matmul_fp16_acc_fp16_unaligned_cacc_sm89, matmul_fp16_acc_fp16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_fp16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_fp16_unaligned_sm89
+EMBED_ASSET matmul_fp16_acc_fp16_unaligned_sm89, matmul_fp16_acc_fp16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_cacc_sm89
+EMBED_ASSET matmul_fp16_acc_out_fp32_cacc_sm89, matmul_fp16_acc_out_fp32_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_sm89
+EMBED_ASSET matmul_fp16_acc_out_fp32_sm89, matmul_fp16_acc_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_ta_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_ta_cacc_sm89
+EMBED_ASSET matmul_fp16_acc_out_fp32_ta_cacc_sm89, matmul_fp16_acc_out_fp32_ta_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_ta_sm89
+EMBED_ASSET matmul_fp16_acc_out_fp32_ta_sm89, matmul_fp16_acc_out_fp32_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tab_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tab_cacc_sm89
+EMBED_ASSET matmul_fp16_acc_out_fp32_tab_cacc_sm89, matmul_fp16_acc_out_fp32_tab_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tab_sm89
+EMBED_ASSET matmul_fp16_acc_out_fp32_tab_sm89, matmul_fp16_acc_out_fp32_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tb_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tb_cacc_sm89
+EMBED_ASSET matmul_fp16_acc_out_fp32_tb_cacc_sm89, matmul_fp16_acc_out_fp32_tb_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tb_sm89
+EMBED_ASSET matmul_fp16_acc_out_fp32_tb_sm89, matmul_fp16_acc_out_fp32_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_unaligned_cacc_sm89
+EMBED_ASSET matmul_fp16_acc_out_fp32_unaligned_cacc_sm89, matmul_fp16_acc_out_fp32_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_unaligned_sm89
+EMBED_ASSET matmul_fp16_acc_out_fp32_unaligned_sm89, matmul_fp16_acc_out_fp32_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_ta_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_ta_unaligned_cacc_sm89
+EMBED_ASSET matmul_fp16_acc_out_fp32_ta_unaligned_cacc_sm89, matmul_fp16_acc_out_fp32_ta_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_ta_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_ta_unaligned_sm89
+EMBED_ASSET matmul_fp16_acc_out_fp32_ta_unaligned_sm89, matmul_fp16_acc_out_fp32_ta_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tab_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tab_unaligned_cacc_sm89
+EMBED_ASSET matmul_fp16_acc_out_fp32_tab_unaligned_cacc_sm89, matmul_fp16_acc_out_fp32_tab_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tab_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tab_unaligned_sm89
+EMBED_ASSET matmul_fp16_acc_out_fp32_tab_unaligned_sm89, matmul_fp16_acc_out_fp32_tab_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tb_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tb_unaligned_cacc_sm89
+EMBED_ASSET matmul_fp16_acc_out_fp32_tb_unaligned_cacc_sm89, matmul_fp16_acc_out_fp32_tb_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tb_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tb_unaligned_sm89
+EMBED_ASSET matmul_fp16_acc_out_fp32_tb_unaligned_sm89, matmul_fp16_acc_out_fp32_tb_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_cacc_sm89
+EMBED_ASSET matmul_fp16_cacc_sm89, matmul_fp16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_cacc_sm89
+EMBED_ASSET matmul_fp16_out_fp32_cacc_sm89, matmul_fp16_out_fp32_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_sm89
+EMBED_ASSET matmul_fp16_out_fp32_sm89, matmul_fp16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_ta_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_ta_cacc_sm89
+EMBED_ASSET matmul_fp16_out_fp32_ta_cacc_sm89, matmul_fp16_out_fp32_ta_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_ta_sm89
+EMBED_ASSET matmul_fp16_out_fp32_ta_sm89, matmul_fp16_out_fp32_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tab_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tab_cacc_sm89
+EMBED_ASSET matmul_fp16_out_fp32_tab_cacc_sm89, matmul_fp16_out_fp32_tab_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tab_sm89
+EMBED_ASSET matmul_fp16_out_fp32_tab_sm89, matmul_fp16_out_fp32_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tb_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tb_cacc_sm89
+EMBED_ASSET matmul_fp16_out_fp32_tb_cacc_sm89, matmul_fp16_out_fp32_tb_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tb_sm89
+EMBED_ASSET matmul_fp16_out_fp32_tb_sm89, matmul_fp16_out_fp32_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_unaligned_cacc_sm89
+EMBED_ASSET matmul_fp16_out_fp32_unaligned_cacc_sm89, matmul_fp16_out_fp32_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_unaligned_sm89
+EMBED_ASSET matmul_fp16_out_fp32_unaligned_sm89, matmul_fp16_out_fp32_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_ta_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_ta_unaligned_cacc_sm89
+EMBED_ASSET matmul_fp16_out_fp32_ta_unaligned_cacc_sm89, matmul_fp16_out_fp32_ta_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_ta_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_ta_unaligned_sm89
+EMBED_ASSET matmul_fp16_out_fp32_ta_unaligned_sm89, matmul_fp16_out_fp32_ta_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tab_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tab_unaligned_cacc_sm89
+EMBED_ASSET matmul_fp16_out_fp32_tab_unaligned_cacc_sm89, matmul_fp16_out_fp32_tab_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tab_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tab_unaligned_sm89
+EMBED_ASSET matmul_fp16_out_fp32_tab_unaligned_sm89, matmul_fp16_out_fp32_tab_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tb_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tb_unaligned_cacc_sm89
+EMBED_ASSET matmul_fp16_out_fp32_tb_unaligned_cacc_sm89, matmul_fp16_out_fp32_tb_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tb_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tb_unaligned_sm89
+EMBED_ASSET matmul_fp16_out_fp32_tb_unaligned_sm89, matmul_fp16_out_fp32_tb_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_sm89
+EMBED_ASSET matmul_fp16_sm89, matmul_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_ta_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_ta_cacc_sm89
+EMBED_ASSET matmul_fp16_ta_cacc_sm89, matmul_fp16_ta_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_ta_sm89
+EMBED_ASSET matmul_fp16_ta_sm89, matmul_fp16_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tab_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tab_cacc_sm89
+EMBED_ASSET matmul_fp16_tab_cacc_sm89, matmul_fp16_tab_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tab_sm89
+EMBED_ASSET matmul_fp16_tab_sm89, matmul_fp16_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tb_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tb_cacc_sm89
+EMBED_ASSET matmul_fp16_tb_cacc_sm89, matmul_fp16_tb_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tb_sm89
+EMBED_ASSET matmul_fp16_tb_sm89, matmul_fp16_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_unaligned_cacc_sm89
+EMBED_ASSET matmul_fp16_unaligned_cacc_sm89, matmul_fp16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_unaligned_sm89
+EMBED_ASSET matmul_fp16_unaligned_sm89, matmul_fp16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_ta_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_ta_unaligned_cacc_sm89
+EMBED_ASSET matmul_fp16_ta_unaligned_cacc_sm89, matmul_fp16_ta_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_ta_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_ta_unaligned_sm89
+EMBED_ASSET matmul_fp16_ta_unaligned_sm89, matmul_fp16_ta_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tab_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tab_unaligned_cacc_sm89
+EMBED_ASSET matmul_fp16_tab_unaligned_cacc_sm89, matmul_fp16_tab_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tab_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tab_unaligned_sm89
+EMBED_ASSET matmul_fp16_tab_unaligned_sm89, matmul_fp16_tab_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tb_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tb_unaligned_cacc_sm89
+EMBED_ASSET matmul_fp16_tb_unaligned_cacc_sm89, matmul_fp16_tb_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tb_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tb_unaligned_sm89
+EMBED_ASSET matmul_fp16_tb_unaligned_sm89, matmul_fp16_tb_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bf16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bf16_cacc_sm89
+EMBED_ASSET matmul_gelu_bf16_cacc_sm89, matmul_gelu_bf16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bf16_sm89
+EMBED_ASSET matmul_gelu_bf16_sm89, matmul_gelu_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bf16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bf16_unaligned_cacc_sm89
+EMBED_ASSET matmul_gelu_bf16_unaligned_cacc_sm89, matmul_gelu_bf16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bf16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bf16_unaligned_sm89
+EMBED_ASSET matmul_gelu_bf16_unaligned_sm89, matmul_gelu_bf16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_bf16_cacc_sm89, matmul_gelu_bwd_bf16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_sm89
+EMBED_ASSET matmul_gelu_bwd_bf16_sm89, matmul_gelu_bwd_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_ta_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_ta_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_bf16_ta_cacc_sm89, matmul_gelu_bwd_bf16_ta_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_ta_sm89
+EMBED_ASSET matmul_gelu_bwd_bf16_ta_sm89, matmul_gelu_bwd_bf16_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_tab_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_tab_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_bf16_tab_cacc_sm89, matmul_gelu_bwd_bf16_tab_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_tab_sm89
+EMBED_ASSET matmul_gelu_bwd_bf16_tab_sm89, matmul_gelu_bwd_bf16_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_tb_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_tb_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_bf16_tb_cacc_sm89, matmul_gelu_bwd_bf16_tb_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_tb_sm89
+EMBED_ASSET matmul_gelu_bwd_bf16_tb_sm89, matmul_gelu_bwd_bf16_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_cacc_sm89, matmul_gelu_bwd_bf16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_sm89
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_sm89, matmul_gelu_bwd_bf16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_ta_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_ta_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_ta_cacc_sm89, matmul_gelu_bwd_bf16_unaligned_ta_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_ta_sm89
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_ta_sm89, matmul_gelu_bwd_bf16_unaligned_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_tab_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_tab_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_tab_cacc_sm89, matmul_gelu_bwd_bf16_unaligned_tab_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_tab_sm89
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_tab_sm89, matmul_gelu_bwd_bf16_unaligned_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_tb_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_tb_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_tb_cacc_sm89, matmul_gelu_bwd_bf16_unaligned_tb_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_tb_sm89
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_tb_sm89, matmul_gelu_bwd_bf16_unaligned_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_bf16_sm89
+EMBED_ASSET matmul_gelu_bwd_cutlass_bf16_sm89, matmul_gelu_bwd_cutlass_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_bf16_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_bf16_ta_sm89
+EMBED_ASSET matmul_gelu_bwd_cutlass_bf16_ta_sm89, matmul_gelu_bwd_cutlass_bf16_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_bf16_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_bf16_tab_sm89
+EMBED_ASSET matmul_gelu_bwd_cutlass_bf16_tab_sm89, matmul_gelu_bwd_cutlass_bf16_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_bf16_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_bf16_tb_sm89
+EMBED_ASSET matmul_gelu_bwd_cutlass_bf16_tb_sm89, matmul_gelu_bwd_cutlass_bf16_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_acc_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_acc_fp16_sm89
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_acc_fp16_sm89, matmul_gelu_bwd_cutlass_fp16_acc_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta_sm89
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta_sm89, matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab_sm89
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab_sm89, matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb_sm89
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb_sm89, matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_sm89
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_sm89, matmul_gelu_bwd_cutlass_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_ta_sm89
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_ta_sm89, matmul_gelu_bwd_cutlass_fp16_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_tab_sm89
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_tab_sm89, matmul_gelu_bwd_cutlass_fp16_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_tb_sm89
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_tb_sm89, matmul_gelu_bwd_cutlass_fp16_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_cacc_sm89, matmul_gelu_bwd_fp16_acc_fp16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_sm89, matmul_gelu_bwd_fp16_acc_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_ta_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_ta_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_ta_cacc_sm89, matmul_gelu_bwd_fp16_acc_fp16_ta_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_ta_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_ta_sm89, matmul_gelu_bwd_fp16_acc_fp16_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_tab_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_tab_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_tab_cacc_sm89, matmul_gelu_bwd_fp16_acc_fp16_tab_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_tab_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_tab_sm89, matmul_gelu_bwd_fp16_acc_fp16_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_tb_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_tb_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_tb_cacc_sm89, matmul_gelu_bwd_fp16_acc_fp16_tb_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_tb_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_tb_sm89, matmul_gelu_bwd_fp16_acc_fp16_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_cacc_sm89, matmul_gelu_bwd_fp16_acc_fp16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_sm89, matmul_gelu_bwd_fp16_acc_fp16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_cacc_sm89, matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_sm89, matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_cacc_sm89, matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_sm89, matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_cacc_sm89, matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_sm89, matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_cacc_sm89, matmul_gelu_bwd_fp16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_sm89, matmul_gelu_bwd_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_ta_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_ta_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_ta_cacc_sm89, matmul_gelu_bwd_fp16_ta_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_ta_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_ta_sm89, matmul_gelu_bwd_fp16_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_tab_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_tab_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_tab_cacc_sm89, matmul_gelu_bwd_fp16_tab_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_tab_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_tab_sm89, matmul_gelu_bwd_fp16_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_tb_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_tb_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_tb_cacc_sm89, matmul_gelu_bwd_fp16_tb_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_tb_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_tb_sm89, matmul_gelu_bwd_fp16_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_cacc_sm89, matmul_gelu_bwd_fp16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_sm89, matmul_gelu_bwd_fp16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_ta_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_ta_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_ta_cacc_sm89, matmul_gelu_bwd_fp16_unaligned_ta_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_ta_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_ta_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_ta_sm89, matmul_gelu_bwd_fp16_unaligned_ta_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_tab_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_tab_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_tab_cacc_sm89, matmul_gelu_bwd_fp16_unaligned_tab_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_tab_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_tab_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_tab_sm89, matmul_gelu_bwd_fp16_unaligned_tab_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_tb_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_tb_cacc_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_tb_cacc_sm89, matmul_gelu_bwd_fp16_unaligned_tb_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_tb_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_tb_sm89
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_tb_sm89, matmul_gelu_bwd_fp16_unaligned_tb_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_cutlass_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_cutlass_bf16_sm89
+EMBED_ASSET matmul_gelu_cutlass_bf16_sm89, matmul_gelu_cutlass_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_cutlass_fp16_acc_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_cutlass_fp16_acc_fp16_sm89
+EMBED_ASSET matmul_gelu_cutlass_fp16_acc_fp16_sm89, matmul_gelu_cutlass_fp16_acc_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_cutlass_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_cutlass_fp16_sm89
+EMBED_ASSET matmul_gelu_cutlass_fp16_sm89, matmul_gelu_cutlass_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_acc_fp16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_acc_fp16_cacc_sm89
+EMBED_ASSET matmul_gelu_fp16_acc_fp16_cacc_sm89, matmul_gelu_fp16_acc_fp16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_acc_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_acc_fp16_sm89
+EMBED_ASSET matmul_gelu_fp16_acc_fp16_sm89, matmul_gelu_fp16_acc_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_acc_fp16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_acc_fp16_unaligned_cacc_sm89
+EMBED_ASSET matmul_gelu_fp16_acc_fp16_unaligned_cacc_sm89, matmul_gelu_fp16_acc_fp16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_acc_fp16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_acc_fp16_unaligned_sm89
+EMBED_ASSET matmul_gelu_fp16_acc_fp16_unaligned_sm89, matmul_gelu_fp16_acc_fp16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_cacc_sm89
+EMBED_ASSET matmul_gelu_fp16_cacc_sm89, matmul_gelu_fp16_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_sm89
+EMBED_ASSET matmul_gelu_fp16_sm89, matmul_gelu_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_unaligned_cacc_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_unaligned_cacc_sm89
+EMBED_ASSET matmul_gelu_fp16_unaligned_cacc_sm89, matmul_gelu_fp16_unaligned_cacc_sm89.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_unaligned_sm89.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_unaligned_sm89
+EMBED_ASSET matmul_gelu_fp16_unaligned_sm89, matmul_gelu_fp16_unaligned_sm89.cubin, 4
+#include "../kernel_gen/output/mean_reduce_column_tiled_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mean_reduce_column_tiled_bf16_sm89
+EMBED_ASSET mean_reduce_column_tiled_bf16_sm89, mean_reduce_column_tiled_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/mean_reduce_column_tiled_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mean_reduce_column_tiled_fp16_sm89
+EMBED_ASSET mean_reduce_column_tiled_fp16_sm89, mean_reduce_column_tiled_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/mean_reduce_contiguous_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mean_reduce_contiguous_bf16_sm89
+EMBED_ASSET mean_reduce_contiguous_bf16_sm89, mean_reduce_contiguous_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/mean_reduce_contiguous_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mean_reduce_contiguous_fp16_sm89
+EMBED_ASSET mean_reduce_contiguous_fp16_sm89, mean_reduce_contiguous_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_cutlass_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_cutlass_bf16_sm89
+EMBED_ASSET mha_full_attn_bwd_cutlass_bf16_sm89, mha_full_attn_bwd_cutlass_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_cutlass_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_cutlass_fp16_sm89
+EMBED_ASSET mha_full_attn_bwd_cutlass_fp16_sm89, mha_full_attn_bwd_cutlass_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_hs128_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_hs128_bf16_sm89
+EMBED_ASSET mha_full_attn_bwd_hs128_bf16_sm89, mha_full_attn_bwd_hs128_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_hs128_bf16_uneven_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_hs128_bf16_uneven_sm89
+EMBED_ASSET mha_full_attn_bwd_hs128_bf16_uneven_sm89, mha_full_attn_bwd_hs128_bf16_uneven_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_hs128_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_hs128_fp16_sm89
+EMBED_ASSET mha_full_attn_bwd_hs128_fp16_sm89, mha_full_attn_bwd_hs128_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_hs128_fp16_uneven_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_hs128_fp16_uneven_sm89
+EMBED_ASSET mha_full_attn_bwd_hs128_fp16_uneven_sm89, mha_full_attn_bwd_hs128_fp16_uneven_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_pre_hs128_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_pre_hs128_bf16_sm89
+EMBED_ASSET mha_full_attn_bwd_pre_hs128_bf16_sm89, mha_full_attn_bwd_pre_hs128_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_pre_hs128_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_pre_hs128_fp16_sm89
+EMBED_ASSET mha_full_attn_bwd_pre_hs128_fp16_sm89, mha_full_attn_bwd_pre_hs128_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_cutlass_bf16_lse_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_cutlass_bf16_lse_sm89
+EMBED_ASSET mha_full_attn_cutlass_bf16_lse_sm89, mha_full_attn_cutlass_bf16_lse_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_cutlass_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_cutlass_bf16_sm89
+EMBED_ASSET mha_full_attn_cutlass_bf16_sm89, mha_full_attn_cutlass_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_cutlass_fp16_lse_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_cutlass_fp16_lse_sm89
+EMBED_ASSET mha_full_attn_cutlass_fp16_lse_sm89, mha_full_attn_cutlass_fp16_lse_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_cutlass_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_cutlass_fp16_sm89
+EMBED_ASSET mha_full_attn_cutlass_fp16_sm89, mha_full_attn_cutlass_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_convert_dq_hs128_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_convert_dq_hs128_bf16_sm89
+EMBED_ASSET mha_full_attn_fa_bwd_convert_dq_hs128_bf16_sm89, mha_full_attn_fa_bwd_convert_dq_hs128_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_convert_dq_hs128_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_convert_dq_hs128_fp16_sm89
+EMBED_ASSET mha_full_attn_fa_bwd_convert_dq_hs128_fp16_sm89, mha_full_attn_fa_bwd_convert_dq_hs128_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_dot_do_o_hs128_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_dot_do_o_hs128_bf16_sm89
+EMBED_ASSET mha_full_attn_fa_bwd_dot_do_o_hs128_bf16_sm89, mha_full_attn_fa_bwd_dot_do_o_hs128_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_dot_do_o_hs128_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_dot_do_o_hs128_fp16_sm89
+EMBED_ASSET mha_full_attn_fa_bwd_dot_do_o_hs128_fp16_sm89, mha_full_attn_fa_bwd_dot_do_o_hs128_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_hs128_bf16_even_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_hs128_bf16_even_sm89
+EMBED_ASSET mha_full_attn_fa_bwd_hs128_bf16_even_sm89, mha_full_attn_fa_bwd_hs128_bf16_even_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_hs128_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_hs128_bf16_sm89
+EMBED_ASSET mha_full_attn_fa_bwd_hs128_bf16_sm89, mha_full_attn_fa_bwd_hs128_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_hs128_fp16_even_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_hs128_fp16_even_sm89
+EMBED_ASSET mha_full_attn_fa_bwd_hs128_fp16_even_sm89, mha_full_attn_fa_bwd_hs128_fp16_even_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_hs128_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_hs128_fp16_sm89
+EMBED_ASSET mha_full_attn_fa_bwd_hs128_fp16_sm89, mha_full_attn_fa_bwd_hs128_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_bf16_even_nolse_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_bf16_even_nolse_sm89
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_bf16_even_nolse_sm89, mha_full_attn_fa_fwd_hs128_bf16_even_nolse_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_bf16_even_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_bf16_even_sm89
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_bf16_even_sm89, mha_full_attn_fa_fwd_hs128_bf16_even_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_bf16_nolse_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_bf16_nolse_sm89
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_bf16_nolse_sm89, mha_full_attn_fa_fwd_hs128_bf16_nolse_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_bf16_sm89
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_bf16_sm89, mha_full_attn_fa_fwd_hs128_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_nolse_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_nolse_sm89
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_nolse_sm89, mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_nolse_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_sm89
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_sm89, mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_nolse_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_nolse_sm89
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_nolse_sm89, mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_nolse_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_sm89
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_sm89, mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_even_nolse_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_even_nolse_sm89
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_even_nolse_sm89, mha_full_attn_fa_fwd_hs128_fp16_even_nolse_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_even_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_even_sm89
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_even_sm89, mha_full_attn_fa_fwd_hs128_fp16_even_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_nolse_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_nolse_sm89
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_nolse_sm89, mha_full_attn_fa_fwd_hs128_fp16_nolse_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_sm89
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_sm89, mha_full_attn_fa_fwd_hs128_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_bf16_nolse_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_bf16_nolse_sm89
+EMBED_ASSET mha_full_attn_fwd_hs128_bf16_nolse_sm89, mha_full_attn_fwd_hs128_bf16_nolse_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_bf16_sm89
+EMBED_ASSET mha_full_attn_fwd_hs128_bf16_sm89, mha_full_attn_fwd_hs128_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_bf16_uneven_nolse_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_bf16_uneven_nolse_sm89
+EMBED_ASSET mha_full_attn_fwd_hs128_bf16_uneven_nolse_sm89, mha_full_attn_fwd_hs128_bf16_uneven_nolse_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_bf16_uneven_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_bf16_uneven_sm89
+EMBED_ASSET mha_full_attn_fwd_hs128_bf16_uneven_sm89, mha_full_attn_fwd_hs128_bf16_uneven_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_acc_fp16_nolse_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_acc_fp16_nolse_sm89
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_acc_fp16_nolse_sm89, mha_full_attn_fwd_hs128_fp16_acc_fp16_nolse_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_acc_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_acc_fp16_sm89
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_acc_fp16_sm89, mha_full_attn_fwd_hs128_fp16_acc_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_nolse_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_nolse_sm89
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_nolse_sm89, mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_nolse_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_sm89
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_sm89, mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_nolse_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_nolse_sm89
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_nolse_sm89, mha_full_attn_fwd_hs128_fp16_nolse_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_sm89
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_sm89, mha_full_attn_fwd_hs128_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_uneven_nolse_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_uneven_nolse_sm89
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_uneven_nolse_sm89, mha_full_attn_fwd_hs128_fp16_uneven_nolse_sm89.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_uneven_sm89.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_uneven_sm89
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_uneven_sm89, mha_full_attn_fwd_hs128_fp16_uneven_sm89.cubin, 4
+#include "../kernel_gen/output/mul_elementwise_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mul_elementwise_bf16_sm89
+EMBED_ASSET mul_elementwise_bf16_sm89, mul_elementwise_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/mul_elementwise_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mul_elementwise_fp16_sm89
+EMBED_ASSET mul_elementwise_fp16_sm89, mul_elementwise_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/mul_elementwise_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO mul_elementwise_fp32_sm89
+EMBED_ASSET mul_elementwise_fp32_sm89, mul_elementwise_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/mul_reduce_column_tiled_bf16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_column_tiled_bf16_out_fp32_sm89
+EMBED_ASSET mul_reduce_column_tiled_bf16_out_fp32_sm89, mul_reduce_column_tiled_bf16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/mul_reduce_column_tiled_fp16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_column_tiled_fp16_out_fp32_sm89
+EMBED_ASSET mul_reduce_column_tiled_fp16_out_fp32_sm89, mul_reduce_column_tiled_fp16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/mul_reduce_column_split_partials_bf16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_column_split_partials_bf16_out_fp32_sm89
+EMBED_ASSET mul_reduce_column_split_partials_bf16_out_fp32_sm89, mul_reduce_column_split_partials_bf16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/mul_reduce_column_split_partials_fp16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_column_split_partials_fp16_out_fp32_sm89
+EMBED_ASSET mul_reduce_column_split_partials_fp16_out_fp32_sm89, mul_reduce_column_split_partials_fp16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/mul_reduce_contiguous_bf16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_contiguous_bf16_out_fp32_sm89
+EMBED_ASSET mul_reduce_contiguous_bf16_out_fp32_sm89, mul_reduce_contiguous_bf16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/mul_reduce_contiguous_fp16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_contiguous_fp16_out_fp32_sm89
+EMBED_ASSET mul_reduce_contiguous_fp16_out_fp32_sm89, mul_reduce_contiguous_fp16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/mul_scalar_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mul_scalar_bf16_sm89
+EMBED_ASSET mul_scalar_bf16_sm89, mul_scalar_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/mul_scalar_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mul_scalar_fp16_sm89
+EMBED_ASSET mul_scalar_fp16_sm89, mul_scalar_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/mul_scalar_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO mul_scalar_fp32_sm89
+EMBED_ASSET mul_scalar_fp32_sm89, mul_scalar_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/sqrt_elementwise_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO sqrt_elementwise_bf16_sm89
+EMBED_ASSET sqrt_elementwise_bf16_sm89, sqrt_elementwise_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/sqrt_elementwise_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO sqrt_elementwise_fp16_sm89
+EMBED_ASSET sqrt_elementwise_fp16_sm89, sqrt_elementwise_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/sqrt_elementwise_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO sqrt_elementwise_fp32_sm89
+EMBED_ASSET sqrt_elementwise_fp32_sm89, sqrt_elementwise_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/mul_trailing_broadcast_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mul_trailing_broadcast_bf16_sm89
+EMBED_ASSET mul_trailing_broadcast_bf16_sm89, mul_trailing_broadcast_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/mul_trailing_broadcast_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO mul_trailing_broadcast_fp16_sm89
+EMBED_ASSET mul_trailing_broadcast_fp16_sm89, mul_trailing_broadcast_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/mul_trailing_broadcast_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO mul_trailing_broadcast_fp32_sm89
+EMBED_ASSET mul_trailing_broadcast_fp32_sm89, mul_trailing_broadcast_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/reduce_sum_partial_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO reduce_sum_partial_fp32_sm89
+EMBED_ASSET reduce_sum_partial_fp32_sm89, reduce_sum_partial_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/rms_norm_bwd_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO rms_norm_bwd_bf16_sm89
+EMBED_ASSET rms_norm_bwd_bf16_sm89, rms_norm_bwd_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/rms_norm_bwd_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO rms_norm_bwd_fp16_sm89
+EMBED_ASSET rms_norm_bwd_fp16_sm89, rms_norm_bwd_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/rms_norm_fwd_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO rms_norm_fwd_bf16_sm89
+EMBED_ASSET rms_norm_fwd_bf16_sm89, rms_norm_fwd_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/rms_norm_fwd_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO rms_norm_fwd_fp16_sm89
+EMBED_ASSET rms_norm_fwd_fp16_sm89, rms_norm_fwd_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/sgd_step_bf16_sm89.kinfo.inc.asm"
+DECLARE_KINFO sgd_step_bf16_sm89
+EMBED_ASSET sgd_step_bf16_sm89, sgd_step_bf16_sm89.cubin, 4
+#include "../kernel_gen/output/sgd_step_fp16_sm89.kinfo.inc.asm"
+DECLARE_KINFO sgd_step_fp16_sm89
+EMBED_ASSET sgd_step_fp16_sm89, sgd_step_fp16_sm89.cubin, 4
+#include "../kernel_gen/output/sgd_step_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO sgd_step_fp32_sm89
+EMBED_ASSET sgd_step_fp32_sm89, sgd_step_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_tiled_bf16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_tiled_bf16_out_fp32_sm89
+EMBED_ASSET sum_reduce_column_tiled_bf16_out_fp32_sm89, sum_reduce_column_tiled_bf16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_tiled_fp16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_tiled_fp16_out_fp32_sm89
+EMBED_ASSET sum_reduce_column_tiled_fp16_out_fp32_sm89, sum_reduce_column_tiled_fp16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_tiled_fp32_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_tiled_fp32_out_fp32_sm89
+EMBED_ASSET sum_reduce_column_tiled_fp32_out_fp32_sm89, sum_reduce_column_tiled_fp32_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_split_partials_bf16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_split_partials_bf16_out_fp32_sm89
+EMBED_ASSET sum_reduce_column_split_partials_bf16_out_fp32_sm89, sum_reduce_column_split_partials_bf16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_split_partials_fp16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_split_partials_fp16_out_fp32_sm89
+EMBED_ASSET sum_reduce_column_split_partials_fp16_out_fp32_sm89, sum_reduce_column_split_partials_fp16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_split_partials_fp32_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_split_partials_fp32_out_fp32_sm89
+EMBED_ASSET sum_reduce_column_split_partials_fp32_out_fp32_sm89, sum_reduce_column_split_partials_fp32_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/sum_reduce_contiguous_bf16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_contiguous_bf16_out_fp32_sm89
+EMBED_ASSET sum_reduce_contiguous_bf16_out_fp32_sm89, sum_reduce_contiguous_bf16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/sum_reduce_contiguous_fp16_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_contiguous_fp16_out_fp32_sm89
+EMBED_ASSET sum_reduce_contiguous_fp16_out_fp32_sm89, sum_reduce_contiguous_fp16_out_fp32_sm89.cubin, 4
+#include "../kernel_gen/output/sum_reduce_contiguous_fp32_out_fp32_sm89.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_contiguous_fp32_out_fp32_sm89
+EMBED_ASSET sum_reduce_contiguous_fp32_out_fp32_sm89, sum_reduce_contiguous_fp32_out_fp32_sm89.cubin, 4
+
+#elif NV_KERNEL_ARCH == 90
+#include "../kernel_gen/output/act_gelu_bwd_elementwise_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO act_gelu_bwd_elementwise_bf16_sm90
+EMBED_ASSET act_gelu_bwd_elementwise_bf16_sm90, act_gelu_bwd_elementwise_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/act_gelu_bwd_elementwise_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO act_gelu_bwd_elementwise_fp16_sm90
+EMBED_ASSET act_gelu_bwd_elementwise_fp16_sm90, act_gelu_bwd_elementwise_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/act_gelu_elementwise_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO act_gelu_elementwise_bf16_sm90
+EMBED_ASSET act_gelu_elementwise_bf16_sm90, act_gelu_elementwise_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/act_gelu_elementwise_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO act_gelu_elementwise_fp16_sm90
+EMBED_ASSET act_gelu_elementwise_fp16_sm90, act_gelu_elementwise_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/act_relu_elementwise_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO act_relu_elementwise_bf16_sm90
+EMBED_ASSET act_relu_elementwise_bf16_sm90, act_relu_elementwise_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/act_relu_elementwise_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO act_relu_elementwise_fp16_sm90
+EMBED_ASSET act_relu_elementwise_fp16_sm90, act_relu_elementwise_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/adamw_step_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO adamw_step_bf16_sm90
+EMBED_ASSET adamw_step_bf16_sm90, adamw_step_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/adamw_step_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO adamw_step_fp16_sm90
+EMBED_ASSET adamw_step_fp16_sm90, adamw_step_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/adamw_step_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO adamw_step_fp32_sm90
+EMBED_ASSET adamw_step_fp32_sm90, adamw_step_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/add_elementwise_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO add_elementwise_bf16_sm90
+EMBED_ASSET add_elementwise_bf16_sm90, add_elementwise_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/add_elementwise_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO add_elementwise_fp16_sm90
+EMBED_ASSET add_elementwise_fp16_sm90, add_elementwise_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/add_elementwise_fp32_out_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO add_elementwise_fp32_out_fp16_sm90
+EMBED_ASSET add_elementwise_fp32_out_fp16_sm90, add_elementwise_fp32_out_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/add_elementwise_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO add_elementwise_fp32_sm90
+EMBED_ASSET add_elementwise_fp32_sm90, add_elementwise_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/add_trailing_broadcast_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO add_trailing_broadcast_bf16_sm90
+EMBED_ASSET add_trailing_broadcast_bf16_sm90, add_trailing_broadcast_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/add_trailing_broadcast_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO add_trailing_broadcast_fp16_sm90
+EMBED_ASSET add_trailing_broadcast_fp16_sm90, add_trailing_broadcast_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/add_trailing_broadcast_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO add_trailing_broadcast_fp32_sm90
+EMBED_ASSET add_trailing_broadcast_fp32_sm90, add_trailing_broadcast_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_bf16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_bf16_cacc_sm90
+EMBED_ASSET addmm_bf16_cacc_sm90, addmm_bf16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_bf16_sm90
+EMBED_ASSET addmm_bf16_sm90, addmm_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_bf16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_bf16_unaligned_cacc_sm90
+EMBED_ASSET addmm_bf16_unaligned_cacc_sm90, addmm_bf16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_bf16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_bf16_unaligned_sm90
+EMBED_ASSET addmm_bf16_unaligned_sm90, addmm_bf16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_bf16_sm90
+EMBED_ASSET addmm_cutlass_bf16_sm90, addmm_cutlass_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_fp16_acc_fp16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_fp16_acc_fp16_out_fp32_sm90
+EMBED_ASSET addmm_cutlass_fp16_acc_fp16_out_fp32_sm90, addmm_cutlass_fp16_acc_fp16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_fp16_acc_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_fp16_acc_fp16_sm90
+EMBED_ASSET addmm_cutlass_fp16_acc_fp16_sm90, addmm_cutlass_fp16_acc_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_fp16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_fp16_out_fp32_sm90
+EMBED_ASSET addmm_cutlass_fp16_out_fp32_sm90, addmm_cutlass_fp16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_fp16_sm90
+EMBED_ASSET addmm_cutlass_fp16_sm90, addmm_cutlass_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_fp16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_fp16_cacc_sm90
+EMBED_ASSET addmm_fp16_acc_fp16_cacc_sm90, addmm_fp16_acc_fp16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_fp16_sm90
+EMBED_ASSET addmm_fp16_acc_fp16_sm90, addmm_fp16_acc_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_fp16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_fp16_unaligned_cacc_sm90
+EMBED_ASSET addmm_fp16_acc_fp16_unaligned_cacc_sm90, addmm_fp16_acc_fp16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_fp16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_fp16_unaligned_sm90
+EMBED_ASSET addmm_fp16_acc_fp16_unaligned_sm90, addmm_fp16_acc_fp16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_out_fp32_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_out_fp32_cacc_sm90
+EMBED_ASSET addmm_fp16_acc_out_fp32_cacc_sm90, addmm_fp16_acc_out_fp32_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_out_fp32_sm90
+EMBED_ASSET addmm_fp16_acc_out_fp32_sm90, addmm_fp16_acc_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_out_fp32_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_out_fp32_unaligned_cacc_sm90
+EMBED_ASSET addmm_fp16_acc_out_fp32_unaligned_cacc_sm90, addmm_fp16_acc_out_fp32_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_out_fp32_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_out_fp32_unaligned_sm90
+EMBED_ASSET addmm_fp16_acc_out_fp32_unaligned_sm90, addmm_fp16_acc_out_fp32_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_cacc_sm90
+EMBED_ASSET addmm_fp16_cacc_sm90, addmm_fp16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_out_fp32_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_out_fp32_cacc_sm90
+EMBED_ASSET addmm_fp16_out_fp32_cacc_sm90, addmm_fp16_out_fp32_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_out_fp32_sm90
+EMBED_ASSET addmm_fp16_out_fp32_sm90, addmm_fp16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_out_fp32_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_out_fp32_unaligned_cacc_sm90
+EMBED_ASSET addmm_fp16_out_fp32_unaligned_cacc_sm90, addmm_fp16_out_fp32_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_out_fp32_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_out_fp32_unaligned_sm90
+EMBED_ASSET addmm_fp16_out_fp32_unaligned_sm90, addmm_fp16_out_fp32_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_sm90
+EMBED_ASSET addmm_fp16_sm90, addmm_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_unaligned_cacc_sm90
+EMBED_ASSET addmm_fp16_unaligned_cacc_sm90, addmm_fp16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_unaligned_sm90
+EMBED_ASSET addmm_fp16_unaligned_sm90, addmm_fp16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_bf16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_bf16_cacc_sm90
+EMBED_ASSET addmm_gelu_bf16_cacc_sm90, addmm_gelu_bf16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_bf16_sm90
+EMBED_ASSET addmm_gelu_bf16_sm90, addmm_gelu_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_bf16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_bf16_unaligned_cacc_sm90
+EMBED_ASSET addmm_gelu_bf16_unaligned_cacc_sm90, addmm_gelu_bf16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_bf16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_bf16_unaligned_sm90
+EMBED_ASSET addmm_gelu_bf16_unaligned_sm90, addmm_gelu_bf16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_cutlass_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_cutlass_bf16_sm90
+EMBED_ASSET addmm_gelu_cutlass_bf16_sm90, addmm_gelu_cutlass_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_cutlass_fp16_acc_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_cutlass_fp16_acc_fp16_sm90
+EMBED_ASSET addmm_gelu_cutlass_fp16_acc_fp16_sm90, addmm_gelu_cutlass_fp16_acc_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_cutlass_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_cutlass_fp16_sm90
+EMBED_ASSET addmm_gelu_cutlass_fp16_sm90, addmm_gelu_cutlass_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_acc_fp16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_acc_fp16_cacc_sm90
+EMBED_ASSET addmm_gelu_fp16_acc_fp16_cacc_sm90, addmm_gelu_fp16_acc_fp16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_acc_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_acc_fp16_sm90
+EMBED_ASSET addmm_gelu_fp16_acc_fp16_sm90, addmm_gelu_fp16_acc_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_acc_fp16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_acc_fp16_unaligned_cacc_sm90
+EMBED_ASSET addmm_gelu_fp16_acc_fp16_unaligned_cacc_sm90, addmm_gelu_fp16_acc_fp16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_acc_fp16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_acc_fp16_unaligned_sm90
+EMBED_ASSET addmm_gelu_fp16_acc_fp16_unaligned_sm90, addmm_gelu_fp16_acc_fp16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_cacc_sm90
+EMBED_ASSET addmm_gelu_fp16_cacc_sm90, addmm_gelu_fp16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_sm90
+EMBED_ASSET addmm_gelu_fp16_sm90, addmm_gelu_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_unaligned_cacc_sm90
+EMBED_ASSET addmm_gelu_fp16_unaligned_cacc_sm90, addmm_gelu_fp16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_unaligned_sm90
+EMBED_ASSET addmm_gelu_fp16_unaligned_sm90, addmm_gelu_fp16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_bf16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_bf16_cacc_sm90
+EMBED_ASSET addmm_gelu_preact_bf16_cacc_sm90, addmm_gelu_preact_bf16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_bf16_sm90
+EMBED_ASSET addmm_gelu_preact_bf16_sm90, addmm_gelu_preact_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_bf16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_bf16_unaligned_cacc_sm90
+EMBED_ASSET addmm_gelu_preact_bf16_unaligned_cacc_sm90, addmm_gelu_preact_bf16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_bf16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_bf16_unaligned_sm90
+EMBED_ASSET addmm_gelu_preact_bf16_unaligned_sm90, addmm_gelu_preact_bf16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_cutlass_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_cutlass_bf16_sm90
+EMBED_ASSET addmm_gelu_preact_cutlass_bf16_sm90, addmm_gelu_preact_cutlass_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_cutlass_fp16_acc_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_cutlass_fp16_acc_fp16_sm90
+EMBED_ASSET addmm_gelu_preact_cutlass_fp16_acc_fp16_sm90, addmm_gelu_preact_cutlass_fp16_acc_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_cutlass_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_cutlass_fp16_sm90
+EMBED_ASSET addmm_gelu_preact_cutlass_fp16_sm90, addmm_gelu_preact_cutlass_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_acc_fp16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_acc_fp16_cacc_sm90
+EMBED_ASSET addmm_gelu_preact_fp16_acc_fp16_cacc_sm90, addmm_gelu_preact_fp16_acc_fp16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_acc_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_acc_fp16_sm90
+EMBED_ASSET addmm_gelu_preact_fp16_acc_fp16_sm90, addmm_gelu_preact_fp16_acc_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_acc_fp16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_acc_fp16_unaligned_cacc_sm90
+EMBED_ASSET addmm_gelu_preact_fp16_acc_fp16_unaligned_cacc_sm90, addmm_gelu_preact_fp16_acc_fp16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_acc_fp16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_acc_fp16_unaligned_sm90
+EMBED_ASSET addmm_gelu_preact_fp16_acc_fp16_unaligned_sm90, addmm_gelu_preact_fp16_acc_fp16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_cacc_sm90
+EMBED_ASSET addmm_gelu_preact_fp16_cacc_sm90, addmm_gelu_preact_fp16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_sm90
+EMBED_ASSET addmm_gelu_preact_fp16_sm90, addmm_gelu_preact_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_unaligned_cacc_sm90
+EMBED_ASSET addmm_gelu_preact_fp16_unaligned_cacc_sm90, addmm_gelu_preact_fp16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_unaligned_sm90
+EMBED_ASSET addmm_gelu_preact_fp16_unaligned_sm90, addmm_gelu_preact_fp16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/avg_pool1d_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO avg_pool1d_bf16_sm90
+EMBED_ASSET avg_pool1d_bf16_sm90, avg_pool1d_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/avg_pool1d_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO avg_pool1d_fp16_sm90
+EMBED_ASSET avg_pool1d_fp16_sm90, avg_pool1d_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bf16_sm90
+EMBED_ASSET avg_pool2d_bf16_sm90, avg_pool2d_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_nhwc_2x2_s2_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_nhwc_2x2_s2_bf16_sm90
+EMBED_ASSET avg_pool2d_nhwc_2x2_s2_bf16_sm90, avg_pool2d_nhwc_2x2_s2_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_bf16_sm90
+EMBED_ASSET avg_pool2d_bwd_bf16_sm90, avg_pool2d_bwd_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_fp16_sm90
+EMBED_ASSET avg_pool2d_bwd_fp16_sm90, avg_pool2d_bwd_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_noaccum_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_noaccum_bf16_sm90
+EMBED_ASSET avg_pool2d_bwd_noaccum_bf16_sm90, avg_pool2d_bwd_noaccum_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_noaccum_nhwc_2x2_s2_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_noaccum_nhwc_2x2_s2_bf16_sm90
+EMBED_ASSET avg_pool2d_bwd_noaccum_nhwc_2x2_s2_bf16_sm90, avg_pool2d_bwd_noaccum_nhwc_2x2_s2_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_noaccum_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_noaccum_fp16_sm90
+EMBED_ASSET avg_pool2d_bwd_noaccum_fp16_sm90, avg_pool2d_bwd_noaccum_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_noaccum_nhwc_2x2_s2_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_noaccum_nhwc_2x2_s2_fp16_sm90
+EMBED_ASSET avg_pool2d_bwd_noaccum_nhwc_2x2_s2_fp16_sm90, avg_pool2d_bwd_noaccum_nhwc_2x2_s2_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_fp16_sm90
+EMBED_ASSET avg_pool2d_fp16_sm90, avg_pool2d_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_nhwc_2x2_s2_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_nhwc_2x2_s2_fp16_sm90
+EMBED_ASSET avg_pool2d_nhwc_2x2_s2_fp16_sm90, avg_pool2d_nhwc_2x2_s2_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bf16_sm90
+EMBED_ASSET build_cell_embeds_bf16_sm90, build_cell_embeds_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_color_bf16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_color_bf16_out_fp32_sm90
+EMBED_ASSET build_cell_embeds_bwd_color_bf16_out_fp32_sm90, build_cell_embeds_bwd_color_bf16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_color_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_color_bf16_sm90
+EMBED_ASSET build_cell_embeds_bwd_color_bf16_sm90, build_cell_embeds_bwd_color_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_color_fp16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_color_fp16_out_fp32_sm90
+EMBED_ASSET build_cell_embeds_bwd_color_fp16_out_fp32_sm90, build_cell_embeds_bwd_color_fp16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_color_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_color_fp16_sm90
+EMBED_ASSET build_cell_embeds_bwd_color_fp16_sm90, build_cell_embeds_bwd_color_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_cp_bf16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_cp_bf16_out_fp32_sm90
+EMBED_ASSET build_cell_embeds_bwd_cp_bf16_out_fp32_sm90, build_cell_embeds_bwd_cp_bf16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_cp_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_cp_bf16_sm90
+EMBED_ASSET build_cell_embeds_bwd_cp_bf16_sm90, build_cell_embeds_bwd_cp_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_cp_fp16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_cp_fp16_out_fp32_sm90
+EMBED_ASSET build_cell_embeds_bwd_cp_fp16_out_fp32_sm90, build_cell_embeds_bwd_cp_fp16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_cp_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_cp_fp16_sm90
+EMBED_ASSET build_cell_embeds_bwd_cp_fp16_sm90, build_cell_embeds_bwd_cp_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_pos_bf16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_pos_bf16_out_fp32_sm90
+EMBED_ASSET build_cell_embeds_bwd_pos_bf16_out_fp32_sm90, build_cell_embeds_bwd_pos_bf16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_pos_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_pos_bf16_sm90
+EMBED_ASSET build_cell_embeds_bwd_pos_bf16_sm90, build_cell_embeds_bwd_pos_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_pos_fp16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_pos_fp16_out_fp32_sm90
+EMBED_ASSET build_cell_embeds_bwd_pos_fp16_out_fp32_sm90, build_cell_embeds_bwd_pos_fp16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_pos_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_pos_fp16_sm90
+EMBED_ASSET build_cell_embeds_bwd_pos_fp16_sm90, build_cell_embeds_bwd_pos_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_fp16_sm90
+EMBED_ASSET build_cell_embeds_fp16_sm90, build_cell_embeds_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/cast_bf16_to_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO cast_bf16_to_fp16_sm90
+EMBED_ASSET cast_bf16_to_fp16_sm90, cast_bf16_to_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/cast_bf16_to_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO cast_bf16_to_fp32_sm90
+EMBED_ASSET cast_bf16_to_fp32_sm90, cast_bf16_to_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/cast_fp16_to_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO cast_fp16_to_bf16_sm90
+EMBED_ASSET cast_fp16_to_bf16_sm90, cast_fp16_to_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/cast_fp16_to_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO cast_fp16_to_fp32_sm90
+EMBED_ASSET cast_fp16_to_fp32_sm90, cast_fp16_to_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/cast_fp32_to_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO cast_fp32_to_bf16_sm90
+EMBED_ASSET cast_fp32_to_bf16_sm90, cast_fp32_to_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/cast_fp32_to_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO cast_fp32_to_fp16_sm90
+EMBED_ASSET cast_fp32_to_fp16_sm90, cast_fp32_to_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/contiguous_3d_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO contiguous_3d_bf16_sm90
+EMBED_ASSET contiguous_3d_bf16_sm90, contiguous_3d_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/contiguous_3d_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO contiguous_3d_fp16_sm90
+EMBED_ASSET contiguous_3d_fp16_sm90, contiguous_3d_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/contiguous_4d_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO contiguous_4d_bf16_sm90
+EMBED_ASSET contiguous_4d_bf16_sm90, contiguous_4d_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/contiguous_4d_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO contiguous_4d_fp16_sm90
+EMBED_ASSET contiguous_4d_fp16_sm90, contiguous_4d_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic1024_oc1024_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic1024_oc1024_k3_dil2_sm90
+EMBED_ASSET conv2d_bf16_ic1024_oc1024_k3_dil2_sm90, conv2d_bf16_ic1024_oc1024_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic1024_oc2048_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic1024_oc2048_k3_sm90
+EMBED_ASSET conv2d_bf16_ic1024_oc2048_k3_sm90, conv2d_bf16_ic1024_oc2048_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic32_oc64_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic32_oc64_k3_sm90
+EMBED_ASSET conv2d_bf16_ic32_oc64_k3_sm90, conv2d_bf16_ic32_oc64_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic3_oc8_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic3_oc8_k3_dil2_sm90
+EMBED_ASSET conv2d_bf16_ic3_oc8_k3_dil2_sm90, conv2d_bf16_ic3_oc8_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic3_oc8_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic3_oc8_k3_sm90
+EMBED_ASSET conv2d_bf16_ic3_oc8_k3_sm90, conv2d_bf16_ic3_oc8_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic768_oc1536_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic768_oc1536_k3_sm90
+EMBED_ASSET conv2d_bf16_ic768_oc1536_k3_sm90, conv2d_bf16_ic768_oc1536_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic768_oc768_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic768_oc768_k3_dil2_sm90
+EMBED_ASSET conv2d_bf16_ic768_oc768_k3_dil2_sm90, conv2d_bf16_ic768_oc768_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm90
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm90, conv2d_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm90
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm90, conv2d_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm90
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm90, conv2d_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90, conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90, conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm90
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm90, conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm90
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm90, conv2d_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm90
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm90, conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm90
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm90, conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm90
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm90, conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90, conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90, conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm90
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm90, conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm90
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm90, conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm90
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm90, conv2d_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm90
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm90, conv2d_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm90
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm90, conv2d_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90, conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90, conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm90
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm90, conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm90
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm90, conv2d_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic1024_oc1024_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic1024_oc1024_k3_dil2_sm90
+EMBED_ASSET conv2d_dgrad_bf16_ic1024_oc1024_k3_dil2_sm90, conv2d_dgrad_bf16_ic1024_oc1024_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic1024_oc2048_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic1024_oc2048_k3_sm90
+EMBED_ASSET conv2d_dgrad_bf16_ic1024_oc2048_k3_sm90, conv2d_dgrad_bf16_ic1024_oc2048_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic32_oc64_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic32_oc64_k3_sm90
+EMBED_ASSET conv2d_dgrad_bf16_ic32_oc64_k3_sm90, conv2d_dgrad_bf16_ic32_oc64_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic3_oc8_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic3_oc8_k3_dil2_sm90
+EMBED_ASSET conv2d_dgrad_bf16_ic3_oc8_k3_dil2_sm90, conv2d_dgrad_bf16_ic3_oc8_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic3_oc8_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic3_oc8_k3_sm90
+EMBED_ASSET conv2d_dgrad_bf16_ic3_oc8_k3_sm90, conv2d_dgrad_bf16_ic3_oc8_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic768_oc1536_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic768_oc1536_k3_sm90
+EMBED_ASSET conv2d_dgrad_bf16_ic768_oc1536_k3_sm90, conv2d_dgrad_bf16_ic768_oc1536_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic768_oc768_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic768_oc768_k3_dil2_sm90
+EMBED_ASSET conv2d_dgrad_bf16_ic768_oc768_k3_dil2_sm90, conv2d_dgrad_bf16_ic768_oc768_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm90
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm90, conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm90
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm90, conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm90
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm90, conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm90
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm90, conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90, conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90, conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm90
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm90, conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm90
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm90, conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm90
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm90, conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm90
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm90, conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm90
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm90, conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90, conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90, conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90, conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90, conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90, conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90, conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm90
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm90, conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic1024_oc1024_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic1024_oc1024_k3_dil2_sm90
+EMBED_ASSET conv2d_dgrad_fp16_ic1024_oc1024_k3_dil2_sm90, conv2d_dgrad_fp16_ic1024_oc1024_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic1024_oc2048_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic1024_oc2048_k3_sm90
+EMBED_ASSET conv2d_dgrad_fp16_ic1024_oc2048_k3_sm90, conv2d_dgrad_fp16_ic1024_oc2048_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic32_oc64_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic32_oc64_k3_sm90
+EMBED_ASSET conv2d_dgrad_fp16_ic32_oc64_k3_sm90, conv2d_dgrad_fp16_ic32_oc64_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic3_oc8_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic3_oc8_k3_dil2_sm90
+EMBED_ASSET conv2d_dgrad_fp16_ic3_oc8_k3_dil2_sm90, conv2d_dgrad_fp16_ic3_oc8_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic3_oc8_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic3_oc8_k3_sm90
+EMBED_ASSET conv2d_dgrad_fp16_ic3_oc8_k3_sm90, conv2d_dgrad_fp16_ic3_oc8_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic768_oc1536_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic768_oc1536_k3_sm90
+EMBED_ASSET conv2d_dgrad_fp16_ic768_oc1536_k3_sm90, conv2d_dgrad_fp16_ic768_oc1536_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic768_oc768_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic768_oc768_k3_dil2_sm90
+EMBED_ASSET conv2d_dgrad_fp16_ic768_oc768_k3_dil2_sm90, conv2d_dgrad_fp16_ic768_oc768_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic1024_oc1024_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic1024_oc1024_k3_dil2_sm90
+EMBED_ASSET conv2d_fp16_ic1024_oc1024_k3_dil2_sm90, conv2d_fp16_ic1024_oc1024_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic1024_oc2048_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic1024_oc2048_k3_sm90
+EMBED_ASSET conv2d_fp16_ic1024_oc2048_k3_sm90, conv2d_fp16_ic1024_oc2048_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic32_oc64_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic32_oc64_k3_sm90
+EMBED_ASSET conv2d_fp16_ic32_oc64_k3_sm90, conv2d_fp16_ic32_oc64_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic3_oc8_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic3_oc8_k3_dil2_sm90
+EMBED_ASSET conv2d_fp16_ic3_oc8_k3_dil2_sm90, conv2d_fp16_ic3_oc8_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic3_oc8_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic3_oc8_k3_sm90
+EMBED_ASSET conv2d_fp16_ic3_oc8_k3_sm90, conv2d_fp16_ic3_oc8_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic768_oc1536_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic768_oc1536_k3_sm90
+EMBED_ASSET conv2d_fp16_ic768_oc1536_k3_sm90, conv2d_fp16_ic768_oc1536_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic768_oc768_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic768_oc768_k3_dil2_sm90
+EMBED_ASSET conv2d_fp16_ic768_oc768_k3_dil2_sm90, conv2d_fp16_ic768_oc768_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic1024_oc1024_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic1024_oc1024_k3_dil2_sm90
+EMBED_ASSET conv2d_wgrad_bf16_ic1024_oc1024_k3_dil2_sm90, conv2d_wgrad_bf16_ic1024_oc1024_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic1024_oc2048_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic1024_oc2048_k3_sm90
+EMBED_ASSET conv2d_wgrad_bf16_ic1024_oc2048_k3_sm90, conv2d_wgrad_bf16_ic1024_oc2048_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic32_oc64_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic32_oc64_k3_sm90
+EMBED_ASSET conv2d_wgrad_bf16_ic32_oc64_k3_sm90, conv2d_wgrad_bf16_ic32_oc64_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic3_oc8_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic3_oc8_k3_dil2_sm90
+EMBED_ASSET conv2d_wgrad_bf16_ic3_oc8_k3_dil2_sm90, conv2d_wgrad_bf16_ic3_oc8_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic3_oc8_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic3_oc8_k3_sm90
+EMBED_ASSET conv2d_wgrad_bf16_ic3_oc8_k3_sm90, conv2d_wgrad_bf16_ic3_oc8_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic768_oc1536_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic768_oc1536_k3_sm90
+EMBED_ASSET conv2d_wgrad_bf16_ic768_oc1536_k3_sm90, conv2d_wgrad_bf16_ic768_oc1536_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic768_oc768_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic768_oc768_k3_dil2_sm90
+EMBED_ASSET conv2d_wgrad_bf16_ic768_oc768_k3_dil2_sm90, conv2d_wgrad_bf16_ic768_oc768_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm90
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm90, conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm90
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm90, conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm90
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm90, conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm90
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm90, conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm90
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm90, conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm90
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm90, conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm90
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm90, conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm90
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm90, conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm90
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm90, conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm90
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm90, conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic1024_oc1024_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic1024_oc1024_k3_dil2_sm90
+EMBED_ASSET conv2d_wgrad_fp16_ic1024_oc1024_k3_dil2_sm90, conv2d_wgrad_fp16_ic1024_oc1024_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic1024_oc2048_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic1024_oc2048_k3_sm90
+EMBED_ASSET conv2d_wgrad_fp16_ic1024_oc2048_k3_sm90, conv2d_wgrad_fp16_ic1024_oc2048_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic32_oc64_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic32_oc64_k3_sm90
+EMBED_ASSET conv2d_wgrad_fp16_ic32_oc64_k3_sm90, conv2d_wgrad_fp16_ic32_oc64_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic3_oc8_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic3_oc8_k3_dil2_sm90
+EMBED_ASSET conv2d_wgrad_fp16_ic3_oc8_k3_dil2_sm90, conv2d_wgrad_fp16_ic3_oc8_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic3_oc8_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic3_oc8_k3_sm90
+EMBED_ASSET conv2d_wgrad_fp16_ic3_oc8_k3_sm90, conv2d_wgrad_fp16_ic3_oc8_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic768_oc1536_k3_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic768_oc1536_k3_sm90
+EMBED_ASSET conv2d_wgrad_fp16_ic768_oc1536_k3_sm90, conv2d_wgrad_fp16_ic768_oc1536_k3_sm90.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic768_oc768_k3_dil2_sm90.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic768_oc768_k3_dil2_sm90
+EMBED_ASSET conv2d_wgrad_fp16_ic768_oc768_k3_dil2_sm90, conv2d_wgrad_fp16_ic768_oc768_k3_dil2_sm90.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_add_fp32_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_add_fp32_bf16_sm90
+EMBED_ASSET cross_entropy_on_targets_add_fp32_bf16_sm90, cross_entropy_on_targets_add_fp32_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_add_fp32_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_add_fp32_fp16_sm90
+EMBED_ASSET cross_entropy_on_targets_add_fp32_fp16_sm90, cross_entropy_on_targets_add_fp32_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_bf16_sm90
+EMBED_ASSET cross_entropy_on_targets_bf16_sm90, cross_entropy_on_targets_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_bwd_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_bwd_bf16_sm90
+EMBED_ASSET cross_entropy_on_targets_bwd_bf16_sm90, cross_entropy_on_targets_bwd_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_bwd_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_bwd_fp16_sm90
+EMBED_ASSET cross_entropy_on_targets_bwd_fp16_sm90, cross_entropy_on_targets_bwd_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_fp16_sm90
+EMBED_ASSET cross_entropy_on_targets_fp16_sm90, cross_entropy_on_targets_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/device_copy_strided_2d_sm90.kinfo.inc.asm"
+DECLARE_KINFO device_copy_strided_2d_sm90
+EMBED_ASSET device_copy_strided_2d_sm90, device_copy_strided_2d_sm90.cubin, 4
+#include "../kernel_gen/output/div_add_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO div_add_bf16_sm90
+EMBED_ASSET div_add_bf16_sm90, div_add_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/div_add_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO div_add_fp16_sm90
+EMBED_ASSET div_add_fp16_sm90, div_add_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/div_add_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO div_add_fp32_sm90
+EMBED_ASSET div_add_fp32_sm90, div_add_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/div_elementwise_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO div_elementwise_bf16_sm90
+EMBED_ASSET div_elementwise_bf16_sm90, div_elementwise_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/div_elementwise_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO div_elementwise_fp16_sm90
+EMBED_ASSET div_elementwise_fp16_sm90, div_elementwise_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/div_elementwise_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO div_elementwise_fp32_sm90
+EMBED_ASSET div_elementwise_fp32_sm90, div_elementwise_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_bf16_sm90
+EMBED_ASSET div_scalar_add_bf16_sm90, div_scalar_add_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_broadcast_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_broadcast_bf16_sm90
+EMBED_ASSET div_scalar_add_broadcast_bf16_sm90, div_scalar_add_broadcast_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_broadcast_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_broadcast_fp16_sm90
+EMBED_ASSET div_scalar_add_broadcast_fp16_sm90, div_scalar_add_broadcast_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_broadcast_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_broadcast_fp32_sm90
+EMBED_ASSET div_scalar_add_broadcast_fp32_sm90, div_scalar_add_broadcast_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_fp16_sm90
+EMBED_ASSET div_scalar_add_fp16_sm90, div_scalar_add_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_fp32_sm90
+EMBED_ASSET div_scalar_add_fp32_sm90, div_scalar_add_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/div_scalar_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_bf16_sm90
+EMBED_ASSET div_scalar_bf16_sm90, div_scalar_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/div_scalar_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_fp16_sm90
+EMBED_ASSET div_scalar_fp16_sm90, div_scalar_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/div_scalar_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_fp32_sm90
+EMBED_ASSET div_scalar_fp32_sm90, div_scalar_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/embedding_lookup_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO embedding_lookup_bf16_sm90
+EMBED_ASSET embedding_lookup_bf16_sm90, embedding_lookup_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/embedding_lookup_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO embedding_lookup_fp16_sm90
+EMBED_ASSET embedding_lookup_fp16_sm90, embedding_lookup_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/fill_constant_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO fill_constant_bf16_sm90
+EMBED_ASSET fill_constant_bf16_sm90, fill_constant_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/fill_constant_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO fill_constant_fp16_sm90
+EMBED_ASSET fill_constant_fp16_sm90, fill_constant_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/fill_constant_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO fill_constant_fp32_sm90
+EMBED_ASSET fill_constant_fp32_sm90, fill_constant_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/fill_normal_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO fill_normal_bf16_sm90
+EMBED_ASSET fill_normal_bf16_sm90, fill_normal_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/fill_normal_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO fill_normal_fp16_sm90
+EMBED_ASSET fill_normal_fp16_sm90, fill_normal_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/fill_uniform_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO fill_uniform_bf16_sm90
+EMBED_ASSET fill_uniform_bf16_sm90, fill_uniform_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/fill_uniform_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO fill_uniform_fp16_sm90
+EMBED_ASSET fill_uniform_fp16_sm90, fill_uniform_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/fill_uniform_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO fill_uniform_fp32_sm90
+EMBED_ASSET fill_uniform_fp32_sm90, fill_uniform_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/fill_zeros_sm90.kinfo.inc.asm"
+DECLARE_KINFO fill_zeros_sm90
+EMBED_ASSET fill_zeros_sm90, fill_zeros_sm90.cubin, 4
+#include "../kernel_gen/output/layer_norm_fwd_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO layer_norm_fwd_bf16_sm90
+EMBED_ASSET layer_norm_fwd_bf16_sm90, layer_norm_fwd_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/layer_norm_fwd_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO layer_norm_fwd_fp16_sm90
+EMBED_ASSET layer_norm_fwd_fp16_sm90, layer_norm_fwd_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/lstm_cell_bwd_pointwise_out_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_bwd_pointwise_out_bf16_sm90
+EMBED_ASSET lstm_cell_bwd_pointwise_out_bf16_sm90, lstm_cell_bwd_pointwise_out_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/lstm_cell_bwd_pointwise_out_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_bwd_pointwise_out_fp16_sm90
+EMBED_ASSET lstm_cell_bwd_pointwise_out_fp16_sm90, lstm_cell_bwd_pointwise_out_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/lstm_cell_fwd_fp32_state_out_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_fwd_fp32_state_out_bf16_sm90
+EMBED_ASSET lstm_cell_fwd_fp32_state_out_bf16_sm90, lstm_cell_fwd_fp32_state_out_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/lstm_cell_fwd_fp32_state_out_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_fwd_fp32_state_out_fp16_sm90
+EMBED_ASSET lstm_cell_fwd_fp32_state_out_fp16_sm90, lstm_cell_fwd_fp32_state_out_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/lstm_cell_fwd_out_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_fwd_out_fp16_sm90
+EMBED_ASSET lstm_cell_fwd_out_fp16_sm90, lstm_cell_fwd_out_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/lstm_cell_recompute_out_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_recompute_out_bf16_sm90
+EMBED_ASSET lstm_cell_recompute_out_bf16_sm90, lstm_cell_recompute_out_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/lstm_cell_recompute_out_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_recompute_out_fp16_sm90
+EMBED_ASSET lstm_cell_recompute_out_fp16_sm90, lstm_cell_recompute_out_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_cacc_sm90
+EMBED_ASSET matmul_bf16_cacc_sm90, matmul_bf16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_cacc_sm90
+EMBED_ASSET matmul_bf16_out_fp32_cacc_sm90, matmul_bf16_out_fp32_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_sm90
+EMBED_ASSET matmul_bf16_out_fp32_sm90, matmul_bf16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_ta_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_ta_cacc_sm90
+EMBED_ASSET matmul_bf16_out_fp32_ta_cacc_sm90, matmul_bf16_out_fp32_ta_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_ta_sm90
+EMBED_ASSET matmul_bf16_out_fp32_ta_sm90, matmul_bf16_out_fp32_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tab_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tab_cacc_sm90
+EMBED_ASSET matmul_bf16_out_fp32_tab_cacc_sm90, matmul_bf16_out_fp32_tab_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tab_sm90
+EMBED_ASSET matmul_bf16_out_fp32_tab_sm90, matmul_bf16_out_fp32_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tb_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tb_cacc_sm90
+EMBED_ASSET matmul_bf16_out_fp32_tb_cacc_sm90, matmul_bf16_out_fp32_tb_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tb_sm90
+EMBED_ASSET matmul_bf16_out_fp32_tb_sm90, matmul_bf16_out_fp32_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_unaligned_cacc_sm90
+EMBED_ASSET matmul_bf16_out_fp32_unaligned_cacc_sm90, matmul_bf16_out_fp32_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_unaligned_sm90
+EMBED_ASSET matmul_bf16_out_fp32_unaligned_sm90, matmul_bf16_out_fp32_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_ta_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_ta_unaligned_cacc_sm90
+EMBED_ASSET matmul_bf16_out_fp32_ta_unaligned_cacc_sm90, matmul_bf16_out_fp32_ta_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_ta_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_ta_unaligned_sm90
+EMBED_ASSET matmul_bf16_out_fp32_ta_unaligned_sm90, matmul_bf16_out_fp32_ta_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tab_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tab_unaligned_cacc_sm90
+EMBED_ASSET matmul_bf16_out_fp32_tab_unaligned_cacc_sm90, matmul_bf16_out_fp32_tab_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tab_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tab_unaligned_sm90
+EMBED_ASSET matmul_bf16_out_fp32_tab_unaligned_sm90, matmul_bf16_out_fp32_tab_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tb_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tb_unaligned_cacc_sm90
+EMBED_ASSET matmul_bf16_out_fp32_tb_unaligned_cacc_sm90, matmul_bf16_out_fp32_tb_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tb_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tb_unaligned_sm90
+EMBED_ASSET matmul_bf16_out_fp32_tb_unaligned_sm90, matmul_bf16_out_fp32_tb_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_sm90
+EMBED_ASSET matmul_bf16_sm90, matmul_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_ta_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_ta_cacc_sm90
+EMBED_ASSET matmul_bf16_ta_cacc_sm90, matmul_bf16_ta_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_ta_sm90
+EMBED_ASSET matmul_bf16_ta_sm90, matmul_bf16_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tab_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tab_cacc_sm90
+EMBED_ASSET matmul_bf16_tab_cacc_sm90, matmul_bf16_tab_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tab_sm90
+EMBED_ASSET matmul_bf16_tab_sm90, matmul_bf16_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tb_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tb_cacc_sm90
+EMBED_ASSET matmul_bf16_tb_cacc_sm90, matmul_bf16_tb_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tb_sm90
+EMBED_ASSET matmul_bf16_tb_sm90, matmul_bf16_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_unaligned_cacc_sm90
+EMBED_ASSET matmul_bf16_unaligned_cacc_sm90, matmul_bf16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_unaligned_sm90
+EMBED_ASSET matmul_bf16_unaligned_sm90, matmul_bf16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_ta_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_ta_unaligned_cacc_sm90
+EMBED_ASSET matmul_bf16_ta_unaligned_cacc_sm90, matmul_bf16_ta_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_ta_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_ta_unaligned_sm90
+EMBED_ASSET matmul_bf16_ta_unaligned_sm90, matmul_bf16_ta_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tab_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tab_unaligned_cacc_sm90
+EMBED_ASSET matmul_bf16_tab_unaligned_cacc_sm90, matmul_bf16_tab_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tab_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tab_unaligned_sm90
+EMBED_ASSET matmul_bf16_tab_unaligned_sm90, matmul_bf16_tab_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tb_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tb_unaligned_cacc_sm90
+EMBED_ASSET matmul_bf16_tb_unaligned_cacc_sm90, matmul_bf16_tb_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tb_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tb_unaligned_sm90
+EMBED_ASSET matmul_bf16_tb_unaligned_sm90, matmul_bf16_tb_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_out_fp32_sm90
+EMBED_ASSET matmul_cutlass_bf16_out_fp32_sm90, matmul_cutlass_bf16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_out_fp32_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_out_fp32_ta_sm90
+EMBED_ASSET matmul_cutlass_bf16_out_fp32_ta_sm90, matmul_cutlass_bf16_out_fp32_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_out_fp32_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_out_fp32_tab_sm90
+EMBED_ASSET matmul_cutlass_bf16_out_fp32_tab_sm90, matmul_cutlass_bf16_out_fp32_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_out_fp32_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_out_fp32_tb_sm90
+EMBED_ASSET matmul_cutlass_bf16_out_fp32_tb_sm90, matmul_cutlass_bf16_out_fp32_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_sm90
+EMBED_ASSET matmul_cutlass_bf16_sm90, matmul_cutlass_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_ta_sm90
+EMBED_ASSET matmul_cutlass_bf16_ta_sm90, matmul_cutlass_bf16_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_tab_sm90
+EMBED_ASSET matmul_cutlass_bf16_tab_sm90, matmul_cutlass_bf16_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_tb_sm90
+EMBED_ASSET matmul_cutlass_bf16_tb_sm90, matmul_cutlass_bf16_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_out_fp32_sm90
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_out_fp32_sm90, matmul_cutlass_fp16_acc_fp16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_out_fp32_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_out_fp32_ta_sm90
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_out_fp32_ta_sm90, matmul_cutlass_fp16_acc_fp16_out_fp32_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_out_fp32_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_out_fp32_tab_sm90
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_out_fp32_tab_sm90, matmul_cutlass_fp16_acc_fp16_out_fp32_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_out_fp32_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_out_fp32_tb_sm90
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_out_fp32_tb_sm90, matmul_cutlass_fp16_acc_fp16_out_fp32_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_sm90
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_sm90, matmul_cutlass_fp16_acc_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_ta_sm90
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_ta_sm90, matmul_cutlass_fp16_acc_fp16_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_tab_sm90
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_tab_sm90, matmul_cutlass_fp16_acc_fp16_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_tb_sm90
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_tb_sm90, matmul_cutlass_fp16_acc_fp16_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_out_fp32_sm90
+EMBED_ASSET matmul_cutlass_fp16_out_fp32_sm90, matmul_cutlass_fp16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_out_fp32_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_out_fp32_ta_sm90
+EMBED_ASSET matmul_cutlass_fp16_out_fp32_ta_sm90, matmul_cutlass_fp16_out_fp32_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_out_fp32_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_out_fp32_tab_sm90
+EMBED_ASSET matmul_cutlass_fp16_out_fp32_tab_sm90, matmul_cutlass_fp16_out_fp32_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_out_fp32_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_out_fp32_tb_sm90
+EMBED_ASSET matmul_cutlass_fp16_out_fp32_tb_sm90, matmul_cutlass_fp16_out_fp32_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_sm90
+EMBED_ASSET matmul_cutlass_fp16_sm90, matmul_cutlass_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_ta_sm90
+EMBED_ASSET matmul_cutlass_fp16_ta_sm90, matmul_cutlass_fp16_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_tab_sm90
+EMBED_ASSET matmul_cutlass_fp16_tab_sm90, matmul_cutlass_fp16_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_tb_sm90
+EMBED_ASSET matmul_cutlass_fp16_tb_sm90, matmul_cutlass_fp16_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_fp16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_fp16_cacc_sm90
+EMBED_ASSET matmul_fp16_acc_fp16_cacc_sm90, matmul_fp16_acc_fp16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_fp16_sm90
+EMBED_ASSET matmul_fp16_acc_fp16_sm90, matmul_fp16_acc_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_fp16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_fp16_unaligned_cacc_sm90
+EMBED_ASSET matmul_fp16_acc_fp16_unaligned_cacc_sm90, matmul_fp16_acc_fp16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_fp16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_fp16_unaligned_sm90
+EMBED_ASSET matmul_fp16_acc_fp16_unaligned_sm90, matmul_fp16_acc_fp16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_cacc_sm90
+EMBED_ASSET matmul_fp16_acc_out_fp32_cacc_sm90, matmul_fp16_acc_out_fp32_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_sm90
+EMBED_ASSET matmul_fp16_acc_out_fp32_sm90, matmul_fp16_acc_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_ta_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_ta_cacc_sm90
+EMBED_ASSET matmul_fp16_acc_out_fp32_ta_cacc_sm90, matmul_fp16_acc_out_fp32_ta_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_ta_sm90
+EMBED_ASSET matmul_fp16_acc_out_fp32_ta_sm90, matmul_fp16_acc_out_fp32_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tab_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tab_cacc_sm90
+EMBED_ASSET matmul_fp16_acc_out_fp32_tab_cacc_sm90, matmul_fp16_acc_out_fp32_tab_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tab_sm90
+EMBED_ASSET matmul_fp16_acc_out_fp32_tab_sm90, matmul_fp16_acc_out_fp32_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tb_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tb_cacc_sm90
+EMBED_ASSET matmul_fp16_acc_out_fp32_tb_cacc_sm90, matmul_fp16_acc_out_fp32_tb_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tb_sm90
+EMBED_ASSET matmul_fp16_acc_out_fp32_tb_sm90, matmul_fp16_acc_out_fp32_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_unaligned_cacc_sm90
+EMBED_ASSET matmul_fp16_acc_out_fp32_unaligned_cacc_sm90, matmul_fp16_acc_out_fp32_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_unaligned_sm90
+EMBED_ASSET matmul_fp16_acc_out_fp32_unaligned_sm90, matmul_fp16_acc_out_fp32_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_ta_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_ta_unaligned_cacc_sm90
+EMBED_ASSET matmul_fp16_acc_out_fp32_ta_unaligned_cacc_sm90, matmul_fp16_acc_out_fp32_ta_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_ta_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_ta_unaligned_sm90
+EMBED_ASSET matmul_fp16_acc_out_fp32_ta_unaligned_sm90, matmul_fp16_acc_out_fp32_ta_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tab_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tab_unaligned_cacc_sm90
+EMBED_ASSET matmul_fp16_acc_out_fp32_tab_unaligned_cacc_sm90, matmul_fp16_acc_out_fp32_tab_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tab_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tab_unaligned_sm90
+EMBED_ASSET matmul_fp16_acc_out_fp32_tab_unaligned_sm90, matmul_fp16_acc_out_fp32_tab_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tb_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tb_unaligned_cacc_sm90
+EMBED_ASSET matmul_fp16_acc_out_fp32_tb_unaligned_cacc_sm90, matmul_fp16_acc_out_fp32_tb_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tb_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tb_unaligned_sm90
+EMBED_ASSET matmul_fp16_acc_out_fp32_tb_unaligned_sm90, matmul_fp16_acc_out_fp32_tb_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_cacc_sm90
+EMBED_ASSET matmul_fp16_cacc_sm90, matmul_fp16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_cacc_sm90
+EMBED_ASSET matmul_fp16_out_fp32_cacc_sm90, matmul_fp16_out_fp32_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_sm90
+EMBED_ASSET matmul_fp16_out_fp32_sm90, matmul_fp16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_ta_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_ta_cacc_sm90
+EMBED_ASSET matmul_fp16_out_fp32_ta_cacc_sm90, matmul_fp16_out_fp32_ta_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_ta_sm90
+EMBED_ASSET matmul_fp16_out_fp32_ta_sm90, matmul_fp16_out_fp32_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tab_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tab_cacc_sm90
+EMBED_ASSET matmul_fp16_out_fp32_tab_cacc_sm90, matmul_fp16_out_fp32_tab_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tab_sm90
+EMBED_ASSET matmul_fp16_out_fp32_tab_sm90, matmul_fp16_out_fp32_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tb_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tb_cacc_sm90
+EMBED_ASSET matmul_fp16_out_fp32_tb_cacc_sm90, matmul_fp16_out_fp32_tb_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tb_sm90
+EMBED_ASSET matmul_fp16_out_fp32_tb_sm90, matmul_fp16_out_fp32_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_unaligned_cacc_sm90
+EMBED_ASSET matmul_fp16_out_fp32_unaligned_cacc_sm90, matmul_fp16_out_fp32_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_unaligned_sm90
+EMBED_ASSET matmul_fp16_out_fp32_unaligned_sm90, matmul_fp16_out_fp32_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_ta_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_ta_unaligned_cacc_sm90
+EMBED_ASSET matmul_fp16_out_fp32_ta_unaligned_cacc_sm90, matmul_fp16_out_fp32_ta_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_ta_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_ta_unaligned_sm90
+EMBED_ASSET matmul_fp16_out_fp32_ta_unaligned_sm90, matmul_fp16_out_fp32_ta_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tab_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tab_unaligned_cacc_sm90
+EMBED_ASSET matmul_fp16_out_fp32_tab_unaligned_cacc_sm90, matmul_fp16_out_fp32_tab_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tab_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tab_unaligned_sm90
+EMBED_ASSET matmul_fp16_out_fp32_tab_unaligned_sm90, matmul_fp16_out_fp32_tab_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tb_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tb_unaligned_cacc_sm90
+EMBED_ASSET matmul_fp16_out_fp32_tb_unaligned_cacc_sm90, matmul_fp16_out_fp32_tb_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tb_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tb_unaligned_sm90
+EMBED_ASSET matmul_fp16_out_fp32_tb_unaligned_sm90, matmul_fp16_out_fp32_tb_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_sm90
+EMBED_ASSET matmul_fp16_sm90, matmul_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_ta_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_ta_cacc_sm90
+EMBED_ASSET matmul_fp16_ta_cacc_sm90, matmul_fp16_ta_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_ta_sm90
+EMBED_ASSET matmul_fp16_ta_sm90, matmul_fp16_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tab_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tab_cacc_sm90
+EMBED_ASSET matmul_fp16_tab_cacc_sm90, matmul_fp16_tab_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tab_sm90
+EMBED_ASSET matmul_fp16_tab_sm90, matmul_fp16_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tb_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tb_cacc_sm90
+EMBED_ASSET matmul_fp16_tb_cacc_sm90, matmul_fp16_tb_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tb_sm90
+EMBED_ASSET matmul_fp16_tb_sm90, matmul_fp16_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_unaligned_cacc_sm90
+EMBED_ASSET matmul_fp16_unaligned_cacc_sm90, matmul_fp16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_unaligned_sm90
+EMBED_ASSET matmul_fp16_unaligned_sm90, matmul_fp16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_ta_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_ta_unaligned_cacc_sm90
+EMBED_ASSET matmul_fp16_ta_unaligned_cacc_sm90, matmul_fp16_ta_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_ta_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_ta_unaligned_sm90
+EMBED_ASSET matmul_fp16_ta_unaligned_sm90, matmul_fp16_ta_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tab_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tab_unaligned_cacc_sm90
+EMBED_ASSET matmul_fp16_tab_unaligned_cacc_sm90, matmul_fp16_tab_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tab_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tab_unaligned_sm90
+EMBED_ASSET matmul_fp16_tab_unaligned_sm90, matmul_fp16_tab_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tb_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tb_unaligned_cacc_sm90
+EMBED_ASSET matmul_fp16_tb_unaligned_cacc_sm90, matmul_fp16_tb_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tb_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tb_unaligned_sm90
+EMBED_ASSET matmul_fp16_tb_unaligned_sm90, matmul_fp16_tb_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bf16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bf16_cacc_sm90
+EMBED_ASSET matmul_gelu_bf16_cacc_sm90, matmul_gelu_bf16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bf16_sm90
+EMBED_ASSET matmul_gelu_bf16_sm90, matmul_gelu_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bf16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bf16_unaligned_cacc_sm90
+EMBED_ASSET matmul_gelu_bf16_unaligned_cacc_sm90, matmul_gelu_bf16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bf16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bf16_unaligned_sm90
+EMBED_ASSET matmul_gelu_bf16_unaligned_sm90, matmul_gelu_bf16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_bf16_cacc_sm90, matmul_gelu_bwd_bf16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_sm90
+EMBED_ASSET matmul_gelu_bwd_bf16_sm90, matmul_gelu_bwd_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_ta_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_ta_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_bf16_ta_cacc_sm90, matmul_gelu_bwd_bf16_ta_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_ta_sm90
+EMBED_ASSET matmul_gelu_bwd_bf16_ta_sm90, matmul_gelu_bwd_bf16_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_tab_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_tab_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_bf16_tab_cacc_sm90, matmul_gelu_bwd_bf16_tab_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_tab_sm90
+EMBED_ASSET matmul_gelu_bwd_bf16_tab_sm90, matmul_gelu_bwd_bf16_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_tb_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_tb_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_bf16_tb_cacc_sm90, matmul_gelu_bwd_bf16_tb_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_tb_sm90
+EMBED_ASSET matmul_gelu_bwd_bf16_tb_sm90, matmul_gelu_bwd_bf16_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_cacc_sm90, matmul_gelu_bwd_bf16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_sm90
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_sm90, matmul_gelu_bwd_bf16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_ta_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_ta_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_ta_cacc_sm90, matmul_gelu_bwd_bf16_unaligned_ta_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_ta_sm90
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_ta_sm90, matmul_gelu_bwd_bf16_unaligned_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_tab_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_tab_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_tab_cacc_sm90, matmul_gelu_bwd_bf16_unaligned_tab_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_tab_sm90
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_tab_sm90, matmul_gelu_bwd_bf16_unaligned_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_tb_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_tb_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_tb_cacc_sm90, matmul_gelu_bwd_bf16_unaligned_tb_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_tb_sm90
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_tb_sm90, matmul_gelu_bwd_bf16_unaligned_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_bf16_sm90
+EMBED_ASSET matmul_gelu_bwd_cutlass_bf16_sm90, matmul_gelu_bwd_cutlass_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_bf16_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_bf16_ta_sm90
+EMBED_ASSET matmul_gelu_bwd_cutlass_bf16_ta_sm90, matmul_gelu_bwd_cutlass_bf16_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_bf16_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_bf16_tab_sm90
+EMBED_ASSET matmul_gelu_bwd_cutlass_bf16_tab_sm90, matmul_gelu_bwd_cutlass_bf16_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_bf16_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_bf16_tb_sm90
+EMBED_ASSET matmul_gelu_bwd_cutlass_bf16_tb_sm90, matmul_gelu_bwd_cutlass_bf16_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_acc_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_acc_fp16_sm90
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_acc_fp16_sm90, matmul_gelu_bwd_cutlass_fp16_acc_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta_sm90
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta_sm90, matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab_sm90
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab_sm90, matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb_sm90
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb_sm90, matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_sm90
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_sm90, matmul_gelu_bwd_cutlass_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_ta_sm90
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_ta_sm90, matmul_gelu_bwd_cutlass_fp16_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_tab_sm90
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_tab_sm90, matmul_gelu_bwd_cutlass_fp16_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_tb_sm90
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_tb_sm90, matmul_gelu_bwd_cutlass_fp16_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_cacc_sm90, matmul_gelu_bwd_fp16_acc_fp16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_sm90, matmul_gelu_bwd_fp16_acc_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_ta_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_ta_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_ta_cacc_sm90, matmul_gelu_bwd_fp16_acc_fp16_ta_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_ta_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_ta_sm90, matmul_gelu_bwd_fp16_acc_fp16_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_tab_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_tab_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_tab_cacc_sm90, matmul_gelu_bwd_fp16_acc_fp16_tab_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_tab_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_tab_sm90, matmul_gelu_bwd_fp16_acc_fp16_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_tb_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_tb_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_tb_cacc_sm90, matmul_gelu_bwd_fp16_acc_fp16_tb_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_tb_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_tb_sm90, matmul_gelu_bwd_fp16_acc_fp16_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_cacc_sm90, matmul_gelu_bwd_fp16_acc_fp16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_sm90, matmul_gelu_bwd_fp16_acc_fp16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_cacc_sm90, matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_sm90, matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_cacc_sm90, matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_sm90, matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_cacc_sm90, matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_sm90, matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_cacc_sm90, matmul_gelu_bwd_fp16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_sm90, matmul_gelu_bwd_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_ta_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_ta_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_ta_cacc_sm90, matmul_gelu_bwd_fp16_ta_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_ta_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_ta_sm90, matmul_gelu_bwd_fp16_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_tab_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_tab_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_tab_cacc_sm90, matmul_gelu_bwd_fp16_tab_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_tab_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_tab_sm90, matmul_gelu_bwd_fp16_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_tb_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_tb_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_tb_cacc_sm90, matmul_gelu_bwd_fp16_tb_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_tb_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_tb_sm90, matmul_gelu_bwd_fp16_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_cacc_sm90, matmul_gelu_bwd_fp16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_sm90, matmul_gelu_bwd_fp16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_ta_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_ta_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_ta_cacc_sm90, matmul_gelu_bwd_fp16_unaligned_ta_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_ta_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_ta_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_ta_sm90, matmul_gelu_bwd_fp16_unaligned_ta_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_tab_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_tab_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_tab_cacc_sm90, matmul_gelu_bwd_fp16_unaligned_tab_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_tab_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_tab_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_tab_sm90, matmul_gelu_bwd_fp16_unaligned_tab_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_tb_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_tb_cacc_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_tb_cacc_sm90, matmul_gelu_bwd_fp16_unaligned_tb_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_tb_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_tb_sm90
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_tb_sm90, matmul_gelu_bwd_fp16_unaligned_tb_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_cutlass_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_cutlass_bf16_sm90
+EMBED_ASSET matmul_gelu_cutlass_bf16_sm90, matmul_gelu_cutlass_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_cutlass_fp16_acc_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_cutlass_fp16_acc_fp16_sm90
+EMBED_ASSET matmul_gelu_cutlass_fp16_acc_fp16_sm90, matmul_gelu_cutlass_fp16_acc_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_cutlass_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_cutlass_fp16_sm90
+EMBED_ASSET matmul_gelu_cutlass_fp16_sm90, matmul_gelu_cutlass_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_acc_fp16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_acc_fp16_cacc_sm90
+EMBED_ASSET matmul_gelu_fp16_acc_fp16_cacc_sm90, matmul_gelu_fp16_acc_fp16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_acc_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_acc_fp16_sm90
+EMBED_ASSET matmul_gelu_fp16_acc_fp16_sm90, matmul_gelu_fp16_acc_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_acc_fp16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_acc_fp16_unaligned_cacc_sm90
+EMBED_ASSET matmul_gelu_fp16_acc_fp16_unaligned_cacc_sm90, matmul_gelu_fp16_acc_fp16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_acc_fp16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_acc_fp16_unaligned_sm90
+EMBED_ASSET matmul_gelu_fp16_acc_fp16_unaligned_sm90, matmul_gelu_fp16_acc_fp16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_cacc_sm90
+EMBED_ASSET matmul_gelu_fp16_cacc_sm90, matmul_gelu_fp16_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_sm90
+EMBED_ASSET matmul_gelu_fp16_sm90, matmul_gelu_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_unaligned_cacc_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_unaligned_cacc_sm90
+EMBED_ASSET matmul_gelu_fp16_unaligned_cacc_sm90, matmul_gelu_fp16_unaligned_cacc_sm90.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_unaligned_sm90.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_unaligned_sm90
+EMBED_ASSET matmul_gelu_fp16_unaligned_sm90, matmul_gelu_fp16_unaligned_sm90.cubin, 4
+#include "../kernel_gen/output/mean_reduce_column_tiled_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mean_reduce_column_tiled_bf16_sm90
+EMBED_ASSET mean_reduce_column_tiled_bf16_sm90, mean_reduce_column_tiled_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/mean_reduce_column_tiled_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mean_reduce_column_tiled_fp16_sm90
+EMBED_ASSET mean_reduce_column_tiled_fp16_sm90, mean_reduce_column_tiled_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/mean_reduce_contiguous_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mean_reduce_contiguous_bf16_sm90
+EMBED_ASSET mean_reduce_contiguous_bf16_sm90, mean_reduce_contiguous_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/mean_reduce_contiguous_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mean_reduce_contiguous_fp16_sm90
+EMBED_ASSET mean_reduce_contiguous_fp16_sm90, mean_reduce_contiguous_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_cutlass_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_cutlass_bf16_sm90
+EMBED_ASSET mha_full_attn_bwd_cutlass_bf16_sm90, mha_full_attn_bwd_cutlass_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_cutlass_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_cutlass_fp16_sm90
+EMBED_ASSET mha_full_attn_bwd_cutlass_fp16_sm90, mha_full_attn_bwd_cutlass_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_hs128_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_hs128_bf16_sm90
+EMBED_ASSET mha_full_attn_bwd_hs128_bf16_sm90, mha_full_attn_bwd_hs128_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_hs128_bf16_uneven_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_hs128_bf16_uneven_sm90
+EMBED_ASSET mha_full_attn_bwd_hs128_bf16_uneven_sm90, mha_full_attn_bwd_hs128_bf16_uneven_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_hs128_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_hs128_fp16_sm90
+EMBED_ASSET mha_full_attn_bwd_hs128_fp16_sm90, mha_full_attn_bwd_hs128_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_hs128_fp16_uneven_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_hs128_fp16_uneven_sm90
+EMBED_ASSET mha_full_attn_bwd_hs128_fp16_uneven_sm90, mha_full_attn_bwd_hs128_fp16_uneven_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_pre_hs128_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_pre_hs128_bf16_sm90
+EMBED_ASSET mha_full_attn_bwd_pre_hs128_bf16_sm90, mha_full_attn_bwd_pre_hs128_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_pre_hs128_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_pre_hs128_fp16_sm90
+EMBED_ASSET mha_full_attn_bwd_pre_hs128_fp16_sm90, mha_full_attn_bwd_pre_hs128_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_cutlass_bf16_lse_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_cutlass_bf16_lse_sm90
+EMBED_ASSET mha_full_attn_cutlass_bf16_lse_sm90, mha_full_attn_cutlass_bf16_lse_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_cutlass_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_cutlass_bf16_sm90
+EMBED_ASSET mha_full_attn_cutlass_bf16_sm90, mha_full_attn_cutlass_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_cutlass_fp16_lse_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_cutlass_fp16_lse_sm90
+EMBED_ASSET mha_full_attn_cutlass_fp16_lse_sm90, mha_full_attn_cutlass_fp16_lse_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_cutlass_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_cutlass_fp16_sm90
+EMBED_ASSET mha_full_attn_cutlass_fp16_sm90, mha_full_attn_cutlass_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_convert_dq_hs128_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_convert_dq_hs128_bf16_sm90
+EMBED_ASSET mha_full_attn_fa_bwd_convert_dq_hs128_bf16_sm90, mha_full_attn_fa_bwd_convert_dq_hs128_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_convert_dq_hs128_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_convert_dq_hs128_fp16_sm90
+EMBED_ASSET mha_full_attn_fa_bwd_convert_dq_hs128_fp16_sm90, mha_full_attn_fa_bwd_convert_dq_hs128_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_dot_do_o_hs128_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_dot_do_o_hs128_bf16_sm90
+EMBED_ASSET mha_full_attn_fa_bwd_dot_do_o_hs128_bf16_sm90, mha_full_attn_fa_bwd_dot_do_o_hs128_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_dot_do_o_hs128_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_dot_do_o_hs128_fp16_sm90
+EMBED_ASSET mha_full_attn_fa_bwd_dot_do_o_hs128_fp16_sm90, mha_full_attn_fa_bwd_dot_do_o_hs128_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_hs128_bf16_even_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_hs128_bf16_even_sm90
+EMBED_ASSET mha_full_attn_fa_bwd_hs128_bf16_even_sm90, mha_full_attn_fa_bwd_hs128_bf16_even_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_hs128_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_hs128_bf16_sm90
+EMBED_ASSET mha_full_attn_fa_bwd_hs128_bf16_sm90, mha_full_attn_fa_bwd_hs128_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_hs128_fp16_even_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_hs128_fp16_even_sm90
+EMBED_ASSET mha_full_attn_fa_bwd_hs128_fp16_even_sm90, mha_full_attn_fa_bwd_hs128_fp16_even_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_hs128_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_hs128_fp16_sm90
+EMBED_ASSET mha_full_attn_fa_bwd_hs128_fp16_sm90, mha_full_attn_fa_bwd_hs128_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_bf16_even_nolse_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_bf16_even_nolse_sm90
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_bf16_even_nolse_sm90, mha_full_attn_fa_fwd_hs128_bf16_even_nolse_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_bf16_even_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_bf16_even_sm90
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_bf16_even_sm90, mha_full_attn_fa_fwd_hs128_bf16_even_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_bf16_nolse_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_bf16_nolse_sm90
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_bf16_nolse_sm90, mha_full_attn_fa_fwd_hs128_bf16_nolse_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_bf16_sm90
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_bf16_sm90, mha_full_attn_fa_fwd_hs128_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_nolse_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_nolse_sm90
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_nolse_sm90, mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_nolse_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_sm90
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_sm90, mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_nolse_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_nolse_sm90
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_nolse_sm90, mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_nolse_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_sm90
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_sm90, mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_even_nolse_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_even_nolse_sm90
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_even_nolse_sm90, mha_full_attn_fa_fwd_hs128_fp16_even_nolse_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_even_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_even_sm90
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_even_sm90, mha_full_attn_fa_fwd_hs128_fp16_even_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_nolse_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_nolse_sm90
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_nolse_sm90, mha_full_attn_fa_fwd_hs128_fp16_nolse_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_sm90
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_sm90, mha_full_attn_fa_fwd_hs128_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_bf16_nolse_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_bf16_nolse_sm90
+EMBED_ASSET mha_full_attn_fwd_hs128_bf16_nolse_sm90, mha_full_attn_fwd_hs128_bf16_nolse_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_bf16_sm90
+EMBED_ASSET mha_full_attn_fwd_hs128_bf16_sm90, mha_full_attn_fwd_hs128_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_bf16_uneven_nolse_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_bf16_uneven_nolse_sm90
+EMBED_ASSET mha_full_attn_fwd_hs128_bf16_uneven_nolse_sm90, mha_full_attn_fwd_hs128_bf16_uneven_nolse_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_bf16_uneven_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_bf16_uneven_sm90
+EMBED_ASSET mha_full_attn_fwd_hs128_bf16_uneven_sm90, mha_full_attn_fwd_hs128_bf16_uneven_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_acc_fp16_nolse_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_acc_fp16_nolse_sm90
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_acc_fp16_nolse_sm90, mha_full_attn_fwd_hs128_fp16_acc_fp16_nolse_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_acc_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_acc_fp16_sm90
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_acc_fp16_sm90, mha_full_attn_fwd_hs128_fp16_acc_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_nolse_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_nolse_sm90
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_nolse_sm90, mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_nolse_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_sm90
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_sm90, mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_nolse_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_nolse_sm90
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_nolse_sm90, mha_full_attn_fwd_hs128_fp16_nolse_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_sm90
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_sm90, mha_full_attn_fwd_hs128_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_uneven_nolse_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_uneven_nolse_sm90
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_uneven_nolse_sm90, mha_full_attn_fwd_hs128_fp16_uneven_nolse_sm90.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_uneven_sm90.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_uneven_sm90
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_uneven_sm90, mha_full_attn_fwd_hs128_fp16_uneven_sm90.cubin, 4
+#include "../kernel_gen/output/mul_elementwise_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mul_elementwise_bf16_sm90
+EMBED_ASSET mul_elementwise_bf16_sm90, mul_elementwise_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/mul_elementwise_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mul_elementwise_fp16_sm90
+EMBED_ASSET mul_elementwise_fp16_sm90, mul_elementwise_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/mul_elementwise_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO mul_elementwise_fp32_sm90
+EMBED_ASSET mul_elementwise_fp32_sm90, mul_elementwise_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/mul_reduce_column_tiled_bf16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_column_tiled_bf16_out_fp32_sm90
+EMBED_ASSET mul_reduce_column_tiled_bf16_out_fp32_sm90, mul_reduce_column_tiled_bf16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/mul_reduce_column_tiled_fp16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_column_tiled_fp16_out_fp32_sm90
+EMBED_ASSET mul_reduce_column_tiled_fp16_out_fp32_sm90, mul_reduce_column_tiled_fp16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/mul_reduce_column_split_partials_bf16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_column_split_partials_bf16_out_fp32_sm90
+EMBED_ASSET mul_reduce_column_split_partials_bf16_out_fp32_sm90, mul_reduce_column_split_partials_bf16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/mul_reduce_column_split_partials_fp16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_column_split_partials_fp16_out_fp32_sm90
+EMBED_ASSET mul_reduce_column_split_partials_fp16_out_fp32_sm90, mul_reduce_column_split_partials_fp16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/mul_reduce_contiguous_bf16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_contiguous_bf16_out_fp32_sm90
+EMBED_ASSET mul_reduce_contiguous_bf16_out_fp32_sm90, mul_reduce_contiguous_bf16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/mul_reduce_contiguous_fp16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_contiguous_fp16_out_fp32_sm90
+EMBED_ASSET mul_reduce_contiguous_fp16_out_fp32_sm90, mul_reduce_contiguous_fp16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/mul_scalar_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mul_scalar_bf16_sm90
+EMBED_ASSET mul_scalar_bf16_sm90, mul_scalar_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/mul_scalar_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mul_scalar_fp16_sm90
+EMBED_ASSET mul_scalar_fp16_sm90, mul_scalar_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/mul_scalar_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO mul_scalar_fp32_sm90
+EMBED_ASSET mul_scalar_fp32_sm90, mul_scalar_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/sqrt_elementwise_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO sqrt_elementwise_bf16_sm90
+EMBED_ASSET sqrt_elementwise_bf16_sm90, sqrt_elementwise_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/sqrt_elementwise_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO sqrt_elementwise_fp16_sm90
+EMBED_ASSET sqrt_elementwise_fp16_sm90, sqrt_elementwise_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/sqrt_elementwise_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO sqrt_elementwise_fp32_sm90
+EMBED_ASSET sqrt_elementwise_fp32_sm90, sqrt_elementwise_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/mul_trailing_broadcast_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mul_trailing_broadcast_bf16_sm90
+EMBED_ASSET mul_trailing_broadcast_bf16_sm90, mul_trailing_broadcast_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/mul_trailing_broadcast_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO mul_trailing_broadcast_fp16_sm90
+EMBED_ASSET mul_trailing_broadcast_fp16_sm90, mul_trailing_broadcast_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/mul_trailing_broadcast_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO mul_trailing_broadcast_fp32_sm90
+EMBED_ASSET mul_trailing_broadcast_fp32_sm90, mul_trailing_broadcast_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/reduce_sum_partial_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO reduce_sum_partial_fp32_sm90
+EMBED_ASSET reduce_sum_partial_fp32_sm90, reduce_sum_partial_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/rms_norm_bwd_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO rms_norm_bwd_bf16_sm90
+EMBED_ASSET rms_norm_bwd_bf16_sm90, rms_norm_bwd_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/rms_norm_bwd_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO rms_norm_bwd_fp16_sm90
+EMBED_ASSET rms_norm_bwd_fp16_sm90, rms_norm_bwd_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/rms_norm_fwd_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO rms_norm_fwd_bf16_sm90
+EMBED_ASSET rms_norm_fwd_bf16_sm90, rms_norm_fwd_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/rms_norm_fwd_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO rms_norm_fwd_fp16_sm90
+EMBED_ASSET rms_norm_fwd_fp16_sm90, rms_norm_fwd_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/sgd_step_bf16_sm90.kinfo.inc.asm"
+DECLARE_KINFO sgd_step_bf16_sm90
+EMBED_ASSET sgd_step_bf16_sm90, sgd_step_bf16_sm90.cubin, 4
+#include "../kernel_gen/output/sgd_step_fp16_sm90.kinfo.inc.asm"
+DECLARE_KINFO sgd_step_fp16_sm90
+EMBED_ASSET sgd_step_fp16_sm90, sgd_step_fp16_sm90.cubin, 4
+#include "../kernel_gen/output/sgd_step_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO sgd_step_fp32_sm90
+EMBED_ASSET sgd_step_fp32_sm90, sgd_step_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_tiled_bf16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_tiled_bf16_out_fp32_sm90
+EMBED_ASSET sum_reduce_column_tiled_bf16_out_fp32_sm90, sum_reduce_column_tiled_bf16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_tiled_fp16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_tiled_fp16_out_fp32_sm90
+EMBED_ASSET sum_reduce_column_tiled_fp16_out_fp32_sm90, sum_reduce_column_tiled_fp16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_tiled_fp32_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_tiled_fp32_out_fp32_sm90
+EMBED_ASSET sum_reduce_column_tiled_fp32_out_fp32_sm90, sum_reduce_column_tiled_fp32_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_split_partials_bf16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_split_partials_bf16_out_fp32_sm90
+EMBED_ASSET sum_reduce_column_split_partials_bf16_out_fp32_sm90, sum_reduce_column_split_partials_bf16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_split_partials_fp16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_split_partials_fp16_out_fp32_sm90
+EMBED_ASSET sum_reduce_column_split_partials_fp16_out_fp32_sm90, sum_reduce_column_split_partials_fp16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_split_partials_fp32_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_split_partials_fp32_out_fp32_sm90
+EMBED_ASSET sum_reduce_column_split_partials_fp32_out_fp32_sm90, sum_reduce_column_split_partials_fp32_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/sum_reduce_contiguous_bf16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_contiguous_bf16_out_fp32_sm90
+EMBED_ASSET sum_reduce_contiguous_bf16_out_fp32_sm90, sum_reduce_contiguous_bf16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/sum_reduce_contiguous_fp16_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_contiguous_fp16_out_fp32_sm90
+EMBED_ASSET sum_reduce_contiguous_fp16_out_fp32_sm90, sum_reduce_contiguous_fp16_out_fp32_sm90.cubin, 4
+#include "../kernel_gen/output/sum_reduce_contiguous_fp32_out_fp32_sm90.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_contiguous_fp32_out_fp32_sm90
+EMBED_ASSET sum_reduce_contiguous_fp32_out_fp32_sm90, sum_reduce_contiguous_fp32_out_fp32_sm90.cubin, 4
+
+#elif NV_KERNEL_ARCH == 100
+#include "../kernel_gen/output/act_gelu_bwd_elementwise_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO act_gelu_bwd_elementwise_bf16_sm100
+EMBED_ASSET act_gelu_bwd_elementwise_bf16_sm100, act_gelu_bwd_elementwise_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/act_gelu_bwd_elementwise_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO act_gelu_bwd_elementwise_fp16_sm100
+EMBED_ASSET act_gelu_bwd_elementwise_fp16_sm100, act_gelu_bwd_elementwise_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/act_gelu_elementwise_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO act_gelu_elementwise_bf16_sm100
+EMBED_ASSET act_gelu_elementwise_bf16_sm100, act_gelu_elementwise_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/act_gelu_elementwise_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO act_gelu_elementwise_fp16_sm100
+EMBED_ASSET act_gelu_elementwise_fp16_sm100, act_gelu_elementwise_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/act_relu_elementwise_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO act_relu_elementwise_bf16_sm100
+EMBED_ASSET act_relu_elementwise_bf16_sm100, act_relu_elementwise_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/act_relu_elementwise_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO act_relu_elementwise_fp16_sm100
+EMBED_ASSET act_relu_elementwise_fp16_sm100, act_relu_elementwise_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/adamw_step_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO adamw_step_bf16_sm100
+EMBED_ASSET adamw_step_bf16_sm100, adamw_step_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/adamw_step_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO adamw_step_fp16_sm100
+EMBED_ASSET adamw_step_fp16_sm100, adamw_step_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/adamw_step_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO adamw_step_fp32_sm100
+EMBED_ASSET adamw_step_fp32_sm100, adamw_step_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/add_elementwise_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO add_elementwise_bf16_sm100
+EMBED_ASSET add_elementwise_bf16_sm100, add_elementwise_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/add_elementwise_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO add_elementwise_fp16_sm100
+EMBED_ASSET add_elementwise_fp16_sm100, add_elementwise_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/add_elementwise_fp32_out_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO add_elementwise_fp32_out_fp16_sm100
+EMBED_ASSET add_elementwise_fp32_out_fp16_sm100, add_elementwise_fp32_out_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/add_elementwise_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO add_elementwise_fp32_sm100
+EMBED_ASSET add_elementwise_fp32_sm100, add_elementwise_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/add_trailing_broadcast_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO add_trailing_broadcast_bf16_sm100
+EMBED_ASSET add_trailing_broadcast_bf16_sm100, add_trailing_broadcast_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/add_trailing_broadcast_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO add_trailing_broadcast_fp16_sm100
+EMBED_ASSET add_trailing_broadcast_fp16_sm100, add_trailing_broadcast_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/add_trailing_broadcast_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO add_trailing_broadcast_fp32_sm100
+EMBED_ASSET add_trailing_broadcast_fp32_sm100, add_trailing_broadcast_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_bf16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_bf16_cacc_sm100
+EMBED_ASSET addmm_bf16_cacc_sm100, addmm_bf16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_bf16_sm100
+EMBED_ASSET addmm_bf16_sm100, addmm_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_bf16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_bf16_unaligned_cacc_sm100
+EMBED_ASSET addmm_bf16_unaligned_cacc_sm100, addmm_bf16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_bf16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_bf16_unaligned_sm100
+EMBED_ASSET addmm_bf16_unaligned_sm100, addmm_bf16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_bf16_sm100
+EMBED_ASSET addmm_cutlass_bf16_sm100, addmm_cutlass_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_fp16_acc_fp16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_fp16_acc_fp16_out_fp32_sm100
+EMBED_ASSET addmm_cutlass_fp16_acc_fp16_out_fp32_sm100, addmm_cutlass_fp16_acc_fp16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_fp16_acc_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_fp16_acc_fp16_sm100
+EMBED_ASSET addmm_cutlass_fp16_acc_fp16_sm100, addmm_cutlass_fp16_acc_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_fp16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_fp16_out_fp32_sm100
+EMBED_ASSET addmm_cutlass_fp16_out_fp32_sm100, addmm_cutlass_fp16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_cutlass_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_cutlass_fp16_sm100
+EMBED_ASSET addmm_cutlass_fp16_sm100, addmm_cutlass_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_fp16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_fp16_cacc_sm100
+EMBED_ASSET addmm_fp16_acc_fp16_cacc_sm100, addmm_fp16_acc_fp16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_fp16_sm100
+EMBED_ASSET addmm_fp16_acc_fp16_sm100, addmm_fp16_acc_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_fp16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_fp16_unaligned_cacc_sm100
+EMBED_ASSET addmm_fp16_acc_fp16_unaligned_cacc_sm100, addmm_fp16_acc_fp16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_fp16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_fp16_unaligned_sm100
+EMBED_ASSET addmm_fp16_acc_fp16_unaligned_sm100, addmm_fp16_acc_fp16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_out_fp32_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_out_fp32_cacc_sm100
+EMBED_ASSET addmm_fp16_acc_out_fp32_cacc_sm100, addmm_fp16_acc_out_fp32_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_out_fp32_sm100
+EMBED_ASSET addmm_fp16_acc_out_fp32_sm100, addmm_fp16_acc_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_out_fp32_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_out_fp32_unaligned_cacc_sm100
+EMBED_ASSET addmm_fp16_acc_out_fp32_unaligned_cacc_sm100, addmm_fp16_acc_out_fp32_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_acc_out_fp32_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_acc_out_fp32_unaligned_sm100
+EMBED_ASSET addmm_fp16_acc_out_fp32_unaligned_sm100, addmm_fp16_acc_out_fp32_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_cacc_sm100
+EMBED_ASSET addmm_fp16_cacc_sm100, addmm_fp16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_out_fp32_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_out_fp32_cacc_sm100
+EMBED_ASSET addmm_fp16_out_fp32_cacc_sm100, addmm_fp16_out_fp32_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_out_fp32_sm100
+EMBED_ASSET addmm_fp16_out_fp32_sm100, addmm_fp16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_out_fp32_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_out_fp32_unaligned_cacc_sm100
+EMBED_ASSET addmm_fp16_out_fp32_unaligned_cacc_sm100, addmm_fp16_out_fp32_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_out_fp32_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_out_fp32_unaligned_sm100
+EMBED_ASSET addmm_fp16_out_fp32_unaligned_sm100, addmm_fp16_out_fp32_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_sm100
+EMBED_ASSET addmm_fp16_sm100, addmm_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_unaligned_cacc_sm100
+EMBED_ASSET addmm_fp16_unaligned_cacc_sm100, addmm_fp16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_fp16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_fp16_unaligned_sm100
+EMBED_ASSET addmm_fp16_unaligned_sm100, addmm_fp16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_bf16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_bf16_cacc_sm100
+EMBED_ASSET addmm_gelu_bf16_cacc_sm100, addmm_gelu_bf16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_bf16_sm100
+EMBED_ASSET addmm_gelu_bf16_sm100, addmm_gelu_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_bf16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_bf16_unaligned_cacc_sm100
+EMBED_ASSET addmm_gelu_bf16_unaligned_cacc_sm100, addmm_gelu_bf16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_bf16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_bf16_unaligned_sm100
+EMBED_ASSET addmm_gelu_bf16_unaligned_sm100, addmm_gelu_bf16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_cutlass_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_cutlass_bf16_sm100
+EMBED_ASSET addmm_gelu_cutlass_bf16_sm100, addmm_gelu_cutlass_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_cutlass_fp16_acc_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_cutlass_fp16_acc_fp16_sm100
+EMBED_ASSET addmm_gelu_cutlass_fp16_acc_fp16_sm100, addmm_gelu_cutlass_fp16_acc_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_cutlass_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_cutlass_fp16_sm100
+EMBED_ASSET addmm_gelu_cutlass_fp16_sm100, addmm_gelu_cutlass_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_acc_fp16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_acc_fp16_cacc_sm100
+EMBED_ASSET addmm_gelu_fp16_acc_fp16_cacc_sm100, addmm_gelu_fp16_acc_fp16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_acc_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_acc_fp16_sm100
+EMBED_ASSET addmm_gelu_fp16_acc_fp16_sm100, addmm_gelu_fp16_acc_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_acc_fp16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_acc_fp16_unaligned_cacc_sm100
+EMBED_ASSET addmm_gelu_fp16_acc_fp16_unaligned_cacc_sm100, addmm_gelu_fp16_acc_fp16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_acc_fp16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_acc_fp16_unaligned_sm100
+EMBED_ASSET addmm_gelu_fp16_acc_fp16_unaligned_sm100, addmm_gelu_fp16_acc_fp16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_cacc_sm100
+EMBED_ASSET addmm_gelu_fp16_cacc_sm100, addmm_gelu_fp16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_sm100
+EMBED_ASSET addmm_gelu_fp16_sm100, addmm_gelu_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_unaligned_cacc_sm100
+EMBED_ASSET addmm_gelu_fp16_unaligned_cacc_sm100, addmm_gelu_fp16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_fp16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_fp16_unaligned_sm100
+EMBED_ASSET addmm_gelu_fp16_unaligned_sm100, addmm_gelu_fp16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_bf16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_bf16_cacc_sm100
+EMBED_ASSET addmm_gelu_preact_bf16_cacc_sm100, addmm_gelu_preact_bf16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_bf16_sm100
+EMBED_ASSET addmm_gelu_preact_bf16_sm100, addmm_gelu_preact_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_bf16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_bf16_unaligned_cacc_sm100
+EMBED_ASSET addmm_gelu_preact_bf16_unaligned_cacc_sm100, addmm_gelu_preact_bf16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_bf16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_bf16_unaligned_sm100
+EMBED_ASSET addmm_gelu_preact_bf16_unaligned_sm100, addmm_gelu_preact_bf16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_cutlass_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_cutlass_bf16_sm100
+EMBED_ASSET addmm_gelu_preact_cutlass_bf16_sm100, addmm_gelu_preact_cutlass_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_cutlass_fp16_acc_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_cutlass_fp16_acc_fp16_sm100
+EMBED_ASSET addmm_gelu_preact_cutlass_fp16_acc_fp16_sm100, addmm_gelu_preact_cutlass_fp16_acc_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_cutlass_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_cutlass_fp16_sm100
+EMBED_ASSET addmm_gelu_preact_cutlass_fp16_sm100, addmm_gelu_preact_cutlass_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_acc_fp16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_acc_fp16_cacc_sm100
+EMBED_ASSET addmm_gelu_preact_fp16_acc_fp16_cacc_sm100, addmm_gelu_preact_fp16_acc_fp16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_acc_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_acc_fp16_sm100
+EMBED_ASSET addmm_gelu_preact_fp16_acc_fp16_sm100, addmm_gelu_preact_fp16_acc_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_acc_fp16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_acc_fp16_unaligned_cacc_sm100
+EMBED_ASSET addmm_gelu_preact_fp16_acc_fp16_unaligned_cacc_sm100, addmm_gelu_preact_fp16_acc_fp16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_acc_fp16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_acc_fp16_unaligned_sm100
+EMBED_ASSET addmm_gelu_preact_fp16_acc_fp16_unaligned_sm100, addmm_gelu_preact_fp16_acc_fp16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_cacc_sm100
+EMBED_ASSET addmm_gelu_preact_fp16_cacc_sm100, addmm_gelu_preact_fp16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_sm100
+EMBED_ASSET addmm_gelu_preact_fp16_sm100, addmm_gelu_preact_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_unaligned_cacc_sm100
+EMBED_ASSET addmm_gelu_preact_fp16_unaligned_cacc_sm100, addmm_gelu_preact_fp16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/addmm_gelu_preact_fp16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO addmm_gelu_preact_fp16_unaligned_sm100
+EMBED_ASSET addmm_gelu_preact_fp16_unaligned_sm100, addmm_gelu_preact_fp16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/avg_pool1d_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO avg_pool1d_bf16_sm100
+EMBED_ASSET avg_pool1d_bf16_sm100, avg_pool1d_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/avg_pool1d_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO avg_pool1d_fp16_sm100
+EMBED_ASSET avg_pool1d_fp16_sm100, avg_pool1d_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bf16_sm100
+EMBED_ASSET avg_pool2d_bf16_sm100, avg_pool2d_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_nhwc_2x2_s2_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_nhwc_2x2_s2_bf16_sm100
+EMBED_ASSET avg_pool2d_nhwc_2x2_s2_bf16_sm100, avg_pool2d_nhwc_2x2_s2_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_bf16_sm100
+EMBED_ASSET avg_pool2d_bwd_bf16_sm100, avg_pool2d_bwd_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_fp16_sm100
+EMBED_ASSET avg_pool2d_bwd_fp16_sm100, avg_pool2d_bwd_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_noaccum_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_noaccum_bf16_sm100
+EMBED_ASSET avg_pool2d_bwd_noaccum_bf16_sm100, avg_pool2d_bwd_noaccum_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_noaccum_nhwc_2x2_s2_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_noaccum_nhwc_2x2_s2_bf16_sm100
+EMBED_ASSET avg_pool2d_bwd_noaccum_nhwc_2x2_s2_bf16_sm100, avg_pool2d_bwd_noaccum_nhwc_2x2_s2_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_noaccum_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_noaccum_fp16_sm100
+EMBED_ASSET avg_pool2d_bwd_noaccum_fp16_sm100, avg_pool2d_bwd_noaccum_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_bwd_noaccum_nhwc_2x2_s2_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_bwd_noaccum_nhwc_2x2_s2_fp16_sm100
+EMBED_ASSET avg_pool2d_bwd_noaccum_nhwc_2x2_s2_fp16_sm100, avg_pool2d_bwd_noaccum_nhwc_2x2_s2_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_fp16_sm100
+EMBED_ASSET avg_pool2d_fp16_sm100, avg_pool2d_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/avg_pool2d_nhwc_2x2_s2_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO avg_pool2d_nhwc_2x2_s2_fp16_sm100
+EMBED_ASSET avg_pool2d_nhwc_2x2_s2_fp16_sm100, avg_pool2d_nhwc_2x2_s2_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bf16_sm100
+EMBED_ASSET build_cell_embeds_bf16_sm100, build_cell_embeds_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_color_bf16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_color_bf16_out_fp32_sm100
+EMBED_ASSET build_cell_embeds_bwd_color_bf16_out_fp32_sm100, build_cell_embeds_bwd_color_bf16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_color_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_color_bf16_sm100
+EMBED_ASSET build_cell_embeds_bwd_color_bf16_sm100, build_cell_embeds_bwd_color_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_color_fp16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_color_fp16_out_fp32_sm100
+EMBED_ASSET build_cell_embeds_bwd_color_fp16_out_fp32_sm100, build_cell_embeds_bwd_color_fp16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_color_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_color_fp16_sm100
+EMBED_ASSET build_cell_embeds_bwd_color_fp16_sm100, build_cell_embeds_bwd_color_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_cp_bf16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_cp_bf16_out_fp32_sm100
+EMBED_ASSET build_cell_embeds_bwd_cp_bf16_out_fp32_sm100, build_cell_embeds_bwd_cp_bf16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_cp_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_cp_bf16_sm100
+EMBED_ASSET build_cell_embeds_bwd_cp_bf16_sm100, build_cell_embeds_bwd_cp_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_cp_fp16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_cp_fp16_out_fp32_sm100
+EMBED_ASSET build_cell_embeds_bwd_cp_fp16_out_fp32_sm100, build_cell_embeds_bwd_cp_fp16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_cp_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_cp_fp16_sm100
+EMBED_ASSET build_cell_embeds_bwd_cp_fp16_sm100, build_cell_embeds_bwd_cp_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_pos_bf16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_pos_bf16_out_fp32_sm100
+EMBED_ASSET build_cell_embeds_bwd_pos_bf16_out_fp32_sm100, build_cell_embeds_bwd_pos_bf16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_pos_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_pos_bf16_sm100
+EMBED_ASSET build_cell_embeds_bwd_pos_bf16_sm100, build_cell_embeds_bwd_pos_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_pos_fp16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_pos_fp16_out_fp32_sm100
+EMBED_ASSET build_cell_embeds_bwd_pos_fp16_out_fp32_sm100, build_cell_embeds_bwd_pos_fp16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_bwd_pos_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_bwd_pos_fp16_sm100
+EMBED_ASSET build_cell_embeds_bwd_pos_fp16_sm100, build_cell_embeds_bwd_pos_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/build_cell_embeds_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO build_cell_embeds_fp16_sm100
+EMBED_ASSET build_cell_embeds_fp16_sm100, build_cell_embeds_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/cast_bf16_to_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO cast_bf16_to_fp16_sm100
+EMBED_ASSET cast_bf16_to_fp16_sm100, cast_bf16_to_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/cast_bf16_to_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO cast_bf16_to_fp32_sm100
+EMBED_ASSET cast_bf16_to_fp32_sm100, cast_bf16_to_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/cast_fp16_to_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO cast_fp16_to_bf16_sm100
+EMBED_ASSET cast_fp16_to_bf16_sm100, cast_fp16_to_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/cast_fp16_to_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO cast_fp16_to_fp32_sm100
+EMBED_ASSET cast_fp16_to_fp32_sm100, cast_fp16_to_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/cast_fp32_to_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO cast_fp32_to_bf16_sm100
+EMBED_ASSET cast_fp32_to_bf16_sm100, cast_fp32_to_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/cast_fp32_to_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO cast_fp32_to_fp16_sm100
+EMBED_ASSET cast_fp32_to_fp16_sm100, cast_fp32_to_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/contiguous_3d_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO contiguous_3d_bf16_sm100
+EMBED_ASSET contiguous_3d_bf16_sm100, contiguous_3d_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/contiguous_3d_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO contiguous_3d_fp16_sm100
+EMBED_ASSET contiguous_3d_fp16_sm100, contiguous_3d_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/contiguous_4d_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO contiguous_4d_bf16_sm100
+EMBED_ASSET contiguous_4d_bf16_sm100, contiguous_4d_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/contiguous_4d_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO contiguous_4d_fp16_sm100
+EMBED_ASSET contiguous_4d_fp16_sm100, contiguous_4d_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic1024_oc1024_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic1024_oc1024_k3_dil2_sm100
+EMBED_ASSET conv2d_bf16_ic1024_oc1024_k3_dil2_sm100, conv2d_bf16_ic1024_oc1024_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic1024_oc2048_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic1024_oc2048_k3_sm100
+EMBED_ASSET conv2d_bf16_ic1024_oc2048_k3_sm100, conv2d_bf16_ic1024_oc2048_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic32_oc64_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic32_oc64_k3_sm100
+EMBED_ASSET conv2d_bf16_ic32_oc64_k3_sm100, conv2d_bf16_ic32_oc64_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic3_oc8_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic3_oc8_k3_dil2_sm100
+EMBED_ASSET conv2d_bf16_ic3_oc8_k3_dil2_sm100, conv2d_bf16_ic3_oc8_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic3_oc8_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic3_oc8_k3_sm100
+EMBED_ASSET conv2d_bf16_ic3_oc8_k3_sm100, conv2d_bf16_ic3_oc8_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic768_oc1536_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic768_oc1536_k3_sm100
+EMBED_ASSET conv2d_bf16_ic768_oc1536_k3_sm100, conv2d_bf16_ic768_oc1536_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_bf16_ic768_oc768_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_bf16_ic768_oc768_k3_dil2_sm100
+EMBED_ASSET conv2d_bf16_ic768_oc768_k3_dil2_sm100, conv2d_bf16_ic768_oc768_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm100
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm100, conv2d_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm100
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm100, conv2d_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm100
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm100, conv2d_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100, conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100, conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm100
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm100, conv2d_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm100
+EMBED_ASSET conv2d_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm100, conv2d_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm100
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm100, conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic1024_oc2048_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm100
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm100, conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic32_oc64_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm100
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm100, conv2d_cutlass_fp16_acc_fp16_stride1_pad1_dil1_ic768_oc1536_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100, conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100, conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm100
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm100, conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic1024_oc1024_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm100
+EMBED_ASSET conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm100, conv2d_cutlass_fp16_acc_fp16_stride1_pad2_dil2_ic768_oc768_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm100
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm100, conv2d_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm100
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm100, conv2d_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm100
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm100, conv2d_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100, conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100, conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm100
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm100, conv2d_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm100
+EMBED_ASSET conv2d_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm100, conv2d_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic1024_oc1024_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic1024_oc1024_k3_dil2_sm100
+EMBED_ASSET conv2d_dgrad_bf16_ic1024_oc1024_k3_dil2_sm100, conv2d_dgrad_bf16_ic1024_oc1024_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic1024_oc2048_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic1024_oc2048_k3_sm100
+EMBED_ASSET conv2d_dgrad_bf16_ic1024_oc2048_k3_sm100, conv2d_dgrad_bf16_ic1024_oc2048_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic32_oc64_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic32_oc64_k3_sm100
+EMBED_ASSET conv2d_dgrad_bf16_ic32_oc64_k3_sm100, conv2d_dgrad_bf16_ic32_oc64_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic3_oc8_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic3_oc8_k3_dil2_sm100
+EMBED_ASSET conv2d_dgrad_bf16_ic3_oc8_k3_dil2_sm100, conv2d_dgrad_bf16_ic3_oc8_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic3_oc8_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic3_oc8_k3_sm100
+EMBED_ASSET conv2d_dgrad_bf16_ic3_oc8_k3_sm100, conv2d_dgrad_bf16_ic3_oc8_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic768_oc1536_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic768_oc1536_k3_sm100
+EMBED_ASSET conv2d_dgrad_bf16_ic768_oc1536_k3_sm100, conv2d_dgrad_bf16_ic768_oc1536_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_bf16_ic768_oc768_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_bf16_ic768_oc768_k3_dil2_sm100
+EMBED_ASSET conv2d_dgrad_bf16_ic768_oc768_k3_dil2_sm100, conv2d_dgrad_bf16_ic768_oc768_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm100
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm100, conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm100
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm100, conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm100
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm100, conv2d_dgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm100
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm100, conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100, conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100, conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm100
+EMBED_ASSET conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm100, conv2d_dgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm100
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm100, conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm100
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm100, conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm100
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm100, conv2d_dgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm100
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm100, conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100, conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100, conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100, conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100, conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100, conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h24_w80_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100, conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_b32_h48_w160_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm100
+EMBED_ASSET conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm100, conv2d_dgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic1024_oc1024_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic1024_oc1024_k3_dil2_sm100
+EMBED_ASSET conv2d_dgrad_fp16_ic1024_oc1024_k3_dil2_sm100, conv2d_dgrad_fp16_ic1024_oc1024_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic1024_oc2048_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic1024_oc2048_k3_sm100
+EMBED_ASSET conv2d_dgrad_fp16_ic1024_oc2048_k3_sm100, conv2d_dgrad_fp16_ic1024_oc2048_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic32_oc64_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic32_oc64_k3_sm100
+EMBED_ASSET conv2d_dgrad_fp16_ic32_oc64_k3_sm100, conv2d_dgrad_fp16_ic32_oc64_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic3_oc8_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic3_oc8_k3_dil2_sm100
+EMBED_ASSET conv2d_dgrad_fp16_ic3_oc8_k3_dil2_sm100, conv2d_dgrad_fp16_ic3_oc8_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic3_oc8_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic3_oc8_k3_sm100
+EMBED_ASSET conv2d_dgrad_fp16_ic3_oc8_k3_sm100, conv2d_dgrad_fp16_ic3_oc8_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic768_oc1536_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic768_oc1536_k3_sm100
+EMBED_ASSET conv2d_dgrad_fp16_ic768_oc1536_k3_sm100, conv2d_dgrad_fp16_ic768_oc1536_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_dgrad_fp16_ic768_oc768_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_dgrad_fp16_ic768_oc768_k3_dil2_sm100
+EMBED_ASSET conv2d_dgrad_fp16_ic768_oc768_k3_dil2_sm100, conv2d_dgrad_fp16_ic768_oc768_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic1024_oc1024_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic1024_oc1024_k3_dil2_sm100
+EMBED_ASSET conv2d_fp16_ic1024_oc1024_k3_dil2_sm100, conv2d_fp16_ic1024_oc1024_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic1024_oc2048_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic1024_oc2048_k3_sm100
+EMBED_ASSET conv2d_fp16_ic1024_oc2048_k3_sm100, conv2d_fp16_ic1024_oc2048_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic32_oc64_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic32_oc64_k3_sm100
+EMBED_ASSET conv2d_fp16_ic32_oc64_k3_sm100, conv2d_fp16_ic32_oc64_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic3_oc8_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic3_oc8_k3_dil2_sm100
+EMBED_ASSET conv2d_fp16_ic3_oc8_k3_dil2_sm100, conv2d_fp16_ic3_oc8_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic3_oc8_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic3_oc8_k3_sm100
+EMBED_ASSET conv2d_fp16_ic3_oc8_k3_sm100, conv2d_fp16_ic3_oc8_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic768_oc1536_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic768_oc1536_k3_sm100
+EMBED_ASSET conv2d_fp16_ic768_oc1536_k3_sm100, conv2d_fp16_ic768_oc1536_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_fp16_ic768_oc768_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_fp16_ic768_oc768_k3_dil2_sm100
+EMBED_ASSET conv2d_fp16_ic768_oc768_k3_dil2_sm100, conv2d_fp16_ic768_oc768_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic1024_oc1024_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic1024_oc1024_k3_dil2_sm100
+EMBED_ASSET conv2d_wgrad_bf16_ic1024_oc1024_k3_dil2_sm100, conv2d_wgrad_bf16_ic1024_oc1024_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic1024_oc2048_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic1024_oc2048_k3_sm100
+EMBED_ASSET conv2d_wgrad_bf16_ic1024_oc2048_k3_sm100, conv2d_wgrad_bf16_ic1024_oc2048_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic32_oc64_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic32_oc64_k3_sm100
+EMBED_ASSET conv2d_wgrad_bf16_ic32_oc64_k3_sm100, conv2d_wgrad_bf16_ic32_oc64_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic3_oc8_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic3_oc8_k3_dil2_sm100
+EMBED_ASSET conv2d_wgrad_bf16_ic3_oc8_k3_dil2_sm100, conv2d_wgrad_bf16_ic3_oc8_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic3_oc8_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic3_oc8_k3_sm100
+EMBED_ASSET conv2d_wgrad_bf16_ic3_oc8_k3_sm100, conv2d_wgrad_bf16_ic3_oc8_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic768_oc1536_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic768_oc1536_k3_sm100
+EMBED_ASSET conv2d_wgrad_bf16_ic768_oc1536_k3_sm100, conv2d_wgrad_bf16_ic768_oc1536_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_bf16_ic768_oc768_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_bf16_ic768_oc768_k3_dil2_sm100
+EMBED_ASSET conv2d_wgrad_bf16_ic768_oc768_k3_dil2_sm100, conv2d_wgrad_bf16_ic768_oc768_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm100
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm100, conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic1024_oc2048_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm100
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm100, conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic32_oc64_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm100
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm100, conv2d_wgrad_cutlass_bf16_stride1_pad1_dil1_ic768_oc1536_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm100
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm100, conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic1024_oc1024_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm100
+EMBED_ASSET conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm100, conv2d_wgrad_cutlass_bf16_stride1_pad2_dil2_ic768_oc768_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm100
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm100, conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic1024_oc2048_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm100
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm100, conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic32_oc64_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm100
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm100, conv2d_wgrad_cutlass_fp16_stride1_pad1_dil1_ic768_oc1536_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm100
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm100, conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic1024_oc1024_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm100
+EMBED_ASSET conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm100, conv2d_wgrad_cutlass_fp16_stride1_pad2_dil2_ic768_oc768_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic1024_oc1024_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic1024_oc1024_k3_dil2_sm100
+EMBED_ASSET conv2d_wgrad_fp16_ic1024_oc1024_k3_dil2_sm100, conv2d_wgrad_fp16_ic1024_oc1024_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic1024_oc2048_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic1024_oc2048_k3_sm100
+EMBED_ASSET conv2d_wgrad_fp16_ic1024_oc2048_k3_sm100, conv2d_wgrad_fp16_ic1024_oc2048_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic32_oc64_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic32_oc64_k3_sm100
+EMBED_ASSET conv2d_wgrad_fp16_ic32_oc64_k3_sm100, conv2d_wgrad_fp16_ic32_oc64_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic3_oc8_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic3_oc8_k3_dil2_sm100
+EMBED_ASSET conv2d_wgrad_fp16_ic3_oc8_k3_dil2_sm100, conv2d_wgrad_fp16_ic3_oc8_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic3_oc8_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic3_oc8_k3_sm100
+EMBED_ASSET conv2d_wgrad_fp16_ic3_oc8_k3_sm100, conv2d_wgrad_fp16_ic3_oc8_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic768_oc1536_k3_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic768_oc1536_k3_sm100
+EMBED_ASSET conv2d_wgrad_fp16_ic768_oc1536_k3_sm100, conv2d_wgrad_fp16_ic768_oc1536_k3_sm100.cubin, 4
+#include "../kernel_gen/output/conv2d_wgrad_fp16_ic768_oc768_k3_dil2_sm100.kinfo.inc.asm"
+DECLARE_KINFO conv2d_wgrad_fp16_ic768_oc768_k3_dil2_sm100
+EMBED_ASSET conv2d_wgrad_fp16_ic768_oc768_k3_dil2_sm100, conv2d_wgrad_fp16_ic768_oc768_k3_dil2_sm100.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_add_fp32_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_add_fp32_bf16_sm100
+EMBED_ASSET cross_entropy_on_targets_add_fp32_bf16_sm100, cross_entropy_on_targets_add_fp32_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_add_fp32_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_add_fp32_fp16_sm100
+EMBED_ASSET cross_entropy_on_targets_add_fp32_fp16_sm100, cross_entropy_on_targets_add_fp32_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_bf16_sm100
+EMBED_ASSET cross_entropy_on_targets_bf16_sm100, cross_entropy_on_targets_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_bwd_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_bwd_bf16_sm100
+EMBED_ASSET cross_entropy_on_targets_bwd_bf16_sm100, cross_entropy_on_targets_bwd_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_bwd_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_bwd_fp16_sm100
+EMBED_ASSET cross_entropy_on_targets_bwd_fp16_sm100, cross_entropy_on_targets_bwd_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/cross_entropy_on_targets_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO cross_entropy_on_targets_fp16_sm100
+EMBED_ASSET cross_entropy_on_targets_fp16_sm100, cross_entropy_on_targets_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/device_copy_strided_2d_sm100.kinfo.inc.asm"
+DECLARE_KINFO device_copy_strided_2d_sm100
+EMBED_ASSET device_copy_strided_2d_sm100, device_copy_strided_2d_sm100.cubin, 4
+#include "../kernel_gen/output/div_add_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO div_add_bf16_sm100
+EMBED_ASSET div_add_bf16_sm100, div_add_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/div_add_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO div_add_fp16_sm100
+EMBED_ASSET div_add_fp16_sm100, div_add_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/div_add_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO div_add_fp32_sm100
+EMBED_ASSET div_add_fp32_sm100, div_add_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/div_elementwise_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO div_elementwise_bf16_sm100
+EMBED_ASSET div_elementwise_bf16_sm100, div_elementwise_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/div_elementwise_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO div_elementwise_fp16_sm100
+EMBED_ASSET div_elementwise_fp16_sm100, div_elementwise_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/div_elementwise_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO div_elementwise_fp32_sm100
+EMBED_ASSET div_elementwise_fp32_sm100, div_elementwise_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_bf16_sm100
+EMBED_ASSET div_scalar_add_bf16_sm100, div_scalar_add_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_broadcast_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_broadcast_bf16_sm100
+EMBED_ASSET div_scalar_add_broadcast_bf16_sm100, div_scalar_add_broadcast_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_broadcast_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_broadcast_fp16_sm100
+EMBED_ASSET div_scalar_add_broadcast_fp16_sm100, div_scalar_add_broadcast_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_broadcast_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_broadcast_fp32_sm100
+EMBED_ASSET div_scalar_add_broadcast_fp32_sm100, div_scalar_add_broadcast_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_fp16_sm100
+EMBED_ASSET div_scalar_add_fp16_sm100, div_scalar_add_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/div_scalar_add_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_add_fp32_sm100
+EMBED_ASSET div_scalar_add_fp32_sm100, div_scalar_add_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/div_scalar_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_bf16_sm100
+EMBED_ASSET div_scalar_bf16_sm100, div_scalar_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/div_scalar_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_fp16_sm100
+EMBED_ASSET div_scalar_fp16_sm100, div_scalar_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/div_scalar_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO div_scalar_fp32_sm100
+EMBED_ASSET div_scalar_fp32_sm100, div_scalar_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/embedding_lookup_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO embedding_lookup_bf16_sm100
+EMBED_ASSET embedding_lookup_bf16_sm100, embedding_lookup_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/embedding_lookup_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO embedding_lookup_fp16_sm100
+EMBED_ASSET embedding_lookup_fp16_sm100, embedding_lookup_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/fill_constant_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO fill_constant_bf16_sm100
+EMBED_ASSET fill_constant_bf16_sm100, fill_constant_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/fill_constant_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO fill_constant_fp16_sm100
+EMBED_ASSET fill_constant_fp16_sm100, fill_constant_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/fill_constant_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO fill_constant_fp32_sm100
+EMBED_ASSET fill_constant_fp32_sm100, fill_constant_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/fill_normal_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO fill_normal_bf16_sm100
+EMBED_ASSET fill_normal_bf16_sm100, fill_normal_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/fill_normal_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO fill_normal_fp16_sm100
+EMBED_ASSET fill_normal_fp16_sm100, fill_normal_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/fill_uniform_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO fill_uniform_bf16_sm100
+EMBED_ASSET fill_uniform_bf16_sm100, fill_uniform_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/fill_uniform_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO fill_uniform_fp16_sm100
+EMBED_ASSET fill_uniform_fp16_sm100, fill_uniform_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/fill_uniform_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO fill_uniform_fp32_sm100
+EMBED_ASSET fill_uniform_fp32_sm100, fill_uniform_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/fill_zeros_sm100.kinfo.inc.asm"
+DECLARE_KINFO fill_zeros_sm100
+EMBED_ASSET fill_zeros_sm100, fill_zeros_sm100.cubin, 4
+#include "../kernel_gen/output/layer_norm_fwd_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO layer_norm_fwd_bf16_sm100
+EMBED_ASSET layer_norm_fwd_bf16_sm100, layer_norm_fwd_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/layer_norm_fwd_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO layer_norm_fwd_fp16_sm100
+EMBED_ASSET layer_norm_fwd_fp16_sm100, layer_norm_fwd_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/lstm_cell_bwd_pointwise_out_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_bwd_pointwise_out_bf16_sm100
+EMBED_ASSET lstm_cell_bwd_pointwise_out_bf16_sm100, lstm_cell_bwd_pointwise_out_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/lstm_cell_bwd_pointwise_out_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_bwd_pointwise_out_fp16_sm100
+EMBED_ASSET lstm_cell_bwd_pointwise_out_fp16_sm100, lstm_cell_bwd_pointwise_out_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/lstm_cell_fwd_fp32_state_out_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_fwd_fp32_state_out_bf16_sm100
+EMBED_ASSET lstm_cell_fwd_fp32_state_out_bf16_sm100, lstm_cell_fwd_fp32_state_out_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/lstm_cell_fwd_fp32_state_out_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_fwd_fp32_state_out_fp16_sm100
+EMBED_ASSET lstm_cell_fwd_fp32_state_out_fp16_sm100, lstm_cell_fwd_fp32_state_out_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/lstm_cell_fwd_out_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_fwd_out_fp16_sm100
+EMBED_ASSET lstm_cell_fwd_out_fp16_sm100, lstm_cell_fwd_out_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/lstm_cell_recompute_out_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_recompute_out_bf16_sm100
+EMBED_ASSET lstm_cell_recompute_out_bf16_sm100, lstm_cell_recompute_out_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/lstm_cell_recompute_out_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO lstm_cell_recompute_out_fp16_sm100
+EMBED_ASSET lstm_cell_recompute_out_fp16_sm100, lstm_cell_recompute_out_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_cacc_sm100
+EMBED_ASSET matmul_bf16_cacc_sm100, matmul_bf16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_cacc_sm100
+EMBED_ASSET matmul_bf16_out_fp32_cacc_sm100, matmul_bf16_out_fp32_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_sm100
+EMBED_ASSET matmul_bf16_out_fp32_sm100, matmul_bf16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_ta_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_ta_cacc_sm100
+EMBED_ASSET matmul_bf16_out_fp32_ta_cacc_sm100, matmul_bf16_out_fp32_ta_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_ta_sm100
+EMBED_ASSET matmul_bf16_out_fp32_ta_sm100, matmul_bf16_out_fp32_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tab_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tab_cacc_sm100
+EMBED_ASSET matmul_bf16_out_fp32_tab_cacc_sm100, matmul_bf16_out_fp32_tab_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tab_sm100
+EMBED_ASSET matmul_bf16_out_fp32_tab_sm100, matmul_bf16_out_fp32_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tb_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tb_cacc_sm100
+EMBED_ASSET matmul_bf16_out_fp32_tb_cacc_sm100, matmul_bf16_out_fp32_tb_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tb_sm100
+EMBED_ASSET matmul_bf16_out_fp32_tb_sm100, matmul_bf16_out_fp32_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_unaligned_cacc_sm100
+EMBED_ASSET matmul_bf16_out_fp32_unaligned_cacc_sm100, matmul_bf16_out_fp32_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_unaligned_sm100
+EMBED_ASSET matmul_bf16_out_fp32_unaligned_sm100, matmul_bf16_out_fp32_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_ta_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_ta_unaligned_cacc_sm100
+EMBED_ASSET matmul_bf16_out_fp32_ta_unaligned_cacc_sm100, matmul_bf16_out_fp32_ta_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_ta_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_ta_unaligned_sm100
+EMBED_ASSET matmul_bf16_out_fp32_ta_unaligned_sm100, matmul_bf16_out_fp32_ta_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tab_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tab_unaligned_cacc_sm100
+EMBED_ASSET matmul_bf16_out_fp32_tab_unaligned_cacc_sm100, matmul_bf16_out_fp32_tab_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tab_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tab_unaligned_sm100
+EMBED_ASSET matmul_bf16_out_fp32_tab_unaligned_sm100, matmul_bf16_out_fp32_tab_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tb_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tb_unaligned_cacc_sm100
+EMBED_ASSET matmul_bf16_out_fp32_tb_unaligned_cacc_sm100, matmul_bf16_out_fp32_tb_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_out_fp32_tb_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_out_fp32_tb_unaligned_sm100
+EMBED_ASSET matmul_bf16_out_fp32_tb_unaligned_sm100, matmul_bf16_out_fp32_tb_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_sm100
+EMBED_ASSET matmul_bf16_sm100, matmul_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_ta_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_ta_cacc_sm100
+EMBED_ASSET matmul_bf16_ta_cacc_sm100, matmul_bf16_ta_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_ta_sm100
+EMBED_ASSET matmul_bf16_ta_sm100, matmul_bf16_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tab_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tab_cacc_sm100
+EMBED_ASSET matmul_bf16_tab_cacc_sm100, matmul_bf16_tab_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tab_sm100
+EMBED_ASSET matmul_bf16_tab_sm100, matmul_bf16_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tb_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tb_cacc_sm100
+EMBED_ASSET matmul_bf16_tb_cacc_sm100, matmul_bf16_tb_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tb_sm100
+EMBED_ASSET matmul_bf16_tb_sm100, matmul_bf16_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_unaligned_cacc_sm100
+EMBED_ASSET matmul_bf16_unaligned_cacc_sm100, matmul_bf16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_unaligned_sm100
+EMBED_ASSET matmul_bf16_unaligned_sm100, matmul_bf16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_ta_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_ta_unaligned_cacc_sm100
+EMBED_ASSET matmul_bf16_ta_unaligned_cacc_sm100, matmul_bf16_ta_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_ta_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_ta_unaligned_sm100
+EMBED_ASSET matmul_bf16_ta_unaligned_sm100, matmul_bf16_ta_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tab_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tab_unaligned_cacc_sm100
+EMBED_ASSET matmul_bf16_tab_unaligned_cacc_sm100, matmul_bf16_tab_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tab_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tab_unaligned_sm100
+EMBED_ASSET matmul_bf16_tab_unaligned_sm100, matmul_bf16_tab_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tb_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tb_unaligned_cacc_sm100
+EMBED_ASSET matmul_bf16_tb_unaligned_cacc_sm100, matmul_bf16_tb_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_bf16_tb_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_bf16_tb_unaligned_sm100
+EMBED_ASSET matmul_bf16_tb_unaligned_sm100, matmul_bf16_tb_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_out_fp32_sm100
+EMBED_ASSET matmul_cutlass_bf16_out_fp32_sm100, matmul_cutlass_bf16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_out_fp32_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_out_fp32_ta_sm100
+EMBED_ASSET matmul_cutlass_bf16_out_fp32_ta_sm100, matmul_cutlass_bf16_out_fp32_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_out_fp32_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_out_fp32_tab_sm100
+EMBED_ASSET matmul_cutlass_bf16_out_fp32_tab_sm100, matmul_cutlass_bf16_out_fp32_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_out_fp32_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_out_fp32_tb_sm100
+EMBED_ASSET matmul_cutlass_bf16_out_fp32_tb_sm100, matmul_cutlass_bf16_out_fp32_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_sm100
+EMBED_ASSET matmul_cutlass_bf16_sm100, matmul_cutlass_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_ta_sm100
+EMBED_ASSET matmul_cutlass_bf16_ta_sm100, matmul_cutlass_bf16_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_tab_sm100
+EMBED_ASSET matmul_cutlass_bf16_tab_sm100, matmul_cutlass_bf16_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_bf16_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_bf16_tb_sm100
+EMBED_ASSET matmul_cutlass_bf16_tb_sm100, matmul_cutlass_bf16_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_out_fp32_sm100
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_out_fp32_sm100, matmul_cutlass_fp16_acc_fp16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_out_fp32_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_out_fp32_ta_sm100
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_out_fp32_ta_sm100, matmul_cutlass_fp16_acc_fp16_out_fp32_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_out_fp32_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_out_fp32_tab_sm100
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_out_fp32_tab_sm100, matmul_cutlass_fp16_acc_fp16_out_fp32_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_out_fp32_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_out_fp32_tb_sm100
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_out_fp32_tb_sm100, matmul_cutlass_fp16_acc_fp16_out_fp32_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_sm100
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_sm100, matmul_cutlass_fp16_acc_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_ta_sm100
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_ta_sm100, matmul_cutlass_fp16_acc_fp16_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_tab_sm100
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_tab_sm100, matmul_cutlass_fp16_acc_fp16_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_acc_fp16_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_acc_fp16_tb_sm100
+EMBED_ASSET matmul_cutlass_fp16_acc_fp16_tb_sm100, matmul_cutlass_fp16_acc_fp16_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_out_fp32_sm100
+EMBED_ASSET matmul_cutlass_fp16_out_fp32_sm100, matmul_cutlass_fp16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_out_fp32_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_out_fp32_ta_sm100
+EMBED_ASSET matmul_cutlass_fp16_out_fp32_ta_sm100, matmul_cutlass_fp16_out_fp32_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_out_fp32_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_out_fp32_tab_sm100
+EMBED_ASSET matmul_cutlass_fp16_out_fp32_tab_sm100, matmul_cutlass_fp16_out_fp32_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_out_fp32_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_out_fp32_tb_sm100
+EMBED_ASSET matmul_cutlass_fp16_out_fp32_tb_sm100, matmul_cutlass_fp16_out_fp32_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_sm100
+EMBED_ASSET matmul_cutlass_fp16_sm100, matmul_cutlass_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_ta_sm100
+EMBED_ASSET matmul_cutlass_fp16_ta_sm100, matmul_cutlass_fp16_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_tab_sm100
+EMBED_ASSET matmul_cutlass_fp16_tab_sm100, matmul_cutlass_fp16_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_cutlass_fp16_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_cutlass_fp16_tb_sm100
+EMBED_ASSET matmul_cutlass_fp16_tb_sm100, matmul_cutlass_fp16_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_fp16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_fp16_cacc_sm100
+EMBED_ASSET matmul_fp16_acc_fp16_cacc_sm100, matmul_fp16_acc_fp16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_fp16_sm100
+EMBED_ASSET matmul_fp16_acc_fp16_sm100, matmul_fp16_acc_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_fp16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_fp16_unaligned_cacc_sm100
+EMBED_ASSET matmul_fp16_acc_fp16_unaligned_cacc_sm100, matmul_fp16_acc_fp16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_fp16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_fp16_unaligned_sm100
+EMBED_ASSET matmul_fp16_acc_fp16_unaligned_sm100, matmul_fp16_acc_fp16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_cacc_sm100
+EMBED_ASSET matmul_fp16_acc_out_fp32_cacc_sm100, matmul_fp16_acc_out_fp32_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_sm100
+EMBED_ASSET matmul_fp16_acc_out_fp32_sm100, matmul_fp16_acc_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_ta_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_ta_cacc_sm100
+EMBED_ASSET matmul_fp16_acc_out_fp32_ta_cacc_sm100, matmul_fp16_acc_out_fp32_ta_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_ta_sm100
+EMBED_ASSET matmul_fp16_acc_out_fp32_ta_sm100, matmul_fp16_acc_out_fp32_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tab_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tab_cacc_sm100
+EMBED_ASSET matmul_fp16_acc_out_fp32_tab_cacc_sm100, matmul_fp16_acc_out_fp32_tab_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tab_sm100
+EMBED_ASSET matmul_fp16_acc_out_fp32_tab_sm100, matmul_fp16_acc_out_fp32_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tb_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tb_cacc_sm100
+EMBED_ASSET matmul_fp16_acc_out_fp32_tb_cacc_sm100, matmul_fp16_acc_out_fp32_tb_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tb_sm100
+EMBED_ASSET matmul_fp16_acc_out_fp32_tb_sm100, matmul_fp16_acc_out_fp32_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_unaligned_cacc_sm100
+EMBED_ASSET matmul_fp16_acc_out_fp32_unaligned_cacc_sm100, matmul_fp16_acc_out_fp32_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_unaligned_sm100
+EMBED_ASSET matmul_fp16_acc_out_fp32_unaligned_sm100, matmul_fp16_acc_out_fp32_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_ta_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_ta_unaligned_cacc_sm100
+EMBED_ASSET matmul_fp16_acc_out_fp32_ta_unaligned_cacc_sm100, matmul_fp16_acc_out_fp32_ta_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_ta_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_ta_unaligned_sm100
+EMBED_ASSET matmul_fp16_acc_out_fp32_ta_unaligned_sm100, matmul_fp16_acc_out_fp32_ta_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tab_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tab_unaligned_cacc_sm100
+EMBED_ASSET matmul_fp16_acc_out_fp32_tab_unaligned_cacc_sm100, matmul_fp16_acc_out_fp32_tab_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tab_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tab_unaligned_sm100
+EMBED_ASSET matmul_fp16_acc_out_fp32_tab_unaligned_sm100, matmul_fp16_acc_out_fp32_tab_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tb_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tb_unaligned_cacc_sm100
+EMBED_ASSET matmul_fp16_acc_out_fp32_tb_unaligned_cacc_sm100, matmul_fp16_acc_out_fp32_tb_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_acc_out_fp32_tb_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_acc_out_fp32_tb_unaligned_sm100
+EMBED_ASSET matmul_fp16_acc_out_fp32_tb_unaligned_sm100, matmul_fp16_acc_out_fp32_tb_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_cacc_sm100
+EMBED_ASSET matmul_fp16_cacc_sm100, matmul_fp16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_cacc_sm100
+EMBED_ASSET matmul_fp16_out_fp32_cacc_sm100, matmul_fp16_out_fp32_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_sm100
+EMBED_ASSET matmul_fp16_out_fp32_sm100, matmul_fp16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_ta_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_ta_cacc_sm100
+EMBED_ASSET matmul_fp16_out_fp32_ta_cacc_sm100, matmul_fp16_out_fp32_ta_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_ta_sm100
+EMBED_ASSET matmul_fp16_out_fp32_ta_sm100, matmul_fp16_out_fp32_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tab_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tab_cacc_sm100
+EMBED_ASSET matmul_fp16_out_fp32_tab_cacc_sm100, matmul_fp16_out_fp32_tab_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tab_sm100
+EMBED_ASSET matmul_fp16_out_fp32_tab_sm100, matmul_fp16_out_fp32_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tb_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tb_cacc_sm100
+EMBED_ASSET matmul_fp16_out_fp32_tb_cacc_sm100, matmul_fp16_out_fp32_tb_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tb_sm100
+EMBED_ASSET matmul_fp16_out_fp32_tb_sm100, matmul_fp16_out_fp32_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_unaligned_cacc_sm100
+EMBED_ASSET matmul_fp16_out_fp32_unaligned_cacc_sm100, matmul_fp16_out_fp32_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_unaligned_sm100
+EMBED_ASSET matmul_fp16_out_fp32_unaligned_sm100, matmul_fp16_out_fp32_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_ta_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_ta_unaligned_cacc_sm100
+EMBED_ASSET matmul_fp16_out_fp32_ta_unaligned_cacc_sm100, matmul_fp16_out_fp32_ta_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_ta_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_ta_unaligned_sm100
+EMBED_ASSET matmul_fp16_out_fp32_ta_unaligned_sm100, matmul_fp16_out_fp32_ta_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tab_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tab_unaligned_cacc_sm100
+EMBED_ASSET matmul_fp16_out_fp32_tab_unaligned_cacc_sm100, matmul_fp16_out_fp32_tab_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tab_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tab_unaligned_sm100
+EMBED_ASSET matmul_fp16_out_fp32_tab_unaligned_sm100, matmul_fp16_out_fp32_tab_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tb_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tb_unaligned_cacc_sm100
+EMBED_ASSET matmul_fp16_out_fp32_tb_unaligned_cacc_sm100, matmul_fp16_out_fp32_tb_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_out_fp32_tb_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_out_fp32_tb_unaligned_sm100
+EMBED_ASSET matmul_fp16_out_fp32_tb_unaligned_sm100, matmul_fp16_out_fp32_tb_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_sm100
+EMBED_ASSET matmul_fp16_sm100, matmul_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_ta_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_ta_cacc_sm100
+EMBED_ASSET matmul_fp16_ta_cacc_sm100, matmul_fp16_ta_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_ta_sm100
+EMBED_ASSET matmul_fp16_ta_sm100, matmul_fp16_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tab_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tab_cacc_sm100
+EMBED_ASSET matmul_fp16_tab_cacc_sm100, matmul_fp16_tab_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tab_sm100
+EMBED_ASSET matmul_fp16_tab_sm100, matmul_fp16_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tb_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tb_cacc_sm100
+EMBED_ASSET matmul_fp16_tb_cacc_sm100, matmul_fp16_tb_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tb_sm100
+EMBED_ASSET matmul_fp16_tb_sm100, matmul_fp16_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_unaligned_cacc_sm100
+EMBED_ASSET matmul_fp16_unaligned_cacc_sm100, matmul_fp16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_unaligned_sm100
+EMBED_ASSET matmul_fp16_unaligned_sm100, matmul_fp16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_ta_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_ta_unaligned_cacc_sm100
+EMBED_ASSET matmul_fp16_ta_unaligned_cacc_sm100, matmul_fp16_ta_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_ta_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_ta_unaligned_sm100
+EMBED_ASSET matmul_fp16_ta_unaligned_sm100, matmul_fp16_ta_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tab_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tab_unaligned_cacc_sm100
+EMBED_ASSET matmul_fp16_tab_unaligned_cacc_sm100, matmul_fp16_tab_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tab_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tab_unaligned_sm100
+EMBED_ASSET matmul_fp16_tab_unaligned_sm100, matmul_fp16_tab_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tb_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tb_unaligned_cacc_sm100
+EMBED_ASSET matmul_fp16_tb_unaligned_cacc_sm100, matmul_fp16_tb_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_fp16_tb_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_fp16_tb_unaligned_sm100
+EMBED_ASSET matmul_fp16_tb_unaligned_sm100, matmul_fp16_tb_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bf16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bf16_cacc_sm100
+EMBED_ASSET matmul_gelu_bf16_cacc_sm100, matmul_gelu_bf16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bf16_sm100
+EMBED_ASSET matmul_gelu_bf16_sm100, matmul_gelu_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bf16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bf16_unaligned_cacc_sm100
+EMBED_ASSET matmul_gelu_bf16_unaligned_cacc_sm100, matmul_gelu_bf16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bf16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bf16_unaligned_sm100
+EMBED_ASSET matmul_gelu_bf16_unaligned_sm100, matmul_gelu_bf16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_bf16_cacc_sm100, matmul_gelu_bwd_bf16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_sm100
+EMBED_ASSET matmul_gelu_bwd_bf16_sm100, matmul_gelu_bwd_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_ta_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_ta_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_bf16_ta_cacc_sm100, matmul_gelu_bwd_bf16_ta_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_ta_sm100
+EMBED_ASSET matmul_gelu_bwd_bf16_ta_sm100, matmul_gelu_bwd_bf16_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_tab_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_tab_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_bf16_tab_cacc_sm100, matmul_gelu_bwd_bf16_tab_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_tab_sm100
+EMBED_ASSET matmul_gelu_bwd_bf16_tab_sm100, matmul_gelu_bwd_bf16_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_tb_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_tb_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_bf16_tb_cacc_sm100, matmul_gelu_bwd_bf16_tb_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_tb_sm100
+EMBED_ASSET matmul_gelu_bwd_bf16_tb_sm100, matmul_gelu_bwd_bf16_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_cacc_sm100, matmul_gelu_bwd_bf16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_sm100
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_sm100, matmul_gelu_bwd_bf16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_ta_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_ta_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_ta_cacc_sm100, matmul_gelu_bwd_bf16_unaligned_ta_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_ta_sm100
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_ta_sm100, matmul_gelu_bwd_bf16_unaligned_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_tab_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_tab_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_tab_cacc_sm100, matmul_gelu_bwd_bf16_unaligned_tab_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_tab_sm100
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_tab_sm100, matmul_gelu_bwd_bf16_unaligned_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_tb_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_tb_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_tb_cacc_sm100, matmul_gelu_bwd_bf16_unaligned_tb_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_bf16_unaligned_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_bf16_unaligned_tb_sm100
+EMBED_ASSET matmul_gelu_bwd_bf16_unaligned_tb_sm100, matmul_gelu_bwd_bf16_unaligned_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_bf16_sm100
+EMBED_ASSET matmul_gelu_bwd_cutlass_bf16_sm100, matmul_gelu_bwd_cutlass_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_bf16_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_bf16_ta_sm100
+EMBED_ASSET matmul_gelu_bwd_cutlass_bf16_ta_sm100, matmul_gelu_bwd_cutlass_bf16_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_bf16_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_bf16_tab_sm100
+EMBED_ASSET matmul_gelu_bwd_cutlass_bf16_tab_sm100, matmul_gelu_bwd_cutlass_bf16_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_bf16_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_bf16_tb_sm100
+EMBED_ASSET matmul_gelu_bwd_cutlass_bf16_tb_sm100, matmul_gelu_bwd_cutlass_bf16_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_acc_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_acc_fp16_sm100
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_acc_fp16_sm100, matmul_gelu_bwd_cutlass_fp16_acc_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta_sm100
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta_sm100, matmul_gelu_bwd_cutlass_fp16_acc_fp16_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab_sm100
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab_sm100, matmul_gelu_bwd_cutlass_fp16_acc_fp16_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb_sm100
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb_sm100, matmul_gelu_bwd_cutlass_fp16_acc_fp16_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_sm100
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_sm100, matmul_gelu_bwd_cutlass_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_ta_sm100
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_ta_sm100, matmul_gelu_bwd_cutlass_fp16_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_tab_sm100
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_tab_sm100, matmul_gelu_bwd_cutlass_fp16_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_cutlass_fp16_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_cutlass_fp16_tb_sm100
+EMBED_ASSET matmul_gelu_bwd_cutlass_fp16_tb_sm100, matmul_gelu_bwd_cutlass_fp16_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_cacc_sm100, matmul_gelu_bwd_fp16_acc_fp16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_sm100, matmul_gelu_bwd_fp16_acc_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_ta_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_ta_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_ta_cacc_sm100, matmul_gelu_bwd_fp16_acc_fp16_ta_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_ta_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_ta_sm100, matmul_gelu_bwd_fp16_acc_fp16_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_tab_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_tab_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_tab_cacc_sm100, matmul_gelu_bwd_fp16_acc_fp16_tab_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_tab_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_tab_sm100, matmul_gelu_bwd_fp16_acc_fp16_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_tb_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_tb_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_tb_cacc_sm100, matmul_gelu_bwd_fp16_acc_fp16_tb_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_tb_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_tb_sm100, matmul_gelu_bwd_fp16_acc_fp16_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_cacc_sm100, matmul_gelu_bwd_fp16_acc_fp16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_sm100, matmul_gelu_bwd_fp16_acc_fp16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_cacc_sm100, matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_sm100, matmul_gelu_bwd_fp16_acc_fp16_unaligned_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_cacc_sm100, matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_sm100, matmul_gelu_bwd_fp16_acc_fp16_unaligned_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_cacc_sm100, matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_sm100, matmul_gelu_bwd_fp16_acc_fp16_unaligned_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_cacc_sm100, matmul_gelu_bwd_fp16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_sm100, matmul_gelu_bwd_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_ta_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_ta_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_ta_cacc_sm100, matmul_gelu_bwd_fp16_ta_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_ta_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_ta_sm100, matmul_gelu_bwd_fp16_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_tab_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_tab_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_tab_cacc_sm100, matmul_gelu_bwd_fp16_tab_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_tab_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_tab_sm100, matmul_gelu_bwd_fp16_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_tb_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_tb_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_tb_cacc_sm100, matmul_gelu_bwd_fp16_tb_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_tb_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_tb_sm100, matmul_gelu_bwd_fp16_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_cacc_sm100, matmul_gelu_bwd_fp16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_sm100, matmul_gelu_bwd_fp16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_ta_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_ta_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_ta_cacc_sm100, matmul_gelu_bwd_fp16_unaligned_ta_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_ta_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_ta_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_ta_sm100, matmul_gelu_bwd_fp16_unaligned_ta_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_tab_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_tab_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_tab_cacc_sm100, matmul_gelu_bwd_fp16_unaligned_tab_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_tab_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_tab_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_tab_sm100, matmul_gelu_bwd_fp16_unaligned_tab_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_tb_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_tb_cacc_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_tb_cacc_sm100, matmul_gelu_bwd_fp16_unaligned_tb_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_bwd_fp16_unaligned_tb_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_bwd_fp16_unaligned_tb_sm100
+EMBED_ASSET matmul_gelu_bwd_fp16_unaligned_tb_sm100, matmul_gelu_bwd_fp16_unaligned_tb_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_cutlass_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_cutlass_bf16_sm100
+EMBED_ASSET matmul_gelu_cutlass_bf16_sm100, matmul_gelu_cutlass_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_cutlass_fp16_acc_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_cutlass_fp16_acc_fp16_sm100
+EMBED_ASSET matmul_gelu_cutlass_fp16_acc_fp16_sm100, matmul_gelu_cutlass_fp16_acc_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_cutlass_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_cutlass_fp16_sm100
+EMBED_ASSET matmul_gelu_cutlass_fp16_sm100, matmul_gelu_cutlass_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_acc_fp16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_acc_fp16_cacc_sm100
+EMBED_ASSET matmul_gelu_fp16_acc_fp16_cacc_sm100, matmul_gelu_fp16_acc_fp16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_acc_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_acc_fp16_sm100
+EMBED_ASSET matmul_gelu_fp16_acc_fp16_sm100, matmul_gelu_fp16_acc_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_acc_fp16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_acc_fp16_unaligned_cacc_sm100
+EMBED_ASSET matmul_gelu_fp16_acc_fp16_unaligned_cacc_sm100, matmul_gelu_fp16_acc_fp16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_acc_fp16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_acc_fp16_unaligned_sm100
+EMBED_ASSET matmul_gelu_fp16_acc_fp16_unaligned_sm100, matmul_gelu_fp16_acc_fp16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_cacc_sm100
+EMBED_ASSET matmul_gelu_fp16_cacc_sm100, matmul_gelu_fp16_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_sm100
+EMBED_ASSET matmul_gelu_fp16_sm100, matmul_gelu_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_unaligned_cacc_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_unaligned_cacc_sm100
+EMBED_ASSET matmul_gelu_fp16_unaligned_cacc_sm100, matmul_gelu_fp16_unaligned_cacc_sm100.cubin, 4
+#include "../kernel_gen/output/matmul_gelu_fp16_unaligned_sm100.kinfo.inc.asm"
+DECLARE_KINFO matmul_gelu_fp16_unaligned_sm100
+EMBED_ASSET matmul_gelu_fp16_unaligned_sm100, matmul_gelu_fp16_unaligned_sm100.cubin, 4
+#include "../kernel_gen/output/mean_reduce_column_tiled_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mean_reduce_column_tiled_bf16_sm100
+EMBED_ASSET mean_reduce_column_tiled_bf16_sm100, mean_reduce_column_tiled_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/mean_reduce_column_tiled_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mean_reduce_column_tiled_fp16_sm100
+EMBED_ASSET mean_reduce_column_tiled_fp16_sm100, mean_reduce_column_tiled_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/mean_reduce_contiguous_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mean_reduce_contiguous_bf16_sm100
+EMBED_ASSET mean_reduce_contiguous_bf16_sm100, mean_reduce_contiguous_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/mean_reduce_contiguous_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mean_reduce_contiguous_fp16_sm100
+EMBED_ASSET mean_reduce_contiguous_fp16_sm100, mean_reduce_contiguous_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_cutlass_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_cutlass_bf16_sm100
+EMBED_ASSET mha_full_attn_bwd_cutlass_bf16_sm100, mha_full_attn_bwd_cutlass_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_cutlass_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_cutlass_fp16_sm100
+EMBED_ASSET mha_full_attn_bwd_cutlass_fp16_sm100, mha_full_attn_bwd_cutlass_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_hs128_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_hs128_bf16_sm100
+EMBED_ASSET mha_full_attn_bwd_hs128_bf16_sm100, mha_full_attn_bwd_hs128_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_hs128_bf16_uneven_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_hs128_bf16_uneven_sm100
+EMBED_ASSET mha_full_attn_bwd_hs128_bf16_uneven_sm100, mha_full_attn_bwd_hs128_bf16_uneven_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_hs128_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_hs128_fp16_sm100
+EMBED_ASSET mha_full_attn_bwd_hs128_fp16_sm100, mha_full_attn_bwd_hs128_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_hs128_fp16_uneven_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_hs128_fp16_uneven_sm100
+EMBED_ASSET mha_full_attn_bwd_hs128_fp16_uneven_sm100, mha_full_attn_bwd_hs128_fp16_uneven_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_pre_hs128_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_pre_hs128_bf16_sm100
+EMBED_ASSET mha_full_attn_bwd_pre_hs128_bf16_sm100, mha_full_attn_bwd_pre_hs128_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_bwd_pre_hs128_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_bwd_pre_hs128_fp16_sm100
+EMBED_ASSET mha_full_attn_bwd_pre_hs128_fp16_sm100, mha_full_attn_bwd_pre_hs128_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_cutlass_bf16_lse_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_cutlass_bf16_lse_sm100
+EMBED_ASSET mha_full_attn_cutlass_bf16_lse_sm100, mha_full_attn_cutlass_bf16_lse_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_cutlass_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_cutlass_bf16_sm100
+EMBED_ASSET mha_full_attn_cutlass_bf16_sm100, mha_full_attn_cutlass_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_cutlass_fp16_lse_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_cutlass_fp16_lse_sm100
+EMBED_ASSET mha_full_attn_cutlass_fp16_lse_sm100, mha_full_attn_cutlass_fp16_lse_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_cutlass_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_cutlass_fp16_sm100
+EMBED_ASSET mha_full_attn_cutlass_fp16_sm100, mha_full_attn_cutlass_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_convert_dq_hs128_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_convert_dq_hs128_bf16_sm100
+EMBED_ASSET mha_full_attn_fa_bwd_convert_dq_hs128_bf16_sm100, mha_full_attn_fa_bwd_convert_dq_hs128_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_convert_dq_hs128_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_convert_dq_hs128_fp16_sm100
+EMBED_ASSET mha_full_attn_fa_bwd_convert_dq_hs128_fp16_sm100, mha_full_attn_fa_bwd_convert_dq_hs128_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_dot_do_o_hs128_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_dot_do_o_hs128_bf16_sm100
+EMBED_ASSET mha_full_attn_fa_bwd_dot_do_o_hs128_bf16_sm100, mha_full_attn_fa_bwd_dot_do_o_hs128_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_dot_do_o_hs128_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_dot_do_o_hs128_fp16_sm100
+EMBED_ASSET mha_full_attn_fa_bwd_dot_do_o_hs128_fp16_sm100, mha_full_attn_fa_bwd_dot_do_o_hs128_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_hs128_bf16_even_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_hs128_bf16_even_sm100
+EMBED_ASSET mha_full_attn_fa_bwd_hs128_bf16_even_sm100, mha_full_attn_fa_bwd_hs128_bf16_even_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_hs128_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_hs128_bf16_sm100
+EMBED_ASSET mha_full_attn_fa_bwd_hs128_bf16_sm100, mha_full_attn_fa_bwd_hs128_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_hs128_fp16_even_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_hs128_fp16_even_sm100
+EMBED_ASSET mha_full_attn_fa_bwd_hs128_fp16_even_sm100, mha_full_attn_fa_bwd_hs128_fp16_even_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_bwd_hs128_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_bwd_hs128_fp16_sm100
+EMBED_ASSET mha_full_attn_fa_bwd_hs128_fp16_sm100, mha_full_attn_fa_bwd_hs128_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_bf16_even_nolse_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_bf16_even_nolse_sm100
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_bf16_even_nolse_sm100, mha_full_attn_fa_fwd_hs128_bf16_even_nolse_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_bf16_even_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_bf16_even_sm100
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_bf16_even_sm100, mha_full_attn_fa_fwd_hs128_bf16_even_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_bf16_nolse_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_bf16_nolse_sm100
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_bf16_nolse_sm100, mha_full_attn_fa_fwd_hs128_bf16_nolse_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_bf16_sm100
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_bf16_sm100, mha_full_attn_fa_fwd_hs128_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_nolse_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_nolse_sm100
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_nolse_sm100, mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_nolse_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_sm100
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_sm100, mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_even_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_nolse_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_nolse_sm100
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_nolse_sm100, mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_nolse_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_sm100
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_sm100, mha_full_attn_fa_fwd_hs128_fp16_acc_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_even_nolse_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_even_nolse_sm100
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_even_nolse_sm100, mha_full_attn_fa_fwd_hs128_fp16_even_nolse_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_even_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_even_sm100
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_even_sm100, mha_full_attn_fa_fwd_hs128_fp16_even_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_nolse_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_nolse_sm100
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_nolse_sm100, mha_full_attn_fa_fwd_hs128_fp16_nolse_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fa_fwd_hs128_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fa_fwd_hs128_fp16_sm100
+EMBED_ASSET mha_full_attn_fa_fwd_hs128_fp16_sm100, mha_full_attn_fa_fwd_hs128_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_bf16_nolse_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_bf16_nolse_sm100
+EMBED_ASSET mha_full_attn_fwd_hs128_bf16_nolse_sm100, mha_full_attn_fwd_hs128_bf16_nolse_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_bf16_sm100
+EMBED_ASSET mha_full_attn_fwd_hs128_bf16_sm100, mha_full_attn_fwd_hs128_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_bf16_uneven_nolse_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_bf16_uneven_nolse_sm100
+EMBED_ASSET mha_full_attn_fwd_hs128_bf16_uneven_nolse_sm100, mha_full_attn_fwd_hs128_bf16_uneven_nolse_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_bf16_uneven_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_bf16_uneven_sm100
+EMBED_ASSET mha_full_attn_fwd_hs128_bf16_uneven_sm100, mha_full_attn_fwd_hs128_bf16_uneven_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_acc_fp16_nolse_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_acc_fp16_nolse_sm100
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_acc_fp16_nolse_sm100, mha_full_attn_fwd_hs128_fp16_acc_fp16_nolse_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_acc_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_acc_fp16_sm100
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_acc_fp16_sm100, mha_full_attn_fwd_hs128_fp16_acc_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_nolse_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_nolse_sm100
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_nolse_sm100, mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_nolse_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_sm100
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_sm100, mha_full_attn_fwd_hs128_fp16_acc_fp16_uneven_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_nolse_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_nolse_sm100
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_nolse_sm100, mha_full_attn_fwd_hs128_fp16_nolse_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_sm100
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_sm100, mha_full_attn_fwd_hs128_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_uneven_nolse_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_uneven_nolse_sm100
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_uneven_nolse_sm100, mha_full_attn_fwd_hs128_fp16_uneven_nolse_sm100.cubin, 4
+#include "../kernel_gen/output/mha_full_attn_fwd_hs128_fp16_uneven_sm100.kinfo.inc.asm"
+DECLARE_KINFO mha_full_attn_fwd_hs128_fp16_uneven_sm100
+EMBED_ASSET mha_full_attn_fwd_hs128_fp16_uneven_sm100, mha_full_attn_fwd_hs128_fp16_uneven_sm100.cubin, 4
+#include "../kernel_gen/output/mul_elementwise_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mul_elementwise_bf16_sm100
+EMBED_ASSET mul_elementwise_bf16_sm100, mul_elementwise_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/mul_elementwise_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mul_elementwise_fp16_sm100
+EMBED_ASSET mul_elementwise_fp16_sm100, mul_elementwise_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/mul_elementwise_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO mul_elementwise_fp32_sm100
+EMBED_ASSET mul_elementwise_fp32_sm100, mul_elementwise_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/mul_reduce_column_tiled_bf16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_column_tiled_bf16_out_fp32_sm100
+EMBED_ASSET mul_reduce_column_tiled_bf16_out_fp32_sm100, mul_reduce_column_tiled_bf16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/mul_reduce_column_tiled_fp16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_column_tiled_fp16_out_fp32_sm100
+EMBED_ASSET mul_reduce_column_tiled_fp16_out_fp32_sm100, mul_reduce_column_tiled_fp16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/mul_reduce_column_split_partials_bf16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_column_split_partials_bf16_out_fp32_sm100
+EMBED_ASSET mul_reduce_column_split_partials_bf16_out_fp32_sm100, mul_reduce_column_split_partials_bf16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/mul_reduce_column_split_partials_fp16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_column_split_partials_fp16_out_fp32_sm100
+EMBED_ASSET mul_reduce_column_split_partials_fp16_out_fp32_sm100, mul_reduce_column_split_partials_fp16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/mul_reduce_contiguous_bf16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_contiguous_bf16_out_fp32_sm100
+EMBED_ASSET mul_reduce_contiguous_bf16_out_fp32_sm100, mul_reduce_contiguous_bf16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/mul_reduce_contiguous_fp16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO mul_reduce_contiguous_fp16_out_fp32_sm100
+EMBED_ASSET mul_reduce_contiguous_fp16_out_fp32_sm100, mul_reduce_contiguous_fp16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/mul_scalar_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mul_scalar_bf16_sm100
+EMBED_ASSET mul_scalar_bf16_sm100, mul_scalar_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/mul_scalar_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mul_scalar_fp16_sm100
+EMBED_ASSET mul_scalar_fp16_sm100, mul_scalar_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/mul_scalar_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO mul_scalar_fp32_sm100
+EMBED_ASSET mul_scalar_fp32_sm100, mul_scalar_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/sqrt_elementwise_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO sqrt_elementwise_bf16_sm100
+EMBED_ASSET sqrt_elementwise_bf16_sm100, sqrt_elementwise_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/sqrt_elementwise_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO sqrt_elementwise_fp16_sm100
+EMBED_ASSET sqrt_elementwise_fp16_sm100, sqrt_elementwise_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/sqrt_elementwise_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO sqrt_elementwise_fp32_sm100
+EMBED_ASSET sqrt_elementwise_fp32_sm100, sqrt_elementwise_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/mul_trailing_broadcast_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mul_trailing_broadcast_bf16_sm100
+EMBED_ASSET mul_trailing_broadcast_bf16_sm100, mul_trailing_broadcast_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/mul_trailing_broadcast_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO mul_trailing_broadcast_fp16_sm100
+EMBED_ASSET mul_trailing_broadcast_fp16_sm100, mul_trailing_broadcast_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/mul_trailing_broadcast_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO mul_trailing_broadcast_fp32_sm100
+EMBED_ASSET mul_trailing_broadcast_fp32_sm100, mul_trailing_broadcast_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/reduce_sum_partial_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO reduce_sum_partial_fp32_sm100
+EMBED_ASSET reduce_sum_partial_fp32_sm100, reduce_sum_partial_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/rms_norm_bwd_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO rms_norm_bwd_bf16_sm100
+EMBED_ASSET rms_norm_bwd_bf16_sm100, rms_norm_bwd_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/rms_norm_bwd_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO rms_norm_bwd_fp16_sm100
+EMBED_ASSET rms_norm_bwd_fp16_sm100, rms_norm_bwd_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/rms_norm_fwd_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO rms_norm_fwd_bf16_sm100
+EMBED_ASSET rms_norm_fwd_bf16_sm100, rms_norm_fwd_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/rms_norm_fwd_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO rms_norm_fwd_fp16_sm100
+EMBED_ASSET rms_norm_fwd_fp16_sm100, rms_norm_fwd_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/sgd_step_bf16_sm100.kinfo.inc.asm"
+DECLARE_KINFO sgd_step_bf16_sm100
+EMBED_ASSET sgd_step_bf16_sm100, sgd_step_bf16_sm100.cubin, 4
+#include "../kernel_gen/output/sgd_step_fp16_sm100.kinfo.inc.asm"
+DECLARE_KINFO sgd_step_fp16_sm100
+EMBED_ASSET sgd_step_fp16_sm100, sgd_step_fp16_sm100.cubin, 4
+#include "../kernel_gen/output/sgd_step_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO sgd_step_fp32_sm100
+EMBED_ASSET sgd_step_fp32_sm100, sgd_step_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_tiled_bf16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_tiled_bf16_out_fp32_sm100
+EMBED_ASSET sum_reduce_column_tiled_bf16_out_fp32_sm100, sum_reduce_column_tiled_bf16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_tiled_fp16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_tiled_fp16_out_fp32_sm100
+EMBED_ASSET sum_reduce_column_tiled_fp16_out_fp32_sm100, sum_reduce_column_tiled_fp16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_tiled_fp32_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_tiled_fp32_out_fp32_sm100
+EMBED_ASSET sum_reduce_column_tiled_fp32_out_fp32_sm100, sum_reduce_column_tiled_fp32_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_split_partials_bf16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_split_partials_bf16_out_fp32_sm100
+EMBED_ASSET sum_reduce_column_split_partials_bf16_out_fp32_sm100, sum_reduce_column_split_partials_bf16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_split_partials_fp16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_split_partials_fp16_out_fp32_sm100
+EMBED_ASSET sum_reduce_column_split_partials_fp16_out_fp32_sm100, sum_reduce_column_split_partials_fp16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/sum_reduce_column_split_partials_fp32_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_column_split_partials_fp32_out_fp32_sm100
+EMBED_ASSET sum_reduce_column_split_partials_fp32_out_fp32_sm100, sum_reduce_column_split_partials_fp32_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/sum_reduce_contiguous_bf16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_contiguous_bf16_out_fp32_sm100
+EMBED_ASSET sum_reduce_contiguous_bf16_out_fp32_sm100, sum_reduce_contiguous_bf16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/sum_reduce_contiguous_fp16_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_contiguous_fp16_out_fp32_sm100
+EMBED_ASSET sum_reduce_contiguous_fp16_out_fp32_sm100, sum_reduce_contiguous_fp16_out_fp32_sm100.cubin, 4
+#include "../kernel_gen/output/sum_reduce_contiguous_fp32_out_fp32_sm100.kinfo.inc.asm"
+DECLARE_KINFO sum_reduce_contiguous_fp32_out_fp32_sm100
+EMBED_ASSET sum_reduce_contiguous_fp32_out_fp32_sm100, sum_reduce_contiguous_fp32_out_fp32_sm100.cubin, 4
+
+#endif

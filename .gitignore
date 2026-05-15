@@ -1,0 +1,14 @@
+.venv/
+.idea/
+/tmp/
+/kernel_gen/kernel_gen/kernels/flash_attention_codegen/build/
+/kernel_gen/kernel_gen/kernels/flash_attention_codegen/generated/
+/kernel_gen/kernel_gen/kernels/flash_attention_codegen/third_party/*
+!/kernel_gen/kernel_gen/kernels/flash_attention_codegen/third_party/aten_stub/
+!/kernel_gen/kernel_gen/kernels/flash_attention_codegen/third_party/aten_stub/**
+/kernel_gen/kernel_gen/third_party/
+/kernel_gen/kernel_gen/.venv-rocm/
+/scripts/wandb/
+/tests/.venv-rocm
+/kernel_gen/kernel_gen/output/
+/tests/**/reference*.safetensors

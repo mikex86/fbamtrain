@@ -1,0 +1,6 @@
+add_executable(bench_matmul_mfu bench_matmul_mfu.cpp)
+
+target_link_libraries(bench_matmul_mfu PRIVATE tensorlib)
+target_link_libraries(bench_matmul_mfu PRIVATE fbamtrain_lib)
+
+add_test(NAME bench_matmul_mfu COMMAND bench_matmul_mfu)
