@@ -1,4 +1,5 @@
 .venv/
+uv.lock
 .idea/
 /tmp/
 /kernel_gen/kernel_gen/kernels/flash_attention_codegen/build/
